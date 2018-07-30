@@ -10,19 +10,19 @@ reveal_theme: league.css
 reveal_transition: concave
 
 # Path to the used theme (defaults to the Reveal.js standard theme path)
-reveal_theme_path: reveal.js/css/theme/ 
+reveal_theme_path: reveal.js/css/theme/
 
 # Additional custom CSS paths
-extra_css: 
+extra_css:
 
 # Embed Server-side speaker notes?
 reveal_notes_server: false
 
 # Additional reveal.js options
-reveal_options: 
+reveal_options:
 
 # Additional reveal.js dependencies
-reveal_dependencies: 
+reveal_dependencies:
 
 # Reveal.js subdirectory
 reveal_path: reveal.js/
@@ -31,4 +31,3 @@ reveal_path: reveal.js/
 markdown: redcarpet
 highlighter: pygments
 markdown_ext: ignoreme
-

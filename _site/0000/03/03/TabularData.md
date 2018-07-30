@@ -55,7 +55,7 @@ print table
 
 ## Overview
 
-<img src="../../img/tabulartable.png" alt="slot" style="width: 700px;"/>
+<img src="http://localhost:4000/img/tabulartable.png" alt="slot" style="width: 700px;"/>
 
 ---
 

@@ -4,7 +4,7 @@
 
 ## Counting amino acids
 
-<img src="../../img/pp7.png" alt="slot" style="width: 600px;"/>
+<img src="{{site.url}}/img/pp7.png" alt="slot" style="width: 600px;"/>
 
 
 ```
@@ -121,7 +121,7 @@ Write a file and program that:
 
 ---
 
-<img src="../../img/pp8.png" alt="slot" style="width: 700px;"/>
+<img src="{{site.url}}/img/pp8.png" alt="slot" style="width: 700px;"/>
 
 ---
 
@@ -133,7 +133,7 @@ Write a file and program that:
 
 ## Recap
 
-<img src="../../img/pp9.png" alt="slot" style="width: 700px;"/>
+<img src="{{site.url}}/img/pp9.png" alt="slot" style="width: 700px;"/>
 
 ---
 

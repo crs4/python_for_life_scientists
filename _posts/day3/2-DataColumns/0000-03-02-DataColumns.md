@@ -19,7 +19,7 @@
 
 ## Kick Start
 
-<img src="../../img/neuron.png" alt="slot" style="width: 400px;"/>
+<img src="{{site.url}}/img/neuron.png" alt="slot" style="width: 400px;"/>
 
 > ##### Dendrites are the minor fibers that branch out from the neuron, which carry the nerve signal in centripetal direction (towards the soma, the cell body of the neuron). 
 
@@ -114,7 +114,7 @@ the indication 1 for primary neurons and 2 for secondary neurons)
 
 +  Calculate the standard deviation
 
-<img src="../../img/builtin.png" alt="slot" style="width: 450px;"/>
+<img src="{{site.url}}/img/builtin.png" alt="slot" style="width: 450px;"/>
 
 
 ---
@@ -226,7 +226,7 @@ print  S.format (a,  math.sqrt(a))
 
 ## Match the formatting expressions and their result
 
-<img src="../../img/expression_values.png" alt="slot" style="width: 700px;"/>
+<img src="{{site.url}}/img/expression_values.png" alt="slot" style="width: 700px;"/>
 
 
 ---

@@ -9,7 +9,7 @@
 ## What is the computer shell?
 The shell is an interpreter (a program) that lets you interact with the operating system
 
-![shell](../../../img/f1_shell.png)
+![shell](http://localhost:4000/img/f1_shell.png)
 
 ---
 
@@ -20,19 +20,19 @@ The shell is an interpreter (a program) that lets you interact with the operatin
 -   The shell is actually a scripting language somewhat like Python
 -   It is always possible to change shell (either temporarily or permanently)
 
-<img src="../../img/shelll.png" alt="shell" style="width:500px;"/>
+<img src="http://localhost:4000/img/shelll.png" alt="shell" style="width:500px;"/>
 
 ---
 
 ## What is the graphical interface?
 
-![graphinter](../../../img/f2_graphinter.png)
+![graphinter](http://localhost:4000/img/f2_graphinter.png)
 
 ---
 
 ## What is the command line interface 
 ## (or Terminal)?
-![shell](../../../img/f3_shell.png)
+![shell](http://localhost:4000/img/f3_shell.png)
 
 ---
 
@@ -46,7 +46,7 @@ The shell is an interpreter (a program) that lets you interact with the operatin
 You can type a program name at the terminal prompt and then type
 [Return]
 
-![term](../../../img/f4_command.png)
+![term](http://localhost:4000/img/f4_command.png)
 
 ---
 
@@ -90,7 +90,7 @@ then, when finished, return you to the **command prompt**.
 
 The file-system is arranged in a hierarchical structure, like an inverted tree
 
-![t17](../../../img/t17.png)
+![t17](http://localhost:4000/img/t17.png)
 
 ---
 
@@ -415,7 +415,7 @@ wget [option]... [URL]...
 
 ## Listing files and directories
 
-![tab47](../../../img/t47.png )
+![tab47](http://localhost:4000/img/t47.png )
 
 The directories `.`, `..`, and `~`
 
@@ -430,14 +430,14 @@ $ ls ~/oeiras
 ---
 
 ## Handling files and directories
-![tab48](../../../img/t48.png)
+![tab48](http://localhost:4000/img/t48.png)
 
 ```more``` ,  ```less```,  ```clear```
 
 ---
 
 ## Redirection
-![tab49](../../../img/t49.png)
+![tab49](http://localhost:4000/img/t49.png)
 
 ---
 

@@ -25,13 +25,13 @@ In order to use a function, <br>
 you have first to *define* it and then to *call* it
 
 
-<img src="../../img/functions1.png" alt="slot" style="width: 550px;"/>
+<img src="{{site.url}}/img/functions1.png" alt="slot" style="width: 550px;"/>
 
 ---
 
 ## Function definition
 
-<img src="../../img/functions2.png" alt="slot" style="width: 600px;"/>
+<img src="{{site.url}}/img/functions2.png" alt="slot" style="width: 600px;"/>
 
 ---
 

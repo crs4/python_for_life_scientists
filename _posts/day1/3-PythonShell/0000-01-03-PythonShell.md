@@ -84,12 +84,12 @@ import math
 
 Find the matching pairs of functions and x/y values.
 
-![slot](../../../img/mathgame.png)
+![slot]({{site.url}}/img/mathgame.png)
 
 ---
 
 ### Components of Python
-![slot](../../../img/pycomponents.png)
+![slot]({{site.url}}/img/pycomponents.png)
 
 ---
 
@@ -133,7 +133,7 @@ make it fast.
 >+  Use variables for the parameters
 >+  Print the distance to the screen
 
-![slot](../../../img/cartesiandistance.png)
+![slot]({{site.url}}/img/cartesiandistance.png)
 
 ---
 

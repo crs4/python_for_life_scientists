@@ -4,43 +4,43 @@
 
 ## Searching (and manipulating) your data
 
-<img src="../../img/geneticcode.png" alt="slot" style="width: 600px;"/>
+<img src="http://localhost:4000/img/geneticcode.png" alt="slot" style="width: 600px;"/>
 
 ---
 
-<img src="../../img/datser1.png" alt="slot" style="width: 600px;"/>
+<img src="http://localhost:4000/img/datser1.png" alt="slot" style="width: 600px;"/>
 
 ---
 
-<img src="../../img/datser2.png" alt="slot" style="width: 600px;"/>
+<img src="http://localhost:4000/img/datser2.png" alt="slot" style="width: 600px;"/>
 
 ---
 
-<img src="../../img/datser3.png" alt="slot" style="width: 600px;"/>
+<img src="http://localhost:4000/img/datser3.png" alt="slot" style="width: 600px;"/>
 
 ---
 
-<img src="../../img/datser4.png" alt="slot" style="width: 600px;"/>
+<img src="http://localhost:4000/img/datser4.png" alt="slot" style="width: 600px;"/>
 
 ---
 
-<img src="../../img/datser5.png" alt="slot" style="width: 600px;"/>
+<img src="http://localhost:4000/img/datser5.png" alt="slot" style="width: 600px;"/>
 
 ---
 
-<img src="../../img/datser6.png" alt="slot" style="width: 600px;"/>
+<img src="http://localhost:4000/img/datser6.png" alt="slot" style="width: 600px;"/>
 
 ---
 
-<img src="../../img/datser7.png" alt="slot" style="width: 600px;"/>
+<img src="http://localhost:4000/img/datser7.png" alt="slot" style="width: 600px;"/>
 
 ---
 
-<img src="../../img/datser8.png" alt="slot" style="width: 600px;"/>
+<img src="http://localhost:4000/img/datser8.png" alt="slot" style="width: 600px;"/>
 
 ---
 
-<img src="../../img/datser9.png" alt="slot" style="width: 600px;"/>
+<img src="http://localhost:4000/img/datser9.png" alt="slot" style="width: 600px;"/>
 
 ---
 
@@ -94,7 +94,7 @@ d = {key1:value1, key2:value2, …, keyN:valueN}
 
 ---
 
-<img src="../../img/datser_method.png" alt="slot" style="width: 700px;"/>
+<img src="http://localhost:4000/img/datser_method.png" alt="slot" style="width: 700px;"/>
 
 ---
 
@@ -185,13 +185,13 @@ print sort_dict_by_keys(structures)
 
 ## Remove redundancy
 
-<img src="../../img/redund1.png" alt="slot" style="width: 700px;"/>
+<img src="http://localhost:4000/img/redund1.png" alt="slot" style="width: 700px;"/>
 
 ---
 
 ## Remove redundancy
 
-<img src="../../img/redund2.png" alt="slot" style="width: 700px;"/>
+<img src="http://localhost:4000/img/redund2.png" alt="slot" style="width: 700px;"/>
 
 ---
 
@@ -215,7 +215,7 @@ Q9Y5P2                                                Q9NQQ7
 
 ---
 
-<img src="../../img/redund3.png" alt="slot" style="width: 700px;"/>
+<img src="http://localhost:4000/img/redund3.png" alt="slot" style="width: 700px;"/>
 
 ---
 

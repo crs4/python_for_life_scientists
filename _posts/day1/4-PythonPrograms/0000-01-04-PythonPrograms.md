@@ -20,7 +20,7 @@
 
 ---
 
-<img src="../../img/pp1.png" alt="slot" style="width: 700px;"/>
+<img src="{{site.url}}/img/pp1.png" alt="slot" style="width: 700px;"/>
 
 ---
 
@@ -43,16 +43,16 @@
 
 ---
 
-<img src="../../img/pp2.png" alt="slot" style="width: 700px;"/>
+<img src="{{site.url}}/img/pp2.png" alt="slot" style="width: 700px;"/>
 
 ---
 
-<img src="../../img/pp3.png" alt="slot" style="width: 700px;"/>
+<img src="{{site.url}}/img/pp3.png" alt="slot" style="width: 700px;"/>
 
 ---
 
 ## Input
-<img src="../../img/pp4.png" alt="slot" style="width: 700px;"/>
+<img src="{{site.url}}/img/pp4.png" alt="slot" style="width: 700px;"/>
 
 ---
 
@@ -122,7 +122,7 @@ print insulin
 
 ## Output
 
-<img src="../../img/pp5.png" alt="slot" style="width: 600px;"/>
+<img src="{{site.url}}/img/pp5.png" alt="slot" style="width: 600px;"/>
 
 ---
 

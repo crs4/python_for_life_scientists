@@ -11,35 +11,35 @@
 
 ---
 
-![f1](../../img/ff1.png)
+![f1](http://localhost:4000/img/ff1.png)
 
 ---
 
-![f2](../../img/ff2.png)
+![f2](http://localhost:4000/img/ff2.png)
 
 ---
 
-![f3](../../img/ff3.png)
+![f3](http://localhost:4000/img/ff3.png)
 
 ---
 
-![f4](../../img/ff4.png)
+![f4](http://localhost:4000/img/ff4.png)
 
 ---
 
-![f5](../../img/ff5.png)
+![f5](http://localhost:4000/img/ff5.png)
 
 ---
 
-![f6](../../img/ff6.png)
+![f6](http://localhost:4000/img/ff6.png)
 
 ---
 
-![f7](../../img/ff7.png)
+![f7](http://localhost:4000/img/ff7.png)
 
 ---
 
-![f8](../../img/ff8.png)
+![f8](http://localhost:4000/img/ff8.png)
 
 ---
 
