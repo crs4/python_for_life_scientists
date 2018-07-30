@@ -1,0 +1,54 @@
+# Python<br>for<br>Life Scientists
+## Managing biological data with Python
+
+---
+
+### In this course you will learn to:
+
++ Read text files (and websites)
++ Selectively extract and manipulate information
++ Manage tabular data
++ Manage sequence data
++ Combine programs to pipelines
++ Use libraries
++ PROGRAM!
+
+*At the end of this course you won’t be expert programmers, but “high level beginners”*
+
+> ##### Therefore your future as programmers strongly depends on your will to not stop programming when you go back home
+
+---
+
+## Getting started
+
+
+Why are we here?
+
+What are your expectations?
+
+
+---
+Challenge
+
+> #### What do you need programming for?
+> #### What would you like to take home from the course?
+
+Write on a card
+
+> Finish within 7 minutes
+
+
+---
+
+### How is going to work
+
+|        | `Day 1 Getting Started`          | `Day 2 Parsing`     | `Day 3 Managing Data` | `Day 4 Libraries`  |
+| --- | --- | --- | --- | ---|
+| `1` | Intro & expectations | Repeating things  | Functions | Searching |
+| `2` | Unix Tutorial | Reading files | Functions | Searching |
+| `3` | Phython Shell | Parsing | Data columns | Python Libraries |
+| `4` | Phython Programs | Parsing | Data columns | Python Libraries |
+
+---
+
+# ...

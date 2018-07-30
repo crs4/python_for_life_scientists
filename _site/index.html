@@ -1,0 +1,3409 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Python for Life Scientists: Managing biological data with Python</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/league.css" id="theme">
+
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="reveal.js/lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+            <div class="slides">
+
+                
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# Python<br>for<br>Life Scientists
+## Managing biological data with Python
+
+---
+
+### In this course you will learn to:
+
++ Read text files (and websites)
++ Selectively extract and manipulate information
++ Manage tabular data
++ Manage sequence data
++ Combine programs to pipelines
++ Use libraries
++ PROGRAM!
+
+*At the end of this course you won’t be expert programmers, but “high level beginners”*
+
+> ##### Therefore your future as programmers strongly depends on your will to not stop programming when you go back home
+
+---
+
+## Getting started
+
+
+Why are we here?
+
+What are your expectations?
+
+
+---
+Challenge
+
+> #### What do you need programming for?
+> #### What would you like to take home from the course?
+
+Write on a card
+
+> Finish within 7 minutes
+
+
+---
+
+### How is going to work
+
+|        | `Day 1 Getting Started`          | `Day 2 Parsing`     | `Day 3 Managing Data` | `Day 4 Libraries`  |
+| --- | --- | --- | --- | ---|
+| `1` | Intro & expectations | Repeating things  | Functions | Searching |
+| `2` | Unix Tutorial | Reading files | Functions | Searching |
+| `3` | Phython Shell | Parsing | Data columns | Python Libraries |
+| `4` | Phython Programs | Parsing | Data columns | Python Libraries |
+
+---
+
+# ...
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# What is Unix/Linux?
+
+
+> ### What operating system(s) 
+> ### do you know?
+
+---
+
+## What is the computer shell?
+The shell is an interpreter (a program) that lets you interact with the operating system
+
+![shell](../../../img/f1_shell.png)
+
+---
+
+## The Linux shell
+
+-   The shell is a command-line interpreter that lets you interact with Linux
+-   The shell takes what you type and "decides" what to do with it
+-   The shell is actually a scripting language somewhat like Python
+-   It is always possible to change shell (either temporarily or permanently)
+
+<img src="../../img/shelll.png" alt="shell" style="width:500px;"/>
+
+---
+
+## What is the graphical interface?
+
+![graphinter](../../../img/f2_graphinter.png)
+
+---
+
+## What is the command line interface 
+## (or Terminal)?
+![shell](../../../img/f3_shell.png)
+
+---
+
+## What happens when you double click on the icon of an application?
+
+<img src="../../img/word.png" alt="word" style="width:600px;"/>
+
+---
+
+### Open a command-line terminal on your computer
+You can type a program name at the terminal prompt and then type
+[Return]
+
+![term](../../../img/f4_command.png)
+
+---
+
+## The Terminal can be customised
+
+-   Change default bg color
+-   Change text size, colour and font
+-   Increase/decrease transparency
+-   Resize it
+-   Have multiple windows open side by side
+-   Have multiple "tabs" open at the same time
+-   Change the command prompt (most commonly a $  or % sign)
+-   Make the cursor blinking
+
+---
+
+## The command-line interface (terminal)
+
+allows you:
+
+-  to send typed instructions to the computer (i.e., run programs, move/view files, etc.)
+
+-  to see the output that results from  those instructions.
+
+> Every time you type any Unix command and press **enter**,
+the computer will attempt to follow your instructions and
+then, when finished, return you to the **command prompt**.
+
+---
+
+## What is the filesystem tree?
+
+> Type the Unix command `ls` 
+> at the command prompt:
+
+> what happens?
+
+---
+
+## The directory structure
+
+The file-system is arranged in a hierarchical structure, like an inverted tree
+
+![t17](../../../img/t17.png)
+
+---
+
+- The top of the hierarchy is traditionally called **root**<br>
+- When you first login, the current working directory is your home directory (containing files and directories that only you can modify)
+
+<img src="../../img/t17.png" alt="t17" style="width:500px;"/>
+
+### What is the **path** of a file or a directory?
+
+Slashes separate parts of the directory path:
+```
+/home/allegra/Documents/Training/materials/Unix/Academis_Linux.pdf
+```
+
+---
+
+### Linux commands
+Just a question, before talking about Linux commands
+>What is a computer program?
+
+---
+Which ones do you know?
+```markdown
+- A text file
+- Word
+- OS
+- The shell
+- An Excel data file
+- A database
+- Power point
+- The Linux Terminal
+- A Linux command
+- About Unix commands
+- Commands are themselves programs
+```
+
+---
+
+## An example of command:
+```console
+$ rm myfile.txt [Return]
+```
+```markdown 
+- The shell searches the file containing the program 'rm'
+
+- Executes the program 'rm' on 'myfile.txt'
+
+- After the process 'rm myfile.txt' has finished running, 
+  the shell returns the prompt '$' to you, 
+  indicating that it is waiting for further commands.
+```
+
+<img src="../../img/examplecommand_cccp.png" alt="example" style="width:700px;"/>
+
+---
+
+### Command Sintax
+```console
+$ command_name -options <file> [Return]
+```
+
+### Examples
+```console
+$ ls 
+$ ls –l
+$ ls -l dirname
+$ ls -ltr dirname 
+``` 
+
+### Documentation
+```console
+$ command_name --help
+$ man command_name 
+$ whatis command_name 
+```
+
+A list of [basic linux commands for beginners](https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners)
+
+---
+
+## Writing and running programs in Linux
+
+> ###  Where can we write programs?
+> ### What is a text editor?
+
+---
+
+```markdown
+-  Access your home directory using the command-line interface
+-  Start the nano text editor
+```
+
+<img src="../../img/nano.png" alt="nano" style="width:400px;"/>
+
+```markdown
+- Create a text file `my_first_shell_script.sh`
+```
+
+```bash
+#!/bin/bash
+ls -l
+cd ../
+ls -l
+```
+
+```markdown
+- Write the commands in a file, save and exit
+- Go to the command-line interface and type `ls` at the prompt
+```
+
+---
+
+## How can we run programs on Linux?
+
+### Prerequisites to run a program
+
+1. The program must be somewhere on your computer
+
+2. The program must be **executable**
+
+3. You have to tell the shell which "interpreter" will read and execute the program 
+   AND where it will find it
+
+4. You have to tell Linux where it can find the program
+
+---
+
+### Is my script executable?
+
+```markdown
+Each file (and directory) has associated access rights, which may
+be found by typing `ls -l`
+```
+<img src="../../img/t34.png" alt="permission" style="width:700px;"/>
+
+```markdown
+Access rights on directories
+- r allows users to list files in the directory
+- w allows users to delete files from the directory 
+  or move files into it
+- x allow users to access files in the directory
+```
+
+---
+
+### 2. The program must be **executable**
+
+### How can I make my script *executable?*
+
+```console
+%chmod go-rwx myfile.txt
+
+%chmod a+x my_script
+```
+
+### Changing access rights: chmod
+
+---
+
+```commandline
+chmod go-rwx myfile.txt || chmod a+x my_script
+```
+| **Symbol**  |**Meaning** |
+|----|-----|
+| u|user     |
+| g|group |
+| o|other     |
+| a|all|
+| r|read     |
+| w|write (and delete) |
+| x| execute (and access direcotry)|
+| +| add permission|
+| -| take away permission |
+
+---
+
+### 3. You have to tell the shell which "interpreter" will read and execute the program AND where it will find it
+
+<img src="../../img/FIRST.png" alt="FIRST" style="width:550px;"/>
+
+```bash
+#!/bin/bash
+``` 
+> "Aha, you want to use the program located at **/bin/bash** to interpret all the instructions that follow"
+
+---
+
+### 4. You have to tell Linux where it can find the program
+
+- You must be in the same directory as the program you want to run **OR**….
+
+- …you can prefix its name with a path **OR**…
+
+- …the path to your program must in the `PATH` **environment variable**
+
+---
+
+### Where Linux searches for programs?
+---
+**Either you explicitly tell Linux where it can find your script…**
+
+* by prefixing its name with a path: `commandline ~allegra/Documents/shell_commands.sh`
+
+* If you are in the same directory as the one of the program, you can type: `./shell_commands.sh`
+
+---
+
+### Where Linux searches for programs?
+---
+**Or you can specify the script's path in the `PATH` environment variable**
+
+*  If you simply type (at the prompt): `shell_commands.sh`
+
+
+>Linux will look up a list of predefined directories to see if that program exists in any of those locations
+
+1. If it finds a match, it will try to run the program and stop searching in any other directory
+
+2. Else, it will print `"command not found"`
+
+---
+
+### You may think of the PATH variable as a sort of address book UNIX environment variables
+
+>Linux keeps track of several special variables that are associated with your account
+
+* Written in upper-case letters
+* Use echo and prefix the variable with a $ if you want to get the content
+
+
+Try the following commands:
+
+```shell
+printenv
+echo $SHELL
+printenv SHELL
+echo $PATH
+echo PATH
+echo $USER
+```
+
+---
+
+## Command not found
+
+If the system returns this message 
+
+
+it indicates that **either the command doesn't exist at all on the system or it is simply not in your path.**
+
+-   You can use tab-completion
+-   Your scripts will be treated like any Linux command
+
+---
+
+##  Connecting to a remote computer
+```
+ssh remote_host
+```
+The `remote_host` is the IP address or domain name that you are trying to connect to.
+
+---
+If your `username` is different on the remote system:
+
+```
+ssh remote_username@remote_host
+```
+---
+
+Once you have connected to the server, you will probably be asked to verify your identity by providing a password.
+```
+ssh -x remote_username@remote_host
+```
+
+---
+
+## Transferring files <br> to/from a remote computer
+
+```
+sftp username@host
+```
+
+### Enter your password when prompted
+
+* `get`:  Copy a file from the remote computer to the local computer.
+
+* `put`: Copy a file from the local computer to the remote computer.
+
+---
+
+## Transferring files <br> to/from a remote computer
+
+* `scp`:  copies files over a secure, encrypted network connection.
+
+```shell
+scp /home/image*.jpg allegra@myhost.com:/home/images
+scp allegra@myhost.com:/home/image*.jpg /home/allegra/downloads
+
+scp [-12346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
+[-l limit] [-o ssh_option] [-P port] [-S program]
+[[user@]host1:]file1 ... [[user@]host2:]file2
+```
+
+### Enter your password when prompted
+
+---
+
+## Non-interactive download of files from the Web
+
+```
+wget [option]... [URL]...
+```
+
+* Non-interactive means that it can work in the background, while the user is not logged on.
+
+* This allows you to start a retrieval and disconnect from the system, letting Wget finish the work.
+
+* By contrast, most of the Web browsers require constant user's presence, which can be a great hindrance when transferring a lot of data.
+
+---
+
+## Listing files and directories
+
+![tab47](../../../img/t47.png )
+
+The directories `.`, `..`, and `~`
+
+```
+$ ls -a [Enter]
+$ cd . [Enter]
+$ cd .. [Enter]
+$ ls ~/oeiras
+
+```
+
+---
+
+## Handling files and directories
+![tab48](../../../img/t48.png)
+
+```more``` ,  ```less```,  ```clear```
+
+---
+
+## Redirection
+![tab49](../../../img/t49.png)
+
+---
+
+# ...
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# The Python Shell
+
+---
+
+## In this module you can learn:
+
+* How to use Python as a pocket calculator
+
+* How to store data in variables
+
+* How to import functions from Python modules
+
+---
+
+### The interactive Python shell
+You can access the shell by typing `python` in a command-line terminal
+
+```
+$ python
+Python 2.7.9 (default, Apr  2 2015, 15:33:21)
+[GCC 4.9.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+
+You can leave the shell with  `Ctrl-D`
+
+---
+
+## **Challenge #1**
+
+### Open a Python interactive session (the Python shell):
+
+>+  Calculate the sum and difference of two
+numbers
+>+  Divide two numbers. Try 5/3.
+>+ Then try 5.0/3
+>+  Calculate 3x5
+>+  Calculate a power of 2
+
+---
+
+## Variables
+
+Variables are containers for data.
+
+Variable names may be composed of  
+
+* letters 
+
+* underscores
+ 
+* also digits (but after the first position)
+
+```
+>>> camels = 9
+>>> camels
+9
+>>> silk = camels * 4
+>> silk
+36
+```
+
+---
+
+### The **math** module
+
+Sometimes you need more complex mathematical constants and functions
+```
+*  square root
+*  factorial
+*  sine or cosine
+*  pi
+*  log
+```
+
+Python groups them together in a text file.<br>
+You can access them by importing the file.
+```
+import math
+```
+
+---
+
+Find the matching pairs of functions and x/y values.
+
+![slot](../../../img/mathgame.png)
+
+---
+
+### Components of Python
+![slot](../../../img/pycomponents.png)
+
+---
+
+### The Dogma of Programming
+
+* First, make it work.
+
+* Second, make it nice.
+
+* Third, and only if it is really necessary,
+make it fast.
+
+---
+
+## **Challenge #2**
+
+
+> The diameter of a cell is 10 μm.
+>
+>* What volume does that cell have given it is a perfect sphere?
+>
+>*  Use Python to do the calculation.
+>
+>*  Use variables for the parameters.
+>
+>*  Print the volume to the screen
+
+---
+
+## **Challenge #3**
+
+##### Calculate the distance between two points in the 3D space
+
+##### Given two points in the Cartesian space:
+
+>P1 = (43.64, 30.72, 88.95)
+>
+>P2 = (45.83, 31.11, 92.04)
+>
+>+  Use Python to calculate their distance
+>+  Use variables for the parameters
+>+  Print the distance to the screen
+
+![slot](../../../img/cartesiandistance.png)
+
+---
+
+## Recap
+
++  You can use the Python shell as a pocket
+calculator.
+
++  Variables are containers for data.
+
++  Modules are containers for data and functions
+
++  You can leave the shell by Ctrl-D.
+
+---
+
+# ...
+
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# Python programs
+
+> ### How can I run a program? 
+>
+> ### Input and output
+
+---
+
+## In this module you can learn
+
+-  How to read, process, and output text
+
+-  How to read from the keyboard
+
+-  How to write to the screen
+
+-  How to repeat things
+
+-  How to create your own modules
+
+---
+
+<img src="../../img/pp1.png" alt="slot" style="width: 700px;"/>
+
+---
+
+## What is a program?
+---
+> ### It is a text file that contains <br> Python commands 
+>
+> ### or, in other words
+> 
+> ### lines of code
+
+---
+
+##  **Challenge #1**
+
+>-  Open a text file, write:
+>-  type `"This is the output of my first program"`
+>-  save the file with the name my_print.py and exit
+>-  Open a terminal, go to the directory where you saved `my_print.py` and type at the cursor: `python my_print.py`
+
+---
+
+<img src="../../img/pp2.png" alt="slot" style="width: 700px;"/>
+
+---
+
+<img src="../../img/pp3.png" alt="slot" style="width: 700px;"/>
+
+---
+
+## Input
+<img src="../../img/pp4.png" alt="slot" style="width: 700px;"/>
+
+---
+
+## Input from the program itself
+```
+a = 3
+print a
+```
+---
+## Input from the keyboard
+```
+>>> a = raw_input("Type a number: ")
+Type a number: 3
+>>> print a
+3
+```
+
+---
+
+##  **Challenge #2**
+
+>Write a program that reads something from the keyboard and print it to the screen.
+
+---
+
+## Input from a text file
+
+-  We need to “access” an existing input file
+
+-  And read its content
+
+```
+Infile = open("insulin.txt")
+
+content = Infile.read()
+
+print content
+```
+
+---
+
+## From a Python module
+-  A Python module is a text file (with the `.py` extension) that contains (Python) definitions/assignments
+
+-   Python modules can be accessed from programs using the import statement
+
+
+#### Python module insulin.py
+```
+insulin = "GIVEQCCTSICSLYQLENYCNFVNQHLCGSHLVEALYLVCGERGFFYTPKT"
+```
+#### Python program my_first_import.py
+```
+from insulin import insulin
+print insulin
+```
+
+---
+
+##  **Challenge #3**
+
+>Write a program that reads a sequence from a file and print it to the screen. 
+> 
+> Run it.
+
+---
+
+## Output
+
+<img src="../../img/pp5.png" alt="slot" style="width: 600px;"/>
+
+---
+
+## To the computer screen
+Which command we use?
+
+---
+## To a text file
+-  We need to “open” a text file in the “writing” mode
+
+-  We have to write to it.
+
+```
+from insulin import insulin
+
+outfile = open("my_output.txt", "w")
+outfile.write(insulin)
+outfile.close()
+```
+
+---
+
+##  **Challenge #4**
+
+### Calculate DNA base occurrences
+
+Write a program that counts how many times the four bases occur in a DNA sequence. The program should:
+
+>-  Store the DNA sequence in a variable.
+>-  Count how often each base occurs.
+>-  Write all four numbers to the screen.
+
+Test it with a DNA sequence for which you know the result, for instance “AAAACCCGGT”. <br> This approach makes it much easier to discover small program errors.
+
+---
+
+## Recap
+
+-  string variables contain text
+
+-  `print` writes to the screen
+
+-  you can use functions to do things
+
+-  you can enter text with `raw_input()`    
+
+-  `write()` writes to an open file
+
+-  for loops repeat commands
+
+-  comments starts with `#` or `'''`
+
+---
+
+# ...
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# Repeating things
+
+---
+
+## Counting amino acids
+
+<img src="../../img/pp7.png" alt="slot" style="width: 600px;"/>
+
+
+```
+# insulin [Homo sapiens] GI:386828
+insulin = "GIVEQCCTSICSLYQLENYCFVNQHLC\
+      GSHLVEALYLVGERGFFYTPKT"
+
+for amino_acid in "ACDEFGHIKLMNPQRSTVWY":
+  number = insulin.count(amino_acid)
+  print amino_acid, number
+```
+
+---
+
+## Repetitive tasks
+Consider the solutions of challenge #4 from previous session:
+
+```
+dna = "AGCTTCGA"
+
+print dna.count("A")
+print dna.count("C")
+print dna.count("T")
+print dna.count("G")
+```
+```
+dna = "AGCTTCGA"
+elem =  dna.count ("A")
+print  elem
+elem =  dna.count ("C")
+print  elem
+elem =  dna.count ("T")
+print  elem
+elem =  dna.count ("G")
+print  elem
+```
+
+---
+
+## Loops with for
+
+The `for` command repeats other commands:
+
+```
+dna = "AGCTTCGA”
+
+for base in "ACTG":
+  print dna.count(base)
+```
+
+The commands that are repeated must be **indented** <br> **(shifted right by four spaces)**.
+
+---
+
+## Compare
+```
+dna = "AGCTTCGA”
+for base in "ACTG":
+  print dna.count(base)
+```
+Would you prefer this implementation?
+```
+dna = "AGCTTCGA"
+
+print dna.count("A")
+print dna.count("C")
+print dna.count("T")
+print dna.count("G")
+```
+Why or why not?
+
+---
+
+###  **Challenge #1**
+
+> * Retrieve the 1132-residue sequence of human telomerase reverse transcriptase isoform 1 from the NCBI protein database.
+> * Choose the FASTA format. 
+> * Copy the sequence to a text file (`telomerase.txt`).
+
+
+Write a program that:
+ 
+> 1. Reads the telomerase.txt file 
+> 2. Prints the whole sequence 
+> 3. Prints the sequence residue by residue.
+
+---
+
+## Use a `for` loop <br>to read a file line by line
+```
+Input_file = open(“my_file.txt”)
+for line in Input_file:
+  print line
+```
+
+## Look how beautiful it can be…
+```
+import urllib
+url = 'http://www.uniprot.org/\
+  uniprot/P12931.fasta'
+src_human = urllib.urlopen(url)
+for line in src_human:
+  print line,
+```
+
+---
+
+## **Challenge #2**
+
+Write a file and program that:
+> * Reads the `telomerase.txt` 
+>
+> * Prints its content line by line.
+
+---
+
+<img src="../../img/pp8.png" alt="slot" style="width: 700px;"/>
+
+---
+
+##  **Challenge #3**
+
+> Which amino acid is the most frequent in the sequence of the telomerase reverse transcriptase isoform 1?
+
+---
+
+## Recap
+
+<img src="../../img/pp9.png" alt="slot" style="width: 700px;"/>
+
+---
+
+# ...
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# File formats in bioinformatics
+
+---
+
+## There are four types of computer readable formats in bioinformatics
+
+- FASTA-like
+- GenBank-like
+- Tables
+- XML-like
+
+---
+
+![f1](../../img/ff1.png)
+
+---
+
+![f2](../../img/ff2.png)
+
+---
+
+![f3](../../img/ff3.png)
+
+---
+
+![f4](../../img/ff4.png)
+
+---
+
+![f5](../../img/ff5.png)
+
+---
+
+![f6](../../img/ff6.png)
+
+---
+
+![f7](../../img/ff7.png)
+
+---
+
+![f8](../../img/ff8.png)
+
+---
+
+# ...
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# Parsing data records
+## ROUND 1
+
+---
+
+## Two sequence records in FASTA format:
+
+
+```
+>sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
+MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGA\
+RRWRVISSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQP\
+ESKVFYLKMKGDYFRYLSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRL\
+GLALNFSVFYEILNSPEKACSLAKTAFDEAIAELDTLNEESYKDSTLIMQLLRDNL\
+TLWTSENQGDEGDAGEGEN
+
+>sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
+MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRWRVISS\
+IEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFYLKMKGDYFRY\
+LSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYEILNSPEKACSLAK\
+TAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
+```
+
+---
+
+###  **Challenge #1**
+
+
+> * Open the file `SingleSeq.fasta` 
+>
+> * read its content line by line 
+>
+> * and print it
+
+---
+
+## **Challenge #2**
+
+> * Open the file `SingleSeq.fasta`
+>
+> * read its content line by line 
+> 
+> * and write it to another file.
+
+---
+
+### Writing different things depending on a condition
+
+Read a sequence in FASTA format and print only the header of the sequence
+
+```
+>sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
+MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARWRVISS\
+EQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFYLKMKGDYFRY\
+LSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYEILNSPEKACSLA\
+KTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
+```
+
+---
+
+## Making choices 
+### `if/elif/else`
+
+```
+if condition1 #if expression in condition1is TRUE
+    statements1   #execute statements1
+elif condition2 #else if expression in condition2is TRUE
+    statements2 #execute statements2...
+elif condition3 #etc...
+...
+…
+
+else:
+  statementN
+```
+
+---
+
+## Check these conditions
+
+- ` 'ACTC'[0] == 'C' `  is  True or false?
+- ` 'ACTC'[0] == 'A' `  is  True or false?
+
+---
+## Operators
+
+```
+==    !=     =>    <=    >      <
+```
+
+---
+
+### The `if/elif/else` construct produces different effects compared with the use of a series of `if` conditions
+
+```python
+nucl = ['A','C','T','G']
+if 'A' in nucl: print 'A'
+elif 'C' in nucl: print 'C'
+elif 'T' in nucl: print 'T'
+else: print 'G'
+```
+
+```python
+nucl = ['A','C','T','G']
+if 'A' in nucl: print 'A'
+if 'C' in nucl: print 'C'
+if 'T' in nucl: print 'T'
+if 'G' in nucl: print 'G'
+```
+
+---
+
+## **Challenge #3**
+
+> Read a sequence in FASTA format from the file `SingleSeq.fasta` and print only the header of the sequence
+
+
+```
+>>sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
+MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARWRVISSIE\
+QKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFYLKMKGDYFRYLSE\
+VASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYEILNSPEKACSLAKTAFD\
+EAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
+```
+
+---
+
+## **Challenge #4**
+
+> Read a file in FASTA format and write to a new file  only the header of the record.
+
+---
+
+## **Challenge #5**
+
+
+>Read a file in FASTA format and write to a new file only the sequence (without the header).
+
+---
+
+## **Challenge:** 
+### **Merge programs 4 and 5**
+
+> In other words, read a file in FASTA format and write the header to a file and the sequence to a different one.
+
+---
+
+## **Challenge #6**
+
+>Let’s increase the difficulty just a bit…
+>
+>+   Read a FASTA file line by line
+>+   Save the header in a variable and the sequence in a different one
+>+   Print header and sequence separately
+
+---
+
+## **Challenge #7**
+
+>+   Implement challenge #6 by counting the number of cysteine ("C") residues in the sequence
+>+   Print separately header, sequence and the number of cysteine residues
+
+---
+
+## **Challenge #8**
+
+>+ Read a file in FASTA format line-by-line.
+>+ Print or write the **record** to a file only if the sequence is from Homo sapiens.
+
+---
+
+## **Challenge #9**
+
+#### You will need to analyze several sequences….
+
+```
+SwissProt-Human.fasta
+
+>sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
+MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSSWRVI\
+SSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFYLKMKGDYF\
+RYLSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYYEILNSPEKACS\
+LAKTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
+>sp|P62258|1433E_HUMAN 14-3-3 protein epsilon OS=Homo sapiens
+MDDREDLVYQAKLAEQAERYDEMVESMKKVAGMDVELTVEERNLLSVAYKNVIGARRASWR\
+IISSIEQKEENKGGEDKLKMIREYRQMVETELKLICCDILDVLDKHLIPAANTGESKVFYY\
+KMKGDYHRYLAEFATGNDRKEAAENSLVAYKAASDIAMTELPPTHPIRLGLALNFSVFYYE\
+ILNSPDRACRLAKAAFDDAIAELDTLSEESYKDSTLIMQLLRDNLTLWTSDMQGDGEEQNK\
+EALQDVEDENQ
+...
+...
+```
+> * Download a Uniprot multiple sequence FASTA file. 
+> * Write the record headers to a new file.
+
+---
+
+## **Challenge #10**
+
+> * Read a multiple sequence FASTA file and 
+> * write the sequences to a new file separated by a blank line
+
+---
+
+## **Challenge #11**
+
+> * Read a file in FASTA format 
+> * and copy to a new file the records' Accession Numbers (AC).
+
+---
+
+### **Challenge #12**
+
+>+   Read FASTA records from a file
+>+   Count (and print) the cysteine residues in each sequence.
+
+---
+
+## **Challenge #13**
+
+
+> * Read the multiple sequence FASTA file `sprot_prot.fasta` and 
+> * write to a new file only the records from Homo sapiens.
+
+---
+
+## **Challenge #14 homework**
+
++  Read a multiple sequence file in FASTA format and only write to a new file the records the sequences of which start with a methionine ('M') and have at least two tryptophan residues ('W')
+
+    1. Read a multiple sequence file in FASTA format and write to a new file only the records of the sequences starting with a methionine ('M')
+    2. Read a multiple sequence file in FASTA format and write to a new file only the records of the sequences having at least two tryptophan residues ('W')
+    3. Finally merge the two steps
+
+---
+
+## **Challenge #15 homework**
+
+
+* Read a Genbank record and write to a file the nucleotide sequence in FASTA format. 
+* Extract and write to a file the gene sequence from the Candida albicans genomic DNA, chromosome 7, complete sequence (file ap006852.gbk)
+
+* Try to write it in FASTA format:
+```
+>AP006852
+ccactgtccaatggctcaacacgccaatcatcatacaatacccccaacaggaatcaccaa
+agtactgatgcttctcactatcaatagtttgtactttcaccacacaatagcagatgatcc
+atctaaatccaccttcctatcgatcgtgaccacccccataaaataggtcaactccataaa
+cacctccatcaccaacgctagactcacaacccagaacatgttaatcaaccggtgggccaa
+Gtaccgttgtagctctctcgtaaacacaagaaccaacaccaaacaacatactacaactga
+...
+```
+
+---
+
+## Parsing data records
+
++ Start by visually inspecting the file you want to parse
+
++   Identify the information you want to extract
+
++   Identify separators to select your information using if conditions
+
++   Use  lists if you have to compare data from different files
+
+---
+
+...
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# Parsing data records 
+## Round 2
+
+---
+
+## Comparing data from different files
+```
+SwissProt-Human.fasta
+>sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
+MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSS
+WRVISSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFY
+LKMKGDYFRYLSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFY
+YEILNSPEKACSLAKTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGD
+AGEGEN
+...
+...
+```
+---
+```
+cancer-expressed.txt
+
+Q5XXA6
+Q9Y5P2
+Q14667
+O75387
+Q8WV07
+Q8CH62
+Q9GZY1
+Q9NQQ7
+Q8VCX2
+Q7Z769
+```
+
+---
+
+First, you have to store the 10 Uniprot ID in a data structure
+
++ Read 10 SwissProt ACs from a file
++ Store them into a data structure
+
+Lists are nice and veeeeery flexible data structures
+
+```
+['Q5XXA6', 'Q9Y5P2', 'Q14667', 'O75387', 'Q8WV07',
+ 'Q8CH62', 'Q9GZY1', 'Q9NQQ7', 'Q8VCX2', 'Q7Z769']
+```
+
+---
+
+## List data structure
+
+A list is a mutable ordered collection of objects
+
+The elements of a list can be any kind of object:
+
+- numbers
+- strings
+- tuples
+- lists
+- dictionaries
+- function calls
+- *etcetera*
+
+```
+L = [1, [2,3], 4.52, 'DNA']
+
+L = []  # the empty list
+
+```
+
+---
+
+## Operations with lists
+
+<img src="../../img/parsingimgCHANGE_cccp.png" alt="slot" style="width: 700px;"/>
+
+---
+
+## Indexes
+
+```
+>>> L = [1,"hello",12.1,[1,2,"three"],"seq",(1,2)]
+>>> L[0]  # indexing
+1
+>>> L[3]  # indexing
+[1, 2, 'three']
+>>> L[3][2]  # indexing
+'three'
+>>> L[-1]  # negative indexing
+(1, 2)
+>>> L[2:4]
+[12.1, [1, 2, 'three']]  # slicing
+>>> L[2:]
+[12.1, [1, 2, 'three'], 'seq', (1, 2)] #slicing shorthand
+>>>
+```
+
+---
+
+## Indexes
+
+Computers treat an address in memory as the **starting point** of a body of data.
+
+<img src="../../img/indexing.png" alt="indexing" style="width: 400px;"/>
+
+An **index** in Python always refers to such a starting point, something that is **in between** two objects in memory. 
+
+We humans in contrast always count the objects themselves.
+
+---
+
+## Changing elements of list - 1 -
+#### The elements of a list can be changed/replaced after the list has been defined
+
+**These operations CHANGE the list**
+
+|   | |
+| --------- | ------------- | 
+| l[i] = x | *replaces `i-th` element* |  
+| l[i:j] = t | *replaces `i-th` to `j-th` elements* |
+| del l[i:j] | *deletes `i-th` to `j-th` element*|
+| l.append(x) | *adds `x` element at the end of list*|
+| l.extend(s) | *adds more elements at the end of list**|
+
+s = any sequence
+
+---
+
+## Changing elements of list - 1 -
+#### The elements of a list can be changed/replaced after the list has been defined
+
+**These operations CHANGE the list**
+
+
+```
+>>> l = [2,3,5,7,8,['a','b'],'a','b','cde']
+>>> l[0] = 1
+>>> l
+[1, 3, 5, 7, 8, ['a', 'b'], 'a', 'b', 'cde']
+>>> l[0:3] = 'DNA'
+>>> l
+['D', 'N', 'A', 7, 8, ['a', 'b'], 'a', 'b', 'cde']
+>>> del l[0:5]
+>>> l
+[['a', 'b'], 'a', 'b', 'cde']
+>>> l.append('DNA')
+>>> l
+[['a', 'b'], 'a', 'b', 'cde', 'DNA']
+>>> l.extend('dna')
+>>> l
+[['a', 'b'], 'a', 'b', 'cde', 'DNA', 'd', 'n', 'a']
+>>>
+```
+
+---
+
+## Changing elements of list - 2 -
+#### The elements of a list can be changed/replaced after the list has been defined
+
+**These operations CHANGE the list**
+
+|        |        |
+| ------ | ------ |
+|l.count(x)| *returns the number of occurrences of an element in a list* |
+|l.index(x)| *returns the index of the element in the list* |
+|l.insert(i, x)| *inserts the element '`x` in position `i-th`* |
+|l.pop(i) | *returns and removes the element at the given index* | 
+|l.remove(x) | *only removes the given element from the list* |
+
+---
+
+## Changing elements of list - 2 - 
+#### The elements of a list can be changed/replaced after the list has been defined
+
+**These operations CHANGE the list**
+
+```
+>>> l = [1,3,5,7,8,['a','b'],'a','b','cde']
+>>> l.count('a')
+>>> l
+1
+>>> l.index(8)
+4
+>>> l.insert(4, 80)
+>>> l
+[1, 3, 5, 7, 80, 8, ['a', 'b'], 'a', 'b', 'cde']
+>>> l.pop(4)
+80
+>>> l
+[1, 3, 5, 7, 8, ['a', 'b'], 'a', 'b', 'cde']
+>>> l.pop()
+'cde'
+>>> l
+[1, 3, 5, 7, 8, ['a', 'b'], 'a', 'b']
+>>> l.remove(8)
+[1, 3, 5, 7, ['a', 'b'], 'a', 'b']
+```
+
+---
+
+## Changing elements of list - 3 - 
+#### The elements of a list can be changed/replaced after the list has been defined
+
+**These operations CHANGE the list**
+
+| | |
+| ---------- | ----------- |
+|l.reverse()| *reverses the elements and updates the list* |
+|l.sort()| *sorts the elements of a given list in a specific order - Ascending or Descending.* |
+|sorted(l)| *returns an ordered and iterable list* | 
+
+---
+
+## Changing elements of list - 3 - 
+#### The elements of a list can be changed/replaced after the list has been defined
+
+**These operations CHANGE the list**
+
+```
+>>> l = [4, 3, 2, 1, 5, 6, 7, 8]
+>>> l.reverse()
+>>> l
+[8, 7, 6, 5, 1, 2, 3, 4]
+>>> new = sorted(l)
+>>> new
+[1, 2, 3, 4, 5, 6, 7, 8]
+>>> l
+[8, 7, 6, 5, 1, 2, 3, 4]
+>>> l.sort()
+>>> l
+[1, 2, 3, 4, 5, 6, 7, 8]
+```
+
+---
+
+## Putting together lists and loops
+
+`range()` and `xrange()` built-in functions
+
+```
+>>> range(10)
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+>>> range(1, 11)
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+>>> range(0, 30, 5)
+[0, 5, 10, 15, 20, 25]
+>>> range(0, 10, 3)
+[0, 3, 6, 9]
+>>> range(0, -10, -1)
+[0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
+>>> range(0)
+[]
+>>> range(1, 0)
+[]
+# the xrange()method is more commonly used in for loops than range()
+>>>for i in xrange(5):
+…             print i
+…
+0,1,2,3,4
+```
+The `xrange()` method generates the values upon call, i.e. it does not
+store them into a variable
+
+---
+
+##  **Challenge #1**
+
+
+>-  Read 10 SwissProt ACs from a file
+>-   Store them into a list
+>-   Print the list
+
+---
+
+##  **Challenge #2**
+
+>-  Create a list containing Uniprot ACs extracted from a FASTA file
+>-   Print the list
+
+---
+
+##  **Challenge #3**
+
+>-   Read the human FASTA file one record after the other. Check if the record header contains one of the 10 ACs.
+>-   If YES, copy the header to a new file.
+
+---
+
+##  **Challenge #4**
+
+* Read a multiple sequence file in FASTA format 
+* and write to a new file only the records the Uniprot ACs of which are present in the list created in Program 1
+
+>Check the file `SwissProt-Human.fasta`
+
+```
+>sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
+MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSSWRVISSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFYLKMKGDYFRYLSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYYEILNSPEKACSLAKTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
+>sp|P62258|1433E_HUMAN 14-3-3 protein epsilon OS=Homo sapiens
+MDDREDLVYQAKLAEQAERYDEMVESMKKVAGMDVELTVEERNLLSVAYKNVIGARRASWRIISSIEQKEENKGGEDKLKMIREYRQMVETELKLICCDILDVLDKHLIPAANTGESKVFYYKMKGDYHRYLAEFATGNDRKEAAENSLVAYKAASDIAMTELPPTHPIRLGLALNFSVFYYEILNSPDRACRLAKAAFDDAIAELDTLSEESYKDSTLIMQLLRDNLTLWTSDMQGDGEEQNKEALQDVEDENQ
+>sp|Q04917|1433F_HUMAN 14-3-3 protein eta OS=Homo sapiens
+GNYWHAHMGDREQLLQRARLAEQAERYDDMASAMKAVTELNEPLSNEDRNLLSVAYKNVVGARRSSWRVISSIEQKTMADGNEKKLEKVKAYREKIEKELETVCNDVLSLLDKFLIKNCNDFQYESKVFYLKMKGDYYRYLAEVASGEKKNSVVEASEAAYKEAFEISKEQMQPTHPIRLGLALNFSVFYYEIQNAPEQACLLAKQAFDDAIAELDTLNEDSYKDSTLIMQLLRDNLTLWTSDQQDEEAGEGN
+```
+
+---
+
+## Putting together conditions and loops 
+### `while` loops
+The while statement is used for executing a set of statements until a given  condition is met
+
+    **while <condition 1>:
+    <statements 1>**
+```
+>>> a = 1
+>>> while a < 5:
+...     print a,
+...     a = a + 1
+```
+
+---
+
+## `while` loops
+### `break`
+
+```
+>>> a = 1
+>>> while a > 0:
+...     if a == 5: break
+...     print a,
+...     a = a + 1
+... else: print "loop terminated"
+...
+1 2 3 4
+```
+
+---
+
+## The Boolean values `True` and `False`
+`if` and `while` statements return a `False` value when they are applied to:
+
+- None
+- 0
+- Empty data structures: '',(),[],{}
+
+---
+
+## The Boolean values <br>`True` and `False`
+
+The statements in an `if` or a `while` block are executed only if the condition returns the value `True`.
+
+```
+>>> p = 'protein'
+>>> if p: print 'True'
+...
+True
+>>> n = 0
+>>> while 1:
+...     print n,
+...     n = n + 1
+...     if n > 5: break
+...
+0 1 2 3 4 5
+>>>
+```
+
+---
+
+## Reading files with `while`
+
+```
+cancer_file = open('cancer-expressed.txt')
+
+cancer_list = []
+line = cancer_file.readline()
+while line:
+  AC = line.strip()
+  cancer_list.append(AC)
+  line = cancer_file.readline()
+```
+
+> (but usually we won't do it)
+
+---
+
+# ...
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# Functions
+
+
+> ### What's a function?
+>  
+> ### Why do we use functions?
+
+---
+
+## What's a function?
+**A block of code that performs a specific task**
+
+---
+## Why do we use functions?
+* They are useful to organise your script, in particular if you need to **repeat actions** (e.g. a complex calculation) several times
+
+
+* A function can be accessed from different parts of a script or even from different scripts.
+
+---
+
+## Function definition
+
+In order to use a function, <br>
+you have first to *define* it and then to *call* it
+
+
+<img src="../../img/functions1.png" alt="slot" style="width: 550px;"/>
+
+---
+
+## Function definition
+
+<img src="../../img/functions2.png" alt="slot" style="width: 600px;"/>
+
+---
+
+##  **Challenge #1**
+
+
+> Write a function triangle_area(b, h) that returns the area of a triangle
+
+-    Call the function for b = 2.28 and h = 3.55
+
+-    Print the result
+
+---
+
+## General remarks
+
+- The statement to define a function is `def`
+
+- A function must be **defined** and **called** using brackets
+
+- The body of a function is a block of code that is initiated
+by a colon character followed by *indented instructions*
+
+- The last indented statement marks the end of a function definition
+
+---
+
+### More remarks
+
+- You   can   insert   in   the   body   of   a   function   a documentation  string  in  quotation  marks.  This  string can  be  retrieved  using  the `__doc__`  attribute  of  the function object
+
+- You can **pass arguments** to a function
+
+- A function may or may not **return** a value
+
+```
+def triangle_area(b, h):
+    '''Returns the area of a triangle'''  
+    return (b*h)/2.0
+
+print triangle_area.__doc__
+```
+
+---
+
+###  **Challenge #2**
+
+> Define a function with two arguments: <br>
+> `get_values(arg1, arg2)` <br>
+> that returns:
+>
+> * the sum, 
+>
+> * the difference, 
+>
+> * and the product of `arg1` and `arg2`.
+
+---
+
+## Remarks
+
+-  The statement `return` exits a function, optionally passing
+back a value to the caller.
+
+-   A `return`  statement  with  no  arguments  is  the  same  as returning `None`.
+
+-   The returned value can be assigned to a variable
+
+```
+>>> def j(x,y):
+...     return x + y
+...
+>>> s = j(1, 100)
+>>> print s
+101
+>>>
+```
+
+---
+
+## Function arguments
+
+Every Python object can be passed as argument to a function.<br>
+A function call can be the argument of a function too.
+
+```
+>>> def increment(x):
+...     return x + 1
+...
+>>> def print_arg(y):
+...     print y
+...
+>>> print_arg(increment(5))
+6
+>>>
+```
+
+---
+
+## Function arguments
+
+Multiple parameters can be passed to a function. In this case, the order of the arguments in the caller must be exactly the same as that in the function definition
+
+```
+>>> def print_funct(num, seq):
+...     print num, seq
+...     return
+...
+>>> print_funct(10, "ACCTGGCACAA")
+10 ACCTGGCACAA
+>>>
+```
+
+The sequence of arguments passed to a function is a **tuple**
+
+
+AND
+
+
+Functions return multiple values in the form of
+**tuples** as well
+
+---
+
+## Tuples
+
+
+A tuple is an **immutable** sequence of object
+
+```
+variabile = (item1, item2, item3,…)
+```
+
+Brackets are optional:
+
+```
+Tuple = (1,2,3)
+Tuple = 1,2,3
+
+Tuple = (1,)
+Tuple = 1
+
+```
+---
+```
+>>> my_tuple = (1,2,3)
+>>> my_tuple[0]       #indexing
+1
+>>> my_tuple[:]       #slicing
+(1, 2, 3)
+>>> my_tuple[2:]      #slicing
+(3, )
+```
+
+---
+
+## BUT ...
+### once you have defined a tuple, you cannot change/replace its elements
+
+```
+>>> my_tuple[0] = 0     #re-assigning
+(Forbidden)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support
+item assignment
+>>>
+```
+
+---
+
+### Function arguments - *Reprise*
+
+```
+>>> def f(a,b):
+...     return a + b, a*b, a-b
+
+>>> sum, prod, diff = f(20, 2)
+>>> print sum
+
+>>> result = f(20, 2)
+>>> print result
+>>> print result[0]
+```
+---
+It is possible to assign a name to the arguments of a function. In this case, the order is not important
+
+```
+>>> def print_funct(num, seq):
+...     print num, seq
+...     return
+...
+>>> print_funct(seq = "ACCTGGCACAA", num = 10)
+10 ACCTGGCACAA
+>>>
+```
+
+---
+
+## Default arguments
+
+It is also possible to use default arguments (optional). <br> <br> These optional arguments must be placed in the last position(s) of the function definition
+
+
+```
+def print_funct(num, seq = "A"):
+    print num, seq
+    return
+
+print_funct(10, "ACCTGGCACAA")
+
+print_funct(10)
+```
+
+---
+
+## Summary
+
+- def F(x,y):
+
+- F(3,'codon')
+
+- return
+
+- function arguments
+
+---
+
+###  **Challenge #3**
+
+
+>Write a function that takes as arguments
+>
+>two points  [x1, y1, z1] and [x2, y2, z2]  and 
+>
+>returns the distance between the two points.
+
+---
+
+###  **Challenge #4**
+
+Write a function that:
+
+>-  Takes as input a file name (of a FASTA file).
+>
+>-  Opens the file.
+>
+>-  Returns the header of the sequence record.
+
+Print the header
+
+---
+
+###  **Challenge #5**
+
+>Insert the previous function call 
+>
+> in a for loop running on 
+>
+> a list of 3 sequence file names.
+
+---
+
+###  **Challenge #6**
+
+Consider two output schemes for exercise 4:
+
+1. All the the headers are written to the same output file
+
+2. Each header is written in a separate output file
+
+---
+
+## General remarks
+
+-  Python uses **dynamical** namespaces: when a function is
+called, *its namespace is automatically created*
+
+- The variables defined in the body of a function live in its *local* namespace 
+and not in the script (or module) *global* namespace
+
+- Local objects can be made global using the **global** statement
+
+- When a function is called, names of the objects used in its body
+are first searched in the function namespace and subsequently,
+if they are not found in the function body, they are searched in
+the script (module) global namespace.
+
+---
+
+## Local vs Global
+
+```
+>>> def f():
+...     x = 100
+...     return x
+...
+>>> print x
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'x' is not defined
+>>> f()
+100
+>>> print x
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'x' is not defined
+>>>
+```
+`x` is a local name of the function `f()` namespace <br> 
+and it is not recognised by the `print` statement <br> 
+in the main script  even after the function call
+
+---
+
+## Local vs Global
+
+```
+>>> def g():
+...     global x
+...     x = 200
+...     return x
+...
+>>> print x
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'x' is not defined
+>>> g()
+200
+>>> print x
+200
+>>>
+```
+
+The variable `x`, defined in the body of the `g()` function,<br>
+is made global using the **global** statement <br>
+but is recognized by the `print` statement in the main script <br>
+only after the function call
+
+---
+
+## Local vs Global
+
+```
+>>> y = "ACCTGGCACAA"
+>>> def h():
+...     print y
+...
+>>> h()
+'ACCTGGCACAA'
+```
+
+`y` is recognized when `h()` is called as it is a global name.
+
+---
+
+## The  number  of  arguments  can  be  variable  
+
+(i.e.  can  change  from  one function call to the other) <br>
+
+> In this case, you can use \* or \** symbols.
+
+- 1st  case     (\*args) =>     tuple of arguments
+
+- 2nd  case     (\**args)=>     dictionary of arguments
+
+---
+
+- 1st  case     (\*args) =>     tuple of arguments
+
+```
+>>> def print_args(*args):
+...     print args
+...     return
+...
+>>> print_args(1,2,3,4,5)
+(1, 2, 3, 4, 5)
+>>> print_args("Hello world!")
+(‘Hello world!’,)
+>>> print_args(100, 200, "ACCTGGCACAA")
+(100, 200, ‘ACCTGGCACAA’)
+```
+
+---
+
+- 2nd  case     (\**args)=>     dictionary of arguments
+
+```
+>>> def print_args2(**args):
+...     print args
+...     return
+...
+>>>  print_args2(num  =  100,  num2  =  200, seq  =
+"ACCTGGCACAA")
+{'num': 100, 'seq': 'ACCTGGCACAA', 'num2': 200}
+```
+
+---
+
+# ...
+
+
+
+
+
+
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+
+# Data columns
+
+### Reading  data from a table and writing data to a table
+
+---
+
+### After this module you can:
+
++ Read a list of numbers from a text file to a list
+
++ Calculate the average value of a list of numbers
+
++ Calculate the average value of the numbers of a table's column
+
++ Write a list of numbers to a text file
+
+---
+
+## Kick Start
+
+<img src="../../img/neuron.png" alt="slot" style="width: 400px;"/>
+
+> ##### Dendrites are the minor fibers that branch out from the neuron, which carry the nerve signal in centripetal direction (towards the soma, the cell body of the neuron). 
+
+---
+
+```
+neuron_data.txt (data on dendrites lengths)
+
+16.38
+139.90
+441.46
+29.03
+40.93
+202.07
+142.30
+346.00
+300.00
+```
+
+```
+neuron_data-2.txt (same data plus an extra column with 
+the indication 1 for primary neurons and 2 for secondary neurons)
+
+1         16.38
+2         139.90
+2         441.46
+1         29.03
+1         40.93
+2         202.07
+1         142.30
+2         346.00
+2         300.00
+```
+
+---
+
+## What do we have to do?
+
++  Read data columns from files
+
++  Store data columns to data structures (lists)
+
++  Convert text into numbers
+
++  Convert numbers into text
+
++  Write text to data columns (i.e. with appropriate format)
+
+
+> **Our Goal  is to beat Excel at its own game!**
+
+---
+
+#### Some useful built-in functions
+
+| | |
+|------------|-----------------------------------------------|
+| `split()` | Stores elements from different columns to a list |
+| `unpack()` | Stores elements from different columns to a list using a given format |
+| `join()` | Concatenates objects from a list |
+| `strip()` | Removes blank spaces and newline characters |
+| `int()` | Converts a string into an integer |
+| `float()` | Converts a string into a floating point number |
+| `str()` | Converts an object into a string |
+| `repr()` | Converts an object into a string |
+
+---
+
+##  **Challenge #1**
+
+> Write a program that
+> 
+> - reads the file with neuron lengths (neuron_data.txt)
+> - stores neuron lengths as floating point numbers into a list.
+
+---
+
+###  **Challenge #2**
+
+> Extend the program so that
+>
+> - read data form `neuron_data-2.txt`
+> - stores primary and secondary neuron lengths to different lists.
+
+---
+
+## Manipulating data in the columns
+
++  Calculate max and min length
+
++  Calculate their average length
+
++  Calculate the standard deviation
+
+<img src="../../img/builtin.png" alt="slot" style="width: 450px;"/>
+
+
+---
+
+##  **Challenge #3**
+
+> Extend program 2 so that
+>
+> + calculates the neuron length average separately for primary and secondary neurons
+> + Print the two averages: which neurons are on average longer?
+
+---
+
+##  **Challenge #4**
+
+> Extend program 3 so that 
+>
+> - it calculates the standard deviation of the neuron length.
+
+---
+
+## How to **write** data to columns
+
+### Data needs to be nicely formatted and written to a file
+
++  String concatenation
+
++  String formatting
+
+```
+>>> out = open('data_out.txt', 'w')
+>>> out.write(3)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+TypeError: expected a character buffer object
+>>>
+```
+
+```
+>>> out = open('data_out.txt', 'w')
+>>> out.write(str(3))
+>>>
+```
+
+#### !!! The argument of the `write()` function MUST be a string
+
+---
+
+## String concatenation
+
+### An example of string concatenation using `+`
+
+```
+out = open('data_out.txt', 'w')
+out.write(str(1) + '\t' + str(16.38) + '\n')
+out.close()
+```
+
+---
+
+## **Challenge #5**
+
+> Use two lists with data from <br> `neuron_data-2.txt` <br> to write a table identical to <br> `neuron_data-2.txt`.
+>
+> Do it using **string concatenation**.
+
+---
+
+## String formatting
+
+Nice output can be generated by formatting characters:
+
+```
+print '%d'%(77)
+print '%s'%('text')
+print '%4.1f'%(2.1111)
+```
+```
+print 'The square root of %5.2f is %5.2f'%(a, math.sqrt(a))
+
+print 'The square root of %10.2f is %5.2f'%(a, math.sqrt(a))
+
+print "%i%s%f%s"%(1, '\t', 2.5, '\n')
+
+import math
+A = 25
+S = 'The square root of {0} is  {1}'
+print  S.format (a,  math.sqrt(a))
+```
+
+---
+
+##  **Challenge #6**
+
+> Use two lists with data from `neuron_data-2.txt` to write a table identical to `neuron_data-2.txt`. 
+>
+> Do it using **string formatting**.
+
+---
+
+## Reading and writing tables
++ Read each table column into a different list
+
++  Use a for loop running over the length of the list to write the elements of the lists to a file (using string concatenation or formatting)
+
++  You can write the columns in a different order
+
+---
+
+## Match the formatting expressions and their result
+
+<img src="../../img/expression_values.png" alt="slot" style="width: 700px;"/>
+
+
+---
+
+##  **Challenge #7**
+
+> Write a program that 
+>
+> + reads the `neuron_data-2.txt` file
+> + calculates:
+>   1. the number of primary neurons
+>   2. their total length
+>   3. and the shortest and the longest lengths.
+> + Write the results to a file using string formatting.
+> + You can repeat the exercise for secondary neurons.
+
+---
+
+# ...
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# Tabular data
+
+---
+
+### In this module you can learn:
+
+-  How to represent a table
+
+-  How to extract rows, columns and cells
+
+-  How to delete rows and columns
+
+-  How to sort columns
+
+-  How to sort
+
+---
+
+## Representing a table as a list of lists:
+
+```
+exp      gene1      gene2      gene3      gene4
+1          17        19        2              10
+2          2        336        3              11
+3          16        21        3              12
+4          17        16        1              9
+```
+
+```
+table = [
+['exp', 'gene1', 'gene2', 'gene3', 'gene4'], 
+['1', '17', '19', '2', '10'],
+['2', '2', '336', '3', '11'],
+['3', '16', '21', '3', '12'],
+['4', '17', '16', '1', '9']
+]
+```
+
+---
+
+## How would you generate a table from a text file?
+
+```
+T = open("table-1.txt")
+
+table = []
+
+for line in T:
+    table.append(line.split())
+
+print table
+```
+
+---
+
+## Overview
+
+<img src="../../img/tabulartable.png" alt="slot" style="width: 700px;"/>
+
+---
+
+### Remove a row and write the table 
+### to a tab-separated file
+
+```
+T = open("table-1.txt")
+out_T = open("table-1.out", "w")
+
+table = []
+
+for line in T:
+    table.append(line.split())
+
+table.pop(2)
+
+for row in table:
+    out_T.write('\t'.join(row) + '\n')
+
+out_T.close()
+```
+#### These command generate this table:
+
+```
+exp     gene1   gene2   gene3   gene4
+1       17      19      2       10
+3       16      21      3       12
+4       17      16      1       9
+```
+
+---
+
+### Insert a row and write to a tab-separated file
+
+```
+T= open("table-1.txt")
+out_T = open("table-1.out", "w")
+
+table = []
+
+for line in T:
+    table.append(line.split())
+
+exp5 = ['5', '17', '17', '2', '13']
+table.insert(2, exp5)
+
+for elem in table:
+    out_T.write('\t'.join(elem) + '\n')
+
+out_T.close()
+```
+
+#### These command generate this table:
+
+```
+exp     gene1   gene2   gene3   gene4
+1       17      19      2       10
+5       17      17      2       13
+2       2       336     3       11
+3       16      21      3       12
+4       17      16      1       9
+```
+
+---
+
+### Transpose a table
+
+```
+T = open("table-1.txt")
+
+table = []
+
+for line in T:
+    table.append(line.split())
+
+columns = zip(*table)
+
+for elem in columns:
+    print '\t'.join(elem)
+```
+#### These command generate this table:
+
+```
+exp       1        2         3        4
+gene1     17       2        16       17
+gene2     19       336      21       16
+gene3     2        3         3        1
+gene4     10       11       12        9
+```
+
+---
+
+#### When the argument of a function is a list or a tuple and it is preceded by \*,
+#### it unpacks the list or the tuple and uses each element as an argument to the function
+
+```
+>>> range(*(0,10,2))
+[0, 2, 4, 6, 8]
+>>>
+```
+
+#### `zip(*zipped)` means
+#### "**use each element of `zipped` as an argument to zip**".
+
+```
+>>> x = [1, 2, 3]
+>>> y = [4, 5, 6]
+>>> zipped = zip(x, y)
+>>> zipped
+[(1, 4), (2, 5), (3, 6)]
+>>> x2, y2 = zip(*zipped)
+>>> x2, y2
+((1, 2, 3), (4, 5, 6))
+>>> x == list(x2) and y == list(y2)
+True
+```
+
+---
+
+## Remove a column
+
+```
+T = open("table-1.txt")
+table = []
+
+for line in T:
+    table.append(line.split())
+
+columns = zip(*table)
+
+columns.pop(3)
+
+rows = zip(*columns)
+
+for elem in rows:
+    print '\t'.join(elem)
+```
+#### This generates:
+
+```
+exp     gene1        gene2          gene4
+1         17            19            10
+2         2             336          11
+3         16            21            12
+4         17            16            9
+```
+
+---
+
+## Remove a column (live… 1)
+```
+>>> T = open("table-1.txt")
+>>> table = []
+>>> for line in T:
+...     table.append(line.split())
+...
+>>> table
+[['exp', 'gene1', 'gene2', 'gene3', 'gene4'], 
+['1', '17', '19', '2', '10'], 
+['2', '2', '336', '3','11'], 
+['3', '16', '21', '3', '12'], 
+['4', '17', '16', '1', '9']]
+```
+```
+>>> columns = zip(*table)
+>>> columns
+[('exp', '1', '2', '3', '4'), 
+('gene1', '17', '2', '16', '17'), 
+('gene2', '19', '336', '21', '16'),
+('gene3', '2', '3', '3', '1'), 
+('gene4', '10', '11', '12', '9')]
+>>> columns.pop(3)
+('gene3', '2', '3', '3', '1')
+```
+
+---
+
+## Remove a column (live… 2)
+
+```
+>>> rows = zip(*columns)
+>>> rows
+[('exp', 'gene1', 'gene2', 'gene4'), 
+('1', '17', '19', '10'),
+('2', '2', '336', '11'), 
+('3', '16',
+'21', '12'), 
+('4', '17', '16', '9')]
+```
+
+---
+
+## Replace a column
+```
+
+T = open("table-1.txt")
+table = []
+
+for line in T:
+    table.append(line.split())
+
+columns = zip(*table)
+
+columns.pop(3)
+columns.insert(3, ['gene3', '20', '20', '20'])
+
+rows = zip(*columns)
+
+for elem in rows:
+    print '\t'.join(elem)
+```
+
+#### The resulting table:
+
+```
+exp     gene1          gene2          gene3         gene4
+1         17            19            20            10
+2         2             336          20            11
+3         16            21            20            12
+```
+
+---
+
+## Sorting
+
+#### Python lists are good for sorting using the list's `sort()` method
+
+```
+>>> L = [1,5,7,8,9,2,3,6,6,10]
+>>> L.sort()
+>>> L
+[1, 2, 3, 5, 6, 6, 7, 8, 9, 10]
+```
+
+### Sort in reversed order
+
+```
+>>> L.reverse()
+>>> L
+[10, 9, 8, 7, 6, 6, 5, 3, 2, 1]
+```
+
+Methods of lists **MODIFY** the lists in place
+
+---
+
+## The `sorted()` built-in function
+
+```
+>>> L = [1,5,7,8,9,2,3,6,6,10]
+>>> newL = sorted(L)
+>>> newL
+[1, 2, 3, 5, 6, 6, 7, 8, 9, 10]
+```
+
+### Sort in reversed order
+```
+>>> L = [1,5,7,8,9,2,3,6,6,10]
+>>> sorted(L, reverse = True)
+[10, 9, 8, 7, 6, 6, 5, 3, 2, 1]
+```
+
+---
+
+## Sorting with `itemgetter`
+
+```
+>>> from operator import itemgetter
+>>> L = ['ACCTGGCCA','ACTG','TACGGCAGGAGACG','TTGGATC']
+>>> itemgetter(1)(L)
+'ACTG'
+>>> itemgetter(1,-1)(L)
+('ACTG', 'TTGGATC')
+```
+
+### Sort a table by any column
+```
+from operator import itemgetter
+
+data = [
+[5, 10, 4, 3, 2],
+[6, 7, 8, 9, 10],
+]
+
+data.sort(key = itemgetter(1))
+
+print data
+
+6     7         8         9         10
+
+5     10        4         3         2
+```
+
+---
+
+## Sort a table by any column
+
+```
+from operator import itemgetter
+
+data = [
+[5, 10, 4, 3, 2],
+[6, 7, 8, 9, 10],
+]
+
+data_sorted = sorted(data, key = itemgetter(1))
+
+print data_sorted
+```
+
+---
+
+##  **Challenge #1**
+
+> + Sort a table
+> + convert its elements to strings
+> + and write it to a file
+
+---
+
+### Sort a table by the first column, 
+### then by the second, then by the third, and so on…
+
+```
+from operator import itemgetter
+in_file = open("random_distribution.tsv")
+
+# read table to floats
+table = []
+for line in in_file:
+    rows = line.split()
+    rows = [float(x) for x in rows]
+    table.append(rows)
+
+# sort the table by second, then by third column
+table_sorted = sorted(table, key = itemgetter(1, 2))
+
+# format table as strings
+for row in table_sorted:
+    row = [str(x) for x in row]
+    print "\t".join(row)
+```
+
+---
+
+### Also consider that…
+
+```
+table = sorted(table, key=itemgetter(1), reverse=True)
+
+table = sorted(table, key=itemgetter(1,3), reverse=True)
+```
+
+---
+
+###  **Challenge #2**
+
+From `neuron_data.txt` generate two tables, one for primary and one for secondary neurons
+
+```
+Primary 441.462
+Secondary 29.031
+Secondary 46.009
+Secondary 40.932
+Secondary 34.952
+Primary      139.907
+Secondary 82.248
+Secondary 39.819
+Secondary 144.143
+Primary      16.385
+Secondary 74.495
+Secondary 93.231
+Primary      355.702
+Primary      53.566
+Secondary 202.075
+Secondary 142.301
+neuron_data.txt
+Primary      327.777
+Secondary 99.782
+Secondary 104.875
+Secondary 118.54
+Secondary 63.477
+Secondary 76.063
+Secondary 253.321
+Primary      405.622
+Secondary 125.41
+Secondary 58.876
+Secondary 226.57
+Secondary 362.695
+Primary      256.088
+Secondary 149.753
+Secondary 140.738
+Secondary 214.723
+```
+
+
+---
+
+##  **Challenge #3**
+
+> + Sort the primary neuron’s table
+> + show the three longest neurons
+
+---
+
+##  **Challenge #4**
+
+> + Turn the table
+> + calculate the length average
+
+---
+
+##  **Challenge #5**
+
+>Create an empty table of 10 x 10 cells.
+
+---
+
+##  **Challenge #6**
+
+>Fill the table with the numbers from 1 to 100.
+
+---
+
+##  **Challenge #7**
+
+>Save the table to a tab-separated file.
+
+---
+
+# ...
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# Data Searching
+
+---
+
+## Searching (and manipulating) your data
+
+<img src="../../img/geneticcode.png" alt="slot" style="width: 600px;"/>
+
+---
+
+<img src="../../img/datser1.png" alt="slot" style="width: 600px;"/>
+
+---
+
+<img src="../../img/datser2.png" alt="slot" style="width: 600px;"/>
+
+---
+
+<img src="../../img/datser3.png" alt="slot" style="width: 600px;"/>
+
+---
+
+<img src="../../img/datser4.png" alt="slot" style="width: 600px;"/>
+
+---
+
+<img src="../../img/datser5.png" alt="slot" style="width: 600px;"/>
+
+---
+
+<img src="../../img/datser6.png" alt="slot" style="width: 600px;"/>
+
+---
+
+<img src="../../img/datser7.png" alt="slot" style="width: 600px;"/>
+
+---
+
+<img src="../../img/datser8.png" alt="slot" style="width: 600px;"/>
+
+---
+
+<img src="../../img/datser9.png" alt="slot" style="width: 600px;"/>
+
+---
+
+#### Let's give a look to the content of the tgac.py: 
+
+```
+codonAMINO =  {'GCU':'A','GCC':'A','GCA':'A', 'GCG':'A',
+'CGU':'R','CGC':'R','CGA':'R','CGG':'R','AGA':'R','AGG':'R',
+'UCU':'S','UCC':'S','UCA':'S','UCG':'S','AGU':'S','AGC':'S',
+'AUU':'I','AUC':'I','AUA':'I','AUU':'I','AUC':'I','AUA':'I',
+'UUA':'L','UUG':'L','CUU':'L','CUC':'L','CUA':'L','CUG':'L',
+'GGU':'G','GGC':'G','GGA':'G','GGG':'G','AAU':'N','AAC':'N',
+'GUU':'V','GUC':'V','GUA':'V','GUG':'V','GAU':'D','GAC':'D',
+'ACU':'T','ACC':'T','ACA':'T','ACG':'T','UGU':'C','UGC':'C',
+'CCU':'P','CCC':'P','CCA':'P','CCG':'P','CAA':'Q','CAG':'Q',
+'GAA':'E','GAG':'E','CAU':'H','CAC':'H','AAA':'K','AAG':'K',
+'UUU':'F','UUC':'F','UAU':'Y','UAC':'Y','AUG':'M','UGG':'W',
+'AUG':'START','UAG':'STOP', 'UGA':'STOP', 'UAA':'STOP' }
+>>> codonAMINO['GCU']
+'A'
+>>> codonAMINO['AUG']
+’START’
+```
+```
+>>> for k in codonAMINO.keys():
+...             print k, codonAMINO[k]
+GUC V
+AUA I
+GUA V
+GUG V
+ACU T
+AAC N
+etc.
+```
+
+---
+
+## Dictionaries
+
++ Dictionaries are **unordered** collections of objects
+
++ Dictionaries are structures for mapping immutable objects (keys) on arbitrary objects (values)
+
+```
+d = {key1:value1, key2:value2, …, keyN:valueN}
+```
+
++ Lists and dictionaries cannot be used as dictionary keys!!!!
+
++ Keys must be **unique**, i.e. the same key cannot be associated to more than one value
+
+---
+
+<img src="../../img/datser_method.png" alt="slot" style="width: 700px;"/>
+
+---
+
+```
+>>> d = {'pep1':'MGSNKSKPKDASQRRRSLEPAENVHGAGG', \
+    'pep2':'RSLEPAENVHGAGGGAFPASQTPS'}
+>>> len(d)
+2
+
+>>> d['pep1']
+'MGSNKSKPKDASQRRRSLEPAENVHGAGG'
+
+>>> d['pep3'] = 'ASADGHRGPSAAFAPAAA'
+>>> d
+{'pep1' : 'MGSNKSKPKDASQRRRSLEPAENVHGAGG',
+'pep2' : 'RSLEPAENVHGAGGGAFPASQTPS', 'pep3' :
+'ASADGHRGPSAAFAPAAA'}
+```
+
+```
+>>> del d['pep2']
+>>> d
+{'pep1' : 'MGSNKSKPKDASQRRRSLEPAENVHGAGG',
+'pep3' : 'ASADGHRGPSAAFAPAAA'}
+
+>>> d.clear()
+>>> d
+{ }
+```
+
+---
+
+```
+>>> dict = {"a":1, "b":2, "c":3}
+>>> dict.keys()     #list of dictionary keys
+['a', 'c', 'b']
+
+>>> keys = dict.keys()
+>>> keys.sort() #sort keys
+['a', 'b', 'c']
+
+>>> dict.values() #list of dictionary values
+[1, 3, 2]
+
+>>> dict.items() #tuple of dictionary (key,value) pairs
+[('a', 1), ('c', 3), ('b', 2)]
+
+>>> dict.has_key("a")   #True if dict has key "a", else False
+True
+```
+
+---
+
+## Challenge #1
+
+> + Using the `codonAMINO` dictonary from `tgac.py` translate the sequence in `rna_seq.fasta`. 
+>
+> Use a single reading frame.
+
+---
+
+## Challenge #2
+
+> Implement program 1 for the three reading frames
+
+---
+
+## Sort values of a dictionary by its keys
+
+```
+# sort values of a dictionary by its keys
+
+structures = {
+    '2jel':'antibody',
+    '1cse':'subtilisin',
+    '1ehz':'tRNA(Phe)',
+}
+
+def sort_dict_by_keys(data):
+    keys = data.keys()
+    keys.sort()
+    return [data[k] for k in keys]
+
+print sort_dict_by_keys(structures)
+```
+
+---
+
+## Remove redundancy
+
+<img src="../../img/redund1.png" alt="slot" style="width: 700px;"/>
+
+---
+
+## Remove redundancy
+
+<img src="../../img/redund2.png" alt="slot" style="width: 700px;"/>
+
+---
+
+```
+Q5XXA6                                                Q7Z769
+Q9Y5P2                                                Q8CH62
+Q14667                                                Q9GZY1
+O75387                                                Q9NQQ7
+Q8WV07                                                Q14667
+Q8CH62                                                Q5XXA6
+Q9GZY1                                                Q9Y5P2
+Q9NQQ7                                                Q14667
+Q8VCX2                                                O75387
+Q7Z769                                                Q9Y5P2
+Q8CH62                                                Q8WV07
+Q14667                                                Q8VCX2
+Q9NQQ7                                                Q8CH62
+Q14667                                                Q14667
+Q9Y5P2                                                Q9NQQ7
+```
+
+---
+
+<img src="../../img/redund3.png" alt="slot" style="width: 700px;"/>
+
+---
+
+## Sets
+- Sets are **unordered** collections of unique objects they are not sequence-like objects and that they cannot contain
+identical elements
+
+- Sets do not support indexing and slicing
+- `in` and `not in` operators can be used to test an element for
+membership in a set.
+- Sets are useful for removing duplicates
+- Set operations: **intersection, union, difference, symmetrical
+difference**
+
+---
+
+### Create a new set
+In order to create a set, the method `set(x)` must be used,
+where `x` is a sequence-like object (string, tuple, list)
+
+---
+
+| | |
+|----|-----|
+| `add(x)` | adds a given element to a set |
+| `update(x)` | adds elements from a set to the set  |
+| `copy()` | creates a copy |
+| `pop()`, `remove()`, `discard()`  | remove set elements  |
+| `pop()` | deletes a single element randomly |
+| `remove(x)` | removes the element `x` and returns a message of error if `x` is not in the set |
+| `discard()`  |  removes the element `x` without returning any error message if `x` is not in the set |
+
+---
+
+## S1.union(S2)
+The `union()` between 2 sets S1 and S2 creates a new set
+with the elements from both S1 and S2.
+
+```
+>>> S1 = set(['a','b','c'])
+>>> S2 = set (['c','d','e'])
+>>> S1.union(S2)
+set(['a', 'c', 'b', 'e', 'd'])
+>>> S1 | S2
+set(['a', 'c', 'b', 'e', 'd'])
+```
+
+---
+
+## S1.intersection(S2)
+
+The `intersection()` of 2 sets S1 and S2 creates a new set
+with the elements common to S1 and S2
+
+```
+>>> S1 = set(['a','b','c'])
+>>> S2 = set (['c','d','e'])
+>>> S1.intersection(S2)
+set(['c'])
+>>> S1 & S2
+set(['c'])
+```
+
+---
+
+## S1.symmetric_difference(S2)or S1 ^ S2
+
+`symmetric_difference()` of two sets S1 and S2 creates a new set with elements in either S1 or S2 but not both
+
+```
+>>> S1 = set(['a','b','c'])
+>>> S2 = set (['c','d','e'])
+>>> S1.symmetric_difference(S2)
+set(['a', 'b', 'e', 'd'])
+>>> S1 ^ S2
+set(['a', 'b', 'e', 'd'])
+```
+
+---
+
+## S1.difference(S2) or S1 - S2
+
+The  `difference()`  of  two  sets  S1  and  S2  creates  a  new  set with elements in S1 but not in S2
+
+```
+>>> S1 = set(['a','b','c'])
+>>> S2 = set (['c','d','e'])
+>>> S1.difference(S2)
+set(['a', 'b'])
+>>> S1 - S2
+set(['a', 'b'])
+>>> S2 – S1
+set(['e', 'd'])
+```
+
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+## Welcome
+
+Welcome to the jekyll-reveal.js example presentation.
+
+> Proba
+
+```console
+ls dir
+```
+
+```python
+def rm(h=100):
+    print("here")
+```
+
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+## Slide 2
+
+This is the second slide. And it's just another file inside the _posts-directory.
+
+It is identified as slide 2, because it has a "2" after the mandatory date-part (0000-01-01) in its
+filename. (It's called 0000-01-02-slides.md)
+
+---
+
+This is a third slide, although we're still in 0000-01-02-slides.md.
+
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+## Fragments
+
+It's also possible to do fragments.
+
+- Like <!-- .element: class="fragment" -->
+- This <!-- .element: class="fragment" -->
+
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+## Vertical Slides
+
+Or
+
+--
+
+Even
+
+--
+
+Vertical
+
+--
+
+Slides
+
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# Backgrounds
+
+<!-- .slide: data-background="green " --> 
+
+Or use different backgrounds.
+
+</script>
+</section>
+
+<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
+<script type="text/template">
+# A hidden treasure
+
+This slide has a hidden treasure. Press "s" to see the speaker notes.
+
+Note:
+
+THIS TEXT IS HIDDEEEEEEEN! :)
+
+</script>
+</section>
+
+
+
+            </div>
+
+		</div>
+
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: 'concave', // default/cube/page/concave/zoom/linear/fade/none
+
+                
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    
+					{ src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    
+                    
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
