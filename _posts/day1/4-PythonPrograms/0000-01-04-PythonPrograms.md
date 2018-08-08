@@ -14,8 +14,6 @@
 
 -  How to write to the screen
 
--  How to repeat things
-
 -  How to create your own modules
 
 ---
@@ -72,23 +70,20 @@ Type a number: 3
 
 ---
 
-##  **Challenge #2**
-
->Write a program that reads something from the keyboard and print it to the screen.
-
----
-
 ## Input from a text file
 
 -  We need to “access” an existing input file
 
 -  And read its content
 
-```
+```python
+# 'access' an existing input file
 Infile = open("insulin.txt")
 
+# read its content
 content = Infile.read()
 
+# show its content
 print content
 ```
 
@@ -101,14 +96,20 @@ print content
 
 
 #### Python module insulin.py
-```
+```python
 insulin = "GIVEQCCTSICSLYQLENYCNFVNQHLCGSHLVEALYLVCGERGFFYTPKT"
 ```
 #### Python program my_first_import.py
-```
+```python
 from insulin import insulin
 print insulin
 ```
+
+---
+
+##  **Challenge #2**
+
+>Write a program that reads something from the keyboard and print it to the screen.
 
 ---
 
@@ -135,7 +136,7 @@ Which command we use?
 
 -  We have to write to it.
 
-```
+```python
 from insulin import insulin
 
 outfile = open("my_output.txt", "w")
@@ -159,6 +160,31 @@ Test it with a DNA sequence for which you know the result, for instance “AAAAC
 
 ---
 
+## Solution to challenge #4
+One possible solution
+```python
+dna = 'AGCTTCGA'
+
+print dna.count('A')
+print dna.count('C')
+print dna.count('T')
+print dna.count('G')
+```
+Another possible solution:
+```python
+dna = 'AGCTTCGA'
+elem =  dna.count ('A')
+print  elem
+elem =  dna.count ('C')
+print  elem
+elem =  dna.count ('T')
+print  elem
+elem =  dna.count ('G')
+print  elem
+```
+
+---
+
 ## Recap
 
 -  string variables contain text
@@ -170,8 +196,6 @@ Test it with a DNA sequence for which you know the result, for instance “AAAAC
 -  you can enter text with `raw_input()`    
 
 -  `write()` writes to an open file
-
--  for loops repeat commands
 
 -  comments starts with `#` or `'''`
 

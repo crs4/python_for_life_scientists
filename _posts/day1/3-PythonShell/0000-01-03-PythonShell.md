@@ -56,8 +56,8 @@ Variable names may be composed of
 >>> camels = 9
 >>> camels
 9
->>> silk = camels * 4
->> silk
+>>> silk_one2 = camels * 4
+>> silk_one2
 36
 ```
 
@@ -119,6 +119,23 @@ make it fast.
 
 ---
 
+## Solution to **Challenge #2**
+```python
+from math import pi
+R = 10.0
+V = (4.0/3.0)*pi*(R**3)
+print V
+```
++ in this case we import a specific object from math instead of importing the whole `math` module
+
+<br>
+### Advantages
+
+> 1. f the module is big and we need only one function; 
+> 2. we not using the "." syntax and the name of the variable pi is shorter!
+
+---
+
 ## **Challenge #3**
 
 ##### Calculate the distance between two points in the 3D space
@@ -134,6 +151,24 @@ make it fast.
 >+  Print the distance to the screen
 
 ![slot]({{site.url}}/img/cartesiandistance.png)
+
+---
+
+## Solution to *Challenge #3*
+```
+import math
+
+x1 = 43.64
+y1 = 30.72
+z1 = 88.95
+
+x2 = 45.83
+y2 = 31.11
+z2 = 92.04
+
+dist = math.sqrt((x1-x2)**2 + (y1-y2)**2 + (z1-z2)**2)
+print dist
+```
 
 ---
 

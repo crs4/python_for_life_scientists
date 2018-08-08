@@ -272,6 +272,21 @@ store them into a variable
 
 ---
 
+## Solution to *Challenge #1*
+
+```python
+cancer_file = open('cancer-expressed.txt')
+
+cancer_list = []
+
+for line in cancer_file:
+  AC = line.strip()
+  cancer_list.append(AC)
+print cancer_list
+```
+
+---
+
 ##  **Challenge #2**
 
 >-  Create a list containing Uniprot ACs extracted from a FASTA file
@@ -279,10 +294,50 @@ store them into a variable
 
 ---
 
+## Solution to *Challenge #2*
+
+```python
+InputFile = open("SwissProtHuman.fasta","r")
+AC_list = []
+for line in InputFile:
+  if line[0] == '>':
+    fields = line.split('|')
+    AC_list.append(fields[1])
+print AC_list
+```
+
+---
+
 ##  **Challenge #3**
 
 >-   Read the human FASTA file one record after the other. Check if the record header contains one of the 10 ACs.
 >-   If YES, copy the header to a new file.
+
+---
+
+## Solution to *Challenge #3*
+
+```python
+cancer_file = open('cancer-expressed.txt')
+human_fasta = open('SwissProt-Human.fasta')
+Outfile = open('cancer-expressed.fasta','w')
+
+cancer_list = []
+
+for line in cancer_file:
+  AC = line.strip()
+  cancer_list.append(AC)
+
+for line in human_fasta:
+  if line[0] == '>':
+    AC = line.split('|')[1]
+    if AC in cancer_list:
+      Outfile.write(line)
+
+Outfile.close()
+```
+
+*We are not writing the whole record but the header line only*
 
 ---
 
@@ -300,6 +355,64 @@ MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSSWRVISSIEQKTERNEKKQQM
 MDDREDLVYQAKLAEQAERYDEMVESMKKVAGMDVELTVEERNLLSVAYKNVIGARRASWRIISSIEQKEENKGGEDKLKMIREYRQMVETELKLICCDILDVLDKHLIPAANTGESKVFYYKMKGDYHRYLAEFATGNDRKEAAENSLVAYKAASDIAMTELPPTHPIRLGLALNFSVFYYEILNSPDRACRLAKAAFDDAIAELDTLSEESYKDSTLIMQLLRDNLTLWTSDMQGDGEEQNKEALQDVEDENQ
 >sp|Q04917|1433F_HUMAN 14-3-3 protein eta OS=Homo sapiens
 GNYWHAHMGDREQLLQRARLAEQAERYDDMASAMKAVTELNEPLSNEDRNLLSVAYKNVVGARRSSWRVISSIEQKTMADGNEKKLEKVKAYREKIEKELETVCNDVLSLLDKFLIKNCNDFQYESKVFYLKMKGDYYRYLAEVASGEKKNSVVEASEAAYKEAFEISKEQMQPTHPIRLGLALNFSVFYYEIQNAPEQACLLAKQAFDDAIAELDTLNEDSYKDSTLIMQLLRDNLTLWTSDQQDEEAGEGN
+```
+
+---
+
+## Solution to *Challenge #4*
+One possible solution
+```
+cancer_file = open('cancer-expressed.txt')
+human_fasta = open('SwissProt-Human.fasta')
+Outfile = open('cancer_expressed.fasta','w')
+
+cancer_list = []
+seq = ''
+
+for line in cancer_file:
+  AC = line.strip()
+  cancer_list.append(AC)
+
+for line in human_fasta:
+  if line[0] == '>':
+    if seq:
+      if AC in cancer_list:
+        Outfile.write(header + seq)
+      header = line
+      AC = line.split('|')[1]
+      seq = ''
+  else:
+    seq = seq + line
+
+if AC in cancer_list:
+  Outfile.write(header+seq)
+```
+
+---
+
+## Solution to *Challenge #4*
+Another possible solution:
+```python
+cancer_file = open('cancer-expressed.txt')
+human_fasta = open('SwissProt-Human.fasta')
+Outfile = open('cancer_expressed.fasta','w')
+
+cancer_list = []
+
+for line in cancer_file:
+  AC = line.strip()
+  cancer_list.append(AC)
+
+for line in human_fasta:
+  if line[0] == ">":
+    field = line.split("|")
+    AC = field[1]
+    if AC in cancer_list:
+      Outfile.write(line)
+  else:
+    if AC in cancer_list:
+      Outfile.write(line)
+Outfile.close()
 ```
 
 ---
