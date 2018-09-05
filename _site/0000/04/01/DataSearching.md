@@ -156,15 +156,63 @@ True
 
 ---
 
+## Solution to *Challenge #1*
+
+```python
+F = open('rna_seq.fasta')
+Out = open('protein_seq.fasta','w')
+
+seq=''
+for line in F:
+    if line[0] == '>':
+        header = line.split()
+        geneID = header[0]
+        Out.write(geneID + '_protein\n')
+    else:
+        seq = seq + line.strip()
+
+from tgac import codonAMINO
+prot = ''
+for i in range(0,len(seq),3):
+    triplet =seq[i:i+3]
+    if codonAMINO.has_key(triplet): # is the triplet in the dictionary? equivalent to: if triplet in codonAMINO
+        prot = prot + codonAMINO[triplet]
+    else:
+        prot = prot + '?'
+
+Out.write(prot + '\n')
+```
+
+---
+
 ## Challenge #2
 
 > Implement program 1 for the three reading frames
 
 ---
 
+## Solution to *Challenge #2*
+```python
+from tgac import codonAMINO
+
+prot = ''
+for j in range(3):
+    Out.write(str(j) + "-frame\n")
+    for i in range(j,len(seq),3):
+        if codonAMINO.has_key(seq[i:i+3]):
+            prot = prot + codonAMINO[seq[i:i+3]]
+        else:
+            prot = prot + '*'
+
+    Out.write(prot + '\n')
+prot = ''
+```
+
+---
+
 ## Sort values of a dictionary by its keys
 
-```
+```python
 # sort values of a dictionary by its keys
 
 structures = {

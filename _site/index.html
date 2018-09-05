@@ -45,7 +45,7 @@
 
 ---
 
-### In this course you will learn to:
+## In this course you will learn to:
 
 + Read text files (and websites)
 + Selectively extract and manipulate information
@@ -68,17 +68,9 @@ Why are we here?
 
 What are your expectations?
 
+What do you need programming for?
 
----
-Challenge
-
-> #### What do you need programming for?
-> #### What would you like to take home from the course?
-
-Write on a card
-
-> Finish within 7 minutes
-
+What would you like to take home from the course?
 
 ---
 
@@ -87,7 +79,7 @@ Write on a card
 |        | `Day 1 Getting Started`          | `Day 2 Parsing`     | `Day 3 Managing Data` | `Day 4 Libraries`  |
 | --- | --- | --- | --- | ---|
 | `1` | Intro & expectations | Repeating things  | Functions | Searching |
-| `2` | Unix Tutorial | Reading files | Functions | Searching |
+| `2` | Python | Reading files | Functions | Searching |
 | `3` | Phython Shell | Parsing | Data columns | Python Libraries |
 | `4` | Phython Programs | Parsing | Data columns | Python Libraries |
 
@@ -99,462 +91,251 @@ Write on a card
 
 <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
 <script type="text/template">
-# What is Unix/Linux?
+# Python
 
-
-> ### What operating system(s) 
-> ### do you know?
+#### is not a snake but a frequent thought 
 
 ---
 
-## What is the computer shell?
-The shell is an interpreter (a program) that lets you interact with the operating system
+## Python is not a snake but a frequent thought 
 
-![shell](http://localhost:4000/img/f1_shell.png)
++ Christmas holidays of 1989. Guido Van Rossum is bored, but instead of preparing the Christmas tree he starts to create a new programming language.
 
----
++ He called it Python because  he was a Monty Python fan and he needed a name that was short, unique, and slightly mysterious
 
-## The Linux shell
+> Making references to Monty Python skits is not only allowed, it is encouraged!
 
--   The shell is a command-line interpreter that lets you interact with Linux
--   The shell takes what you type and "decides" what to do with it
--   The shell is actually a scripting language somewhat like Python
--   It is always possible to change shell (either temporarily or permanently)
-
-<img src="http://localhost:4000/img/shelll.png" alt="shell" style="width:500px;"/>
+Monty Python and [SPAM](https://www.youtube.com/watch?v=IYE7_7MBzec)
 
 ---
 
-## What is the graphical interface?
+## In this module we can learn:
 
-![graphinter](http://localhost:4000/img/f2_graphinter.png)
++ What is Python
 
----
++ Why to choose Python
 
-## What is the command line interface 
-## (or Terminal)?
-![shell](http://localhost:4000/img/f3_shell.png)
++ How to install Python
 
 ---
 
-## What happens when you double click on the icon of an application?
+## What is Python?
 
-<img src="../../img/word.png" alt="word" style="width:600px;"/>
 
----
 
-### Open a command-line terminal on your computer
-You can type a program name at the terminal prompt and then type
-[Return]
+Python is a high level programming language
 
-![term](http://localhost:4000/img/f4_command.png)
++ interpreted 
 
----
++ interactive
 
-## The Terminal can be customised
-
--   Change default bg color
--   Change text size, colour and font
--   Increase/decrease transparency
--   Resize it
--   Have multiple windows open side by side
--   Have multiple "tabs" open at the same time
--   Change the command prompt (most commonly a $  or % sign)
--   Make the cursor blinking
++ object-oriented
 
 ---
 
-## The command-line interface (terminal)
+## Interpreted Language
 
-allows you:
++ Programs are executed directly and freely, each line of code at a time
 
--  to send typed instructions to the computer (i.e., run programs, move/view files, etc.)
++ Programmer is able to see the results of their programs immediately
 
--  to see the output that results from  those instructions.
++ Any errors will result in the execution of the code to be halted
 
-> Every time you type any Unix command and press **enter**,
-the computer will attempt to follow your instructions and
-then, when finished, return you to the **command prompt**.
+<img src="http://localhost:4000/img/interpretered.png" alt="interpretered" style="width:550px;"/>
 
 ---
 
-## What is the filesystem tree?
+## VS. Compiled Languages
 
-> Type the Unix command `ls` 
-> at the command prompt:
-
-> what happens?
+<img src="http://localhost:4000/img/compiled.png" alt="compiled" style="width:600px;"/>
+<img src="http://localhost:4000/img/compiled-vs-interpreted.png" alt="Compiled-vs-Interpreted" style="width:700px;"/>
 
 ---
 
-## The directory structure
+## Interactive Language
 
-The file-system is arranged in a hierarchical structure, like an inverted tree
++ You can write instructions directly from its command prompt without needing to create or edit a source file
 
-![t17](http://localhost:4000/img/t17.png)
++ Prompt waits for commands from the user, which it executes and returns the result of the execution. <br>
+After this the shell waits for the next input. 
+
+<img src="http://localhost:4000/img/pythonganywhere.png" alt="interpretered" style="width:600px;"/>
 
 ---
 
-- The top of the hierarchy is traditionally called **root**<br>
-- When you first login, the current working directory is your home directory (containing files and directories that only you can modify)
+## Object Oriented Language
 
-<img src="../../img/t17.png" alt="t17" style="width:500px;"/>
+ + Combines data structures (`attributes`) with functions (`methods`) to create re-usable `objects`.
+ 
+ + Objects interact each other by sending messages
+ 
+ 
+<img src="http://localhost:4000/img/OOP_Objects.png" alt="interpretered" style="width:500px;"/>
 
-### What is the **path** of a file or a directory?
+---
 
-Slashes separate parts of the directory path:
+## VS. Procedural Programming
+
+<img src="http://localhost:4000/img/object.jpg" alt="interpretered" style="width:700px;"/>
+
+---
+
+## Why to choose Python
+
+1. Simple Elegant Syntax
+
+2. Not overly strict
+
+3. Expressiveness of the language
+
+4. Great Community and Support
+
+
+---
+
+## 1. Simple Elegant Syntax
+
++ Programming in Python is fun. 
+
++ It's easier to understand and write Python code: the syntax feels natural. 
+
+Take this source code for an example:
 ```
-/home/allegra/Documents/Training/materials/Unix/Academis_Linux.pdf
-```
-
----
-
-### Linux commands
-Just a question, before talking about Linux commands
->What is a computer program?
-
----
-Which ones do you know?
-```markdown
-- A text file
-- Word
-- OS
-- The shell
-- An Excel data file
-- A database
-- Power point
-- The Linux Terminal
-- A Linux command
-- About Unix commands
-- Commands are themselves programs
+a = 2
+b = 3
+sum = a + b
+print(sum)
 ```
 
 ---
 
-## An example of command:
-```console
-$ rm myfile.txt [Return]
-```
-```markdown 
-- The shell searches the file containing the program 'rm'
+## 2. Not overly strict
 
-- Executes the program 'rm' on 'myfile.txt'
++ You don't need to define the type of a variable in Python. 
 
-- After the process 'rm myfile.txt' has finished running, 
-  the shell returns the prompt '$' to you, 
-  indicating that it is waiting for further commands.
-```
++ It's not necessary to add semicolon at the end of the statement.
 
-<img src="../../img/examplecommand_cccp.png" alt="example" style="width:700px;"/>
++ Python enforces you to follow good practices (like proper indentation). 
+
+> ### These small things can make learning much easier for beginners.
 
 ---
 
-### Command Sintax
-```console
-$ command_name -options <file> [Return]
-```
+## 3. Expressiveness of the language
 
-### Examples
-```console
-$ ls 
-$ ls –l
-$ ls -l dirname
-$ ls -ltr dirname 
-``` 
++ Python allows you to write programs having greater functionality with fewer lines of code. 
 
-### Documentation
-```console
-$ command_name --help
-$ man command_name 
-$ whatis command_name 
-```
-
-A list of [basic linux commands for beginners](https://maker.pro/linux/tutorial/basic-linux-commands-for-beginners)
++ You will be amazed how much you can do with Python once you learn the basics.
 
 ---
 
-## Writing and running programs in Linux
+## 4. Great Community and Support
 
-> ###  Where can we write programs?
-> ### What is a text editor?
++ Python has a large supporting community. 
 
----
++ There are numerous active forums online which can be handy if you are stuck. 
 
-```markdown
--  Access your home directory using the command-line interface
--  Start the nano text editor
-```
+Some of them are:
 
-<img src="../../img/nano.png" alt="nano" style="width:400px;"/>
-
-```markdown
-- Create a text file `my_first_shell_script.sh`
-```
-
-```bash
-#!/bin/bash
-ls -l
-cd ../
-ls -l
-```
-
-```markdown
-- Write the commands in a file, save and exit
-- Go to the command-line interface and type `ls` at the prompt
-```
+>+ [Learn Python subreddit](https://www.reddit.com/r/learnpython/)
+>
+>+ [Google Forum for Python](https://groups.google.com/forum/#!forum/comp.lang.python)
+>
+>+ [Python Questions - Stack Overflow](https://stackoverflow.com/tags/python)
 
 ---
 
-## How can we run programs on Linux?
+## How to install Python
 
-### Prerequisites to run a program
+The easiest way is by using `Conda`. 
 
-1. The program must be somewhere on your computer
++ **What is Conda?**
+    
+    + [Conda](https://conda.io/docs/)  is an open source package management system and environment management system that runs on Windows, macOS and Linux. 
 
-2. The program must be **executable**
-
-3. You have to tell the shell which "interpreter" will read and execute the program 
-   AND where it will find it
-
-4. You have to tell Linux where it can find the program
+    + Conda quickly installs, runs and updates packages and their dependencies.
 
 ---
 
-### Is my script executable?
-
-```markdown
-Each file (and directory) has associated access rights, which may
-be found by typing `ls -l`
-```
-<img src="../../img/t34.png" alt="permission" style="width:700px;"/>
-
-```markdown
-Access rights on directories
-- r allows users to list files in the directory
-- w allows users to delete files from the directory 
-  or move files into it
-- x allow users to access files in the directory
-```
+>But you don’t just install conda per se. 
+>
+>Rather, you’ll install what might be analogized to a distribution
+>
+> Anaconda and Miniconda being the two.
 
 ---
 
-### 2. The program must be **executable**
+## Anaconda
 
-### How can I make my script *executable?*
-
-```console
-%chmod go-rwx myfile.txt
-
-%chmod a+x my_script
-```
-
-### Changing access rights: chmod
++ What is Anaconda?
+    + [Anaconda](https://www.anaconda.com) is a free and open source distribution of the Python and R programming languages for data science and machine learning related applications that aims to simplify package management and deployment.
+  
+    + At the core, Anaconda uses conda package management system.
 
 ---
 
-```commandline
-chmod go-rwx myfile.txt || chmod a+x my_script
-```
-| **Symbol**  |**Meaning** |
-|----|-----|
-| u|user     |
-| g|group |
-| o|other     |
-| a|all|
-| r|read     |
-| w|write (and delete) |
-| x| execute (and access direcotry)|
-| +| add permission|
-| -| take away permission |
+## Miniconda
+
++ What is Miniconda?
+
+    + [Miniconda]() is a free minimal installer for conda. 
+    
+    + Miniconda is a small, bootstrap version of Anaconda that includes only:
+        + conda
+        + Python
+        + the packages they depend on 
+        + a small number of other useful packages
 
 ---
 
-### 3. You have to tell the shell which "interpreter" will read and execute the program AND where it will find it
+## Installing Python
 
-<img src="../../img/FIRST.png" alt="FIRST" style="width:550px;"/>
++ Navigate to the Miniconda download page: [https://conda.io/miniconda.html](https://conda.io/miniconda.html)
++ Select the Python 3.6 installer
 
-```bash
-#!/bin/bash
-``` 
-> "Aha, you want to use the program located at **/bin/bash** to interpret all the instructions that follow"
+<img src="http://localhost:4000/img/miniconda-download.png" alt="miniconda-download" style="width:700px;"/>
 
 ---
 
-### 4. You have to tell Linux where it can find the program
+## Installing Python on Windows
 
-- You must be in the same directory as the program you want to run **OR**….
-
-- …you can prefix its name with a path **OR**…
-
-- …the path to your program must in the `PATH` **environment variable**
-
----
-
-### Where Linux searches for programs?
----
-**Either you explicitly tell Linux where it can find your script…**
-
-* by prefixing its name with a path: `commandline ~allegra/Documents/shell_commands.sh`
-
-* If you are in the same directory as the one of the program, you can type: `./shell_commands.sh`
++ Run the installer: double-click the `.exe` file.
++ Follow the instructions on the screen.
+    + If you are unsure about any setting, accept the defaults. You can change them later.
+  
+<img src="http://localhost:4000/img/miniconda-installer.png" alt="miniconda-installer" style="width:450px;"/>
 
 ---
 
-### Where Linux searches for programs?
----
-**Or you can specify the script's path in the `PATH` environment variable**
++ If the installation has worked, you should now have a new program called `Anaconda Prompt` available in the start menu.
 
-*  If you simply type (at the prompt): `shell_commands.sh`
-
-
->Linux will look up a list of predefined directories to see if that program exists in any of those locations
-
-1. If it finds a match, it will try to run the program and stop searching in any other directory
-
-2. Else, it will print `"command not found"`
+<img src="http://localhost:4000/img/miniconda-prompt.png" alt="miniconda-prompt" style="width:300px;"/>
 
 ---
 
-### You may think of the PATH variable as a sort of address book UNIX environment variables
++ Click on the “Anaconda Prompt” icon to launch a new command prompt window. 
+You should see something like this:
 
->Linux keeps track of several special variables that are associated with your account
+<img src="http://localhost:4000/img/miniconda-prompt-1.png" alt="miniconda-prompt-1" style="width:700px;"/>
 
-* Written in upper-case letters
-* Use echo and prefix the variable with a $ if you want to get the content
+If you’ve never seen a command prompt before<br> don’t be scared.<br>
+It is basically a way of talking directly to your computer. <br>
 
-
-Try the following commands:
-
-```shell
-printenv
-echo $SHELL
-printenv SHELL
-echo $PATH
-echo PATH
-echo $USER
-```
+> To use the command prompt, type a command and then press the return key.
 
 ---
 
-## Command not found
-
-If the system returns this message 
-
-
-it indicates that **either the command doesn't exist at all on the system or it is simply not in your path.**
-
--   You can use tab-completion
--   Your scripts will be treated like any Linux command
-
----
-
-##  Connecting to a remote computer
-```
-ssh remote_host
-```
-The `remote_host` is the IP address or domain name that you are trying to connect to.
-
----
-If your `username` is different on the remote system:
+## Test your Installation
 
 ```
-ssh remote_username@remote_host
-```
----
-
-Once you have connected to the server, you will probably be asked to verify your identity by providing a password.
-```
-ssh -x remote_username@remote_host
+conda --help
 ```
 
----
-
-## Transferring files <br> to/from a remote computer
-
-```
-sftp username@host
-```
-
-### Enter your password when prompted
-
-* `get`:  Copy a file from the remote computer to the local computer.
-
-* `put`: Copy a file from the local computer to the remote computer.
-
----
-
-## Transferring files <br> to/from a remote computer
-
-* `scp`:  copies files over a secure, encrypted network connection.
-
-```shell
-scp /home/image*.jpg allegra@myhost.com:/home/images
-scp allegra@myhost.com:/home/image*.jpg /home/allegra/downloads
-
-scp [-12346BCpqrv] [-c cipher] [-F ssh_config] [-i identity_file]
-[-l limit] [-o ssh_option] [-P port] [-S program]
-[[user@]host1:]file1 ... [[user@]host2:]file2
-```
-
-### Enter your password when prompted
-
----
-
-## Non-interactive download of files from the Web
-
-```
-wget [option]... [URL]...
-```
-
-* Non-interactive means that it can work in the background, while the user is not logged on.
-
-* This allows you to start a retrieval and disconnect from the system, letting Wget finish the work.
-
-* By contrast, most of the Web browsers require constant user's presence, which can be a great hindrance when transferring a lot of data.
-
----
-
-## Listing files and directories
-
-![tab47](http://localhost:4000/img/t47.png )
-
-The directories `.`, `..`, and `~`
-
-```
-$ ls -a [Enter]
-$ cd . [Enter]
-$ cd .. [Enter]
-$ ls ~/oeiras
-
-```
-
----
-
-## Handling files and directories
-![tab48](http://localhost:4000/img/t48.png)
-
-```more``` ,  ```less```,  ```clear```
-
----
-
-## Redirection
-![tab49](http://localhost:4000/img/t49.png)
+<img src="http://localhost:4000/img/miniconda-prompt-2.png" alt="miniconda-prompt-2" style="width:750px;"/>
 
 ---
 
 # ...
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
 </section>
 
@@ -618,8 +399,8 @@ Variable names may be composed of
 >>> camels = 9
 >>> camels
 9
->>> silk = camels * 4
->> silk
+>>> silk_one2 = camels * 4
+>> silk_one2
 36
 ```
 
@@ -681,6 +462,23 @@ make it fast.
 
 ---
 
+## Solution to **Challenge #2**
+```python
+from math import pi
+R = 10.0
+V = (4.0/3.0)*pi*(R**3)
+print V
+```
++ in this case we import a specific object from math instead of importing the whole `math` module
+
+<br>
+### Advantages
+
+> 1. f the module is big and we need only one function; 
+> 2. we not using the "." syntax and the name of the variable pi is shorter!
+
+---
+
 ## **Challenge #3**
 
 ##### Calculate the distance between two points in the 3D space
@@ -696,6 +494,24 @@ make it fast.
 >+  Print the distance to the screen
 
 ![slot](http://localhost:4000/img/cartesiandistance.png)
+
+---
+
+## Solution to *Challenge #3*
+```
+import math
+
+x1 = 43.64
+y1 = 30.72
+z1 = 88.95
+
+x2 = 45.83
+y2 = 31.11
+z2 = 92.04
+
+dist = math.sqrt((x1-x2)**2 + (y1-y2)**2 + (z1-z2)**2)
+print dist
+```
 
 ---
 
@@ -734,8 +550,6 @@ calculator.
 -  How to read from the keyboard
 
 -  How to write to the screen
-
--  How to repeat things
 
 -  How to create your own modules
 
@@ -793,23 +607,20 @@ Type a number: 3
 
 ---
 
-##  **Challenge #2**
-
->Write a program that reads something from the keyboard and print it to the screen.
-
----
-
 ## Input from a text file
 
 -  We need to “access” an existing input file
 
 -  And read its content
 
-```
+```python
+# 'access' an existing input file
 Infile = open("insulin.txt")
 
+# read its content
 content = Infile.read()
 
+# show its content
 print content
 ```
 
@@ -822,14 +633,20 @@ print content
 
 
 #### Python module insulin.py
-```
+```python
 insulin = "GIVEQCCTSICSLYQLENYCNFVNQHLCGSHLVEALYLVCGERGFFYTPKT"
 ```
 #### Python program my_first_import.py
-```
+```python
 from insulin import insulin
 print insulin
 ```
+
+---
+
+##  **Challenge #2**
+
+>Write a program that reads something from the keyboard and print it to the screen.
 
 ---
 
@@ -856,7 +673,7 @@ Which command we use?
 
 -  We have to write to it.
 
-```
+```python
 from insulin import insulin
 
 outfile = open("my_output.txt", "w")
@@ -880,6 +697,31 @@ Test it with a DNA sequence for which you know the result, for instance “AAAAC
 
 ---
 
+## Solution to challenge #4
+One possible solution
+```python
+dna = 'AGCTTCGA'
+
+print dna.count('A')
+print dna.count('C')
+print dna.count('T')
+print dna.count('G')
+```
+Another possible solution:
+```python
+dna = 'AGCTTCGA'
+elem =  dna.count ('A')
+print  elem
+elem =  dna.count ('C')
+print  elem
+elem =  dna.count ('T')
+print  elem
+elem =  dna.count ('G')
+print  elem
+```
+
+---
+
 ## Recap
 
 -  string variables contain text
@@ -891,8 +733,6 @@ Test it with a DNA sequence for which you know the result, for instance “AAAAC
 -  you can enter text with `raw_input()`    
 
 -  `write()` writes to an open file
-
--  for loops repeat commands
 
 -  comments starts with `#` or `'''`
 
@@ -913,10 +753,9 @@ Test it with a DNA sequence for which you know the result, for instance “AAAAC
 <img src="http://localhost:4000/img/pp7.png" alt="slot" style="width: 600px;"/>
 
 
-```
+```python
 # insulin [Homo sapiens] GI:386828
-insulin = "GIVEQCCTSICSLYQLENYCFVNQHLC\
-      GSHLVEALYLVGERGFFYTPKT"
+insulin = "GIVEQCCTSICSLYQLENYCFVNQHLCGSHLVEALYLVGERGFFYTPKT"
 
 for amino_acid in "ACDEFGHIKLMNPQRSTVWY":
   number = insulin.count(amino_acid)
@@ -928,7 +767,7 @@ for amino_acid in "ACDEFGHIKLMNPQRSTVWY":
 ## Repetitive tasks
 Consider the solutions of challenge #4 from previous session:
 
-```
+```python
 dna = "AGCTTCGA"
 
 print dna.count("A")
@@ -936,7 +775,7 @@ print dna.count("C")
 print dna.count("T")
 print dna.count("G")
 ```
-```
+```python
 dna = "AGCTTCGA"
 elem =  dna.count ("A")
 print  elem
@@ -954,8 +793,8 @@ print  elem
 
 The `for` command repeats other commands:
 
-```
-dna = "AGCTTCGA”
+```python
+dna = "AGCTTCGA"
 
 for base in "ACTG":
   print dna.count(base)
@@ -966,13 +805,13 @@ The commands that are repeated must be **indented** <br> **(shifted right by fou
 ---
 
 ## Compare
-```
-dna = "AGCTTCGA”
+```python
+dna = "AGCTTCGA"
 for base in "ACTG":
   print dna.count(base)
 ```
 Would you prefer this implementation?
-```
+```python
 dna = "AGCTTCGA"
 
 print dna.count("A")
@@ -984,8 +823,27 @@ Why or why not?
 
 ---
 
+## Use a `for` loop <br>to read a file line by line
+```python
+Input_file = open('my_file.txt')
+for line in Input_file:
+  print line
+```
+
+## Look how beautiful it can be…
+```python
+import urllib
+url = 'http://www.uniprot.org/uniprot/P12931.fasta'
+src_human = urllib.urlopen(url)
+for line in src_human:
+  print line
+```
+
+---
+
 ###  **Challenge #1**
 
+https://www.uniprot.org/uniprot/Q9UQ24.fasta
 > * Retrieve the 1132-residue sequence of human telomerase reverse transcriptase isoform 1 from the NCBI protein database.
 > * Choose the FASTA format. 
 > * Copy the sequence to a text file (`telomerase.txt`).
@@ -999,21 +857,16 @@ Write a program that:
 
 ---
 
-## Use a `for` loop <br>to read a file line by line
-```
-Input_file = open(“my_file.txt”)
-for line in Input_file:
-  print line
-```
+## Solution to challenge #1
+```python
+telomerase = open("telomerase.txt")
 
-## Look how beautiful it can be…
-```
-import urllib
-url = 'http://www.uniprot.org/\
-  uniprot/P12931.fasta'
-src_human = urllib.urlopen(url)
-for line in src_human:
-  print line,
+seq = telomerase.read()
+
+print seq
+
+for aa in seq:
+  print aa
 ```
 
 ---
@@ -1027,6 +880,16 @@ Write a file and program that:
 
 ---
 
+## Solution to *Challenge #2*
+```python
+telomerase = open("telomerase.txt")
+
+for line in telomerase:
+  print line
+```
+
+---
+
 <img src="http://localhost:4000/img/pp8.png" alt="slot" style="width: 700px;"/>
 
 ---
@@ -1034,6 +897,20 @@ Write a file and program that:
 ##  **Challenge #3**
 
 > Which amino acid is the most frequent in the sequence of the telomerase reverse transcriptase isoform 1?
+
+---
+
+## Solution to *Challenge #3*
+```python
+telomerase = open("telomerase.txt")
+
+seq = telomerase.read()
+
+for aa in "ACDEFGHKILMNPQRSTVYW":
+  aa_count = seq.count(aa)
+  aa_freq = aa_count/float(len(seq))
+  print aa, round(aa_freq, 3)
+```
 
 ---
 
@@ -1136,6 +1013,17 @@ TAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
 
 ---
 
+## Solution to *Challenge #1*
+
+```python
+seq = open("SingleSeq.fasta")
+
+for line in seq:
+    print line
+```
+
+---
+
 ## **Challenge #2**
 
 > * Open the file `SingleSeq.fasta`
@@ -1143,6 +1031,20 @@ TAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
 > * read its content line by line 
 > 
 > * and write it to another file.
+
+---
+
+## Solution to *Challenge #2*
+
+```python
+seq = open("SingleSeq.fasta")
+seq_2 = open("SingleSeq-2.fasta","w")
+
+for line in seq:
+    seq_2.write(line)
+
+seq_2.close()
+```
 
 ---
 
@@ -1227,9 +1129,37 @@ EAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
 
 ---
 
+## Solution to *Challenge #3*
+
+```python
+seq = open("SingleSeq.fasta")
+
+for line in seq:
+    if line[0] == '>':
+        print line
+
+```
+
+---
+
 ## **Challenge #4**
 
 > Read a file in FASTA format and write to a new file  only the header of the record.
+
+---
+
+## Solution to *Challenge #4*
+
+```python
+fasta = open('SingleSeq.fasta')
+header = open('header.txt', 'w’)
+
+for line in fasta:
+    if line[0] == '>':
+        header.write(line)
+
+header.close()
+```
 
 ---
 
@@ -1240,10 +1170,45 @@ EAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
 
 ---
 
+## Solution to challenge #5
+
+```python
+fasta = open('SingleSeq.fasta')
+seq = open('seq.txt','w')
+
+for line in fasta:
+    if line[0] != '>':
+        seq.write(line)
+
+seq.close()
+```
+
+---
+
 ## **Challenge:** 
 ### **Merge programs 4 and 5**
 
 > In other words, read a file in FASTA format and write the header to a file and the sequence to a different one.
+
+---
+
+## Solution to *Challenge #4 and #5* merged
+
+
+```
+fasta = open('SingleSeq.fasta')
+header = open('header.txt', 'w')
+seq = open('seq.txt','w')
+
+for line in fasta:
+    if line[0] == '>':
+        header.write(line)
+    else:
+        seq.write(line)
+
+header.close()
+seq.close()
+```
 
 ---
 
@@ -1257,6 +1222,24 @@ EAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
 
 ---
 
+## Solution to *Challenge #6*
+
+```python
+seq_fasta = open("SingleSeq.fasta")
+
+seq = ''
+
+for line in seq_fasta:
+    if line[0] == '>':
+        header = line
+    else:
+        seq = seq + line.strip()
+
+print header, seq
+```
+
+---
+
 ## **Challenge #7**
 
 >+   Implement challenge #6 by counting the number of cysteine ("C") residues in the sequence
@@ -1264,10 +1247,68 @@ EAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
 
 ---
 
+## Solution to *Challenge #7*
+
+```python
+seq_fasta = open("SingleSeq.fasta")
+
+seq = ''
+
+for line in seq_fasta:
+    if line[0] == '>':
+        header = line
+    else:
+        seq = seq + line.strip()
+
+num_cys = seq.count("C")
+
+print header, seq, num_cys
+```
+
+---
+
 ## **Challenge #8**
 
 >+ Read a file in FASTA format line-by-line.
 >+ Print or write the **record** to a file only if the sequence is from Homo sapiens.
+
+---
+
+## Solution to *Challenge #8*
+
+```python
+seq_fasta = open("SingleSeq.fasta")
+
+seq = ''
+header = ''
+
+for line in seq_fasta:
+    if line[0] == '>':
+        if "Homo sapiens" in line:
+            header = line
+    else:
+        if header:
+            seq = seq + line
+
+if header:
+    print header + seq
+else:
+    print "The record is not from H. sapiens"
+```
+
+Note the use of `if header`:
+
+Apparently **there is no statement after the condition**
+
+---
+
+In Python empty objects in `if` conditions are interpreted as `False` by default.
+
+
+Therefore `header` here is treated as Boolean:
+
+* if it is empty it will be interpreted as `False`
+* once it is filled, it becomes `True`
 
 ---
 
@@ -1297,10 +1338,49 @@ EALQDVEDENQ
 
 ---
 
+## Solution to *Challenge #9*
+
+```python
+fasta = open('SwissProt-Human.fasta')
+headers = open('headers.txt', 'w')
+
+for line in fasta:
+    if line[0] == '>':
+        headers.write(line)
+
+headers.close()
+
+>sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
+>sp|P62258|1433E_HUMAN 14-3-3 protein epsilon OS=Homo sapiens
+>sp|Q04917|1433F_HUMAN 14-3-3 protein eta OS=Homo sapiens GN=YWHAH
+```
+
+---
+
 ## **Challenge #10**
 
 > * Read a multiple sequence FASTA file and 
 > * write the sequences to a new file separated by a blank line
+
+---
+
+## Solution to *Challenge #10*
+
+```python
+fasta = open('SwissProt-Human.fasta.fasta')
+seqs = open('seqs.txt', 'w')
+
+for line in fasta:
+    if line[0] == '>':
+        seqs.write('\n')
+    elif line[0] != '>':
+        seqs.write(line)
+
+seqs.close()
+
+
+seqs.write(line.strip() + '\n')
+```
 
 ---
 
@@ -1311,10 +1391,73 @@ EALQDVEDENQ
 
 ---
 
+## Solution to *Challenge #11*
+
+```python
+human_fasta = open('SwissProt-Human.fasta')
+Outfile = open('SwissProt-Human-AC.txt','w')
+
+for line in human_fasta:
+    if line[0] == '>':
+        AC = line.split('|')[1]
+        Outfile.write(AC + '\n')
+
+Outfile.close()
+```
+
+---
+
 ### **Challenge #12**
 
 >+   Read FASTA records from a file
 >+   Count (and print) the cysteine residues in each sequence.
+
+---
+
+## Solution to *Challenge #12*
+
+One possible solution:
+```python
+fasta = open('sprot_prot.fasta')
+
+seq = ''
+
+for line in fasta:
+    if line[0] == '>' and seq == '':
+        header = line[4:10]
+    elif line[0] != '>':
+        seq = seq + line.strip()
+    elif line[0] == '>' and seq != '':
+        cys_num = seq.count('C')
+        print header, ': ', cys_num
+        header = line[4:10]
+        seq = ''
+
+cys_num = seq.count('C')
+print header, ': ', cys_num
+```
+
+---
+
+## Solution to *Challenge #12*
+
+Another possible solution:
+
+```python
+fasta = open('sprot_prot.fasta')
+
+seq = ''
+
+for line in fasta:
+    if line[0]=='>':
+        if seq:
+            cys_num = seq.count('C')
+            print header, ':' , cys_num
+        header = line.split('|')[1]
+        seq = ''
+    else:
+        seq = seq + line.strip()
+```
 
 ---
 
@@ -1326,6 +1469,54 @@ EALQDVEDENQ
 
 ---
 
+## Solution to *Challenge #13*
+One possible solution:
+```python
+fasta = open('sprot_prot.fasta')
+output = open('homo_sapiens.fasta', 'w')
+seq = ''
+for line in fasta:
+    if line[0] == '>' and seq == '':
+        header = line
+    elif line[0] != '>':
+        seq = seq + line
+    elif line[0] == '>' and seq != '':
+        if "Homo sapiens" in header:
+              output.write(header + seq)
+        header = line
+        seq = ''   
+
+if "Homo sapiens" in header:
+  output.write(header + seq)
+
+output.close()
+```
+
+---
+
+## Solution to *Challenge #13*
+Another possible solution:
+```python
+fasta = open('sprot_prot.fasta')
+output = open('sprot_human.fasta', 'w')
+
+seq = ''
+
+for line in fasta:
+  if line[0]=='>':
+    if seq:
+      if "Homo sapiens" in header:
+        output.write(header + seq)
+    header = line
+    seq = ''
+  else:
+    seq = seq + line
+
+output.close()
+```
+
+---
+
 ## **Challenge #14 homework**
 
 +  Read a multiple sequence file in FASTA format and only write to a new file the records the sequences of which start with a methionine ('M') and have at least two tryptophan residues ('W')
@@ -1333,6 +1524,33 @@ EALQDVEDENQ
     1. Read a multiple sequence file in FASTA format and write to a new file only the records of the sequences starting with a methionine ('M')
     2. Read a multiple sequence file in FASTA format and write to a new file only the records of the sequences having at least two tryptophan residues ('W')
     3. Finally merge the two steps
+
+---
+
+## Solution II to *Challenge #14*
+```python
+fasta = open('SwissProtHuman.fasta','r')
+outfile = open('SwissProtHuman-Filtered.fasta','w')
+
+seq = ''
+
+for line in fasta:
+  if line[0:1] == '>' and seq == '':
+    header = line
+  elif line [0:1] != '>':
+    seq = seq + line
+  elif line[0:1] == '>' and seq != '':
+    TRP_num = seq.count('W')
+    if seq[0] == 'M' and TRP_num > 1:
+      outfile.write(header + seq)
+    seq = ''
+    header = line
+
+TRP_num = seq.count('W')
+if seq[0] == 'M' and TRP_num > 1:
+  outfile.write(header + seq)
+outfile.close()
+```
 
 ---
 
@@ -1351,6 +1569,32 @@ atctaaatccaccttcctatcgatcgtgaccacccccataaaataggtcaactccataaa
 cacctccatcaccaacgctagactcacaacccagaacatgttaatcaaccggtgggccaa
 Gtaccgttgtagctctctcgtaaacacaagaaccaacaccaaacaacatactacaactga
 ...
+```
+
+---
+
+## Solution II to *Challenge #15*
+
+```python
+InputFile = open("ap006852.gbk")
+OutputFile = open("ap006852.fasta","w")
+flag = 0
+
+for line in InputFile:
+  if line[0:9] == 'ACCESSION':
+    AC = line.split()[1].strip()
+    OutputFile.write('>'+AC+'\n')
+  if line[0:6] == 'ORIGIN':
+    flag = 1
+    continue
+  if flag == 1:
+    fields = line.split()
+    if fields != []:
+      seq = ''.join(fields[1:])
+      OutputFile.write(seq +'\n')
+
+InputFile.close()
+OutputFile.close()
 ```
 
 ---
@@ -1647,6 +1891,21 @@ store them into a variable
 
 ---
 
+## Solution to *Challenge #1*
+
+```python
+cancer_file = open('cancer-expressed.txt')
+
+cancer_list = []
+
+for line in cancer_file:
+  AC = line.strip()
+  cancer_list.append(AC)
+print cancer_list
+```
+
+---
+
 ##  **Challenge #2**
 
 >-  Create a list containing Uniprot ACs extracted from a FASTA file
@@ -1654,10 +1913,50 @@ store them into a variable
 
 ---
 
+## Solution to *Challenge #2*
+
+```python
+InputFile = open("SwissProtHuman.fasta","r")
+AC_list = []
+for line in InputFile:
+  if line[0] == '>':
+    fields = line.split('|')
+    AC_list.append(fields[1])
+print AC_list
+```
+
+---
+
 ##  **Challenge #3**
 
 >-   Read the human FASTA file one record after the other. Check if the record header contains one of the 10 ACs.
 >-   If YES, copy the header to a new file.
+
+---
+
+## Solution to *Challenge #3*
+
+```python
+cancer_file = open('cancer-expressed.txt')
+human_fasta = open('SwissProt-Human.fasta')
+Outfile = open('cancer-expressed.fasta','w')
+
+cancer_list = []
+
+for line in cancer_file:
+  AC = line.strip()
+  cancer_list.append(AC)
+
+for line in human_fasta:
+  if line[0] == '>':
+    AC = line.split('|')[1]
+    if AC in cancer_list:
+      Outfile.write(line)
+
+Outfile.close()
+```
+
+*We are not writing the whole record but the header line only*
 
 ---
 
@@ -1675,6 +1974,64 @@ MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSSWRVISSIEQKTERNEKKQQM
 MDDREDLVYQAKLAEQAERYDEMVESMKKVAGMDVELTVEERNLLSVAYKNVIGARRASWRIISSIEQKEENKGGEDKLKMIREYRQMVETELKLICCDILDVLDKHLIPAANTGESKVFYYKMKGDYHRYLAEFATGNDRKEAAENSLVAYKAASDIAMTELPPTHPIRLGLALNFSVFYYEILNSPDRACRLAKAAFDDAIAELDTLSEESYKDSTLIMQLLRDNLTLWTSDMQGDGEEQNKEALQDVEDENQ
 >sp|Q04917|1433F_HUMAN 14-3-3 protein eta OS=Homo sapiens
 GNYWHAHMGDREQLLQRARLAEQAERYDDMASAMKAVTELNEPLSNEDRNLLSVAYKNVVGARRSSWRVISSIEQKTMADGNEKKLEKVKAYREKIEKELETVCNDVLSLLDKFLIKNCNDFQYESKVFYLKMKGDYYRYLAEVASGEKKNSVVEASEAAYKEAFEISKEQMQPTHPIRLGLALNFSVFYYEIQNAPEQACLLAKQAFDDAIAELDTLNEDSYKDSTLIMQLLRDNLTLWTSDQQDEEAGEGN
+```
+
+---
+
+## Solution to *Challenge #4*
+One possible solution
+```
+cancer_file = open('cancer-expressed.txt')
+human_fasta = open('SwissProt-Human.fasta')
+Outfile = open('cancer_expressed.fasta','w')
+
+cancer_list = []
+seq = ''
+
+for line in cancer_file:
+  AC = line.strip()
+  cancer_list.append(AC)
+
+for line in human_fasta:
+  if line[0] == '>':
+    if seq:
+      if AC in cancer_list:
+        Outfile.write(header + seq)
+      header = line
+      AC = line.split('|')[1]
+      seq = ''
+  else:
+    seq = seq + line
+
+if AC in cancer_list:
+  Outfile.write(header+seq)
+```
+
+---
+
+## Solution to *Challenge #4*
+Another possible solution:
+```python
+cancer_file = open('cancer-expressed.txt')
+human_fasta = open('SwissProt-Human.fasta')
+Outfile = open('cancer_expressed.fasta','w')
+
+cancer_list = []
+
+for line in cancer_file:
+  AC = line.strip()
+  cancer_list.append(AC)
+
+for line in human_fasta:
+  if line[0] == ">":
+    field = line.split("|")
+    AC = field[1]
+    if AC in cancer_list:
+      Outfile.write(line)
+  else:
+    if AC in cancer_list:
+      Outfile.write(line)
+Outfile.close()
 ```
 
 ---
@@ -1811,6 +2168,25 @@ you have first to *define* it and then to *call* it
 
 ---
 
+## Solution to *Challenge #1*
+
+```python
+def triangle_area(b, h):
+    A = (b*h)/2.0 # function  body
+    return A      # function  body
+
+print triangle_area(2.28, 3.55)
+```
+
+```python
+def triangle_area(b, h):
+    return (b*h)/2.0
+
+print triangle_area(2.28, 3.55)
+```
+
+---
+
 ## General remarks
 
 - The statement to define a function is `def`
@@ -1832,7 +2208,7 @@ by a colon character followed by *indented instructions*
 
 - A function may or may not **return** a value
 
-```
+```python
 def triangle_area(b, h):
     '''Returns the area of a triangle'''  
     return (b*h)/2.0
@@ -1853,6 +2229,20 @@ print triangle_area.__doc__
 > * the difference, 
 >
 > * and the product of `arg1` and `arg2`.
+
+---
+
+## Solution to *Challenge #2*
+
+```python
+def get_values(arg1, arg2):
+    s = arg1 + arg2
+    d = arg1 - arg2
+    p = arg1 * arg2
+    return s, d, p
+
+print get_values(15, 8)
+```
 
 ---
 
@@ -2001,7 +2391,7 @@ It is possible to assign a name to the arguments of a function. In this case, th
 It is also possible to use default arguments (optional). <br> <br> These optional arguments must be placed in the last position(s) of the function definition
 
 
-```
+```python
 def print_funct(num, seq = "A"):
     print num, seq
     return
@@ -2036,6 +2426,25 @@ print_funct(10)
 
 ---
 
+## Solution to *Challenge #3*
+
+```python
+import math
+
+def distance(p1, p2):
+    dist = math.sqrt((p1[0]-p2[0])**2 +
+                     (p1[1]-p2[1])**2 +
+                     (p1[2]-p2[2])**2)
+    return dist
+
+p1 = (43.64, 30.72, 88.95)
+p2 = (45.83, 31.11, 92.04)
+
+print "Distance:", distance(p1, p2)
+```
+
+---
+
 ###  **Challenge #4**
 
 Write a function that:
@@ -2050,6 +2459,20 @@ Print the header
 
 ---
 
+## Solution to *Challenge #4*
+
+```python
+def return_header(filename):
+    fasta = open(filename)
+    for line in fasta:
+      if line[0] == '>':
+        return line
+
+print return_header('SingleSeq.fasta')
+```
+
+---
+
 ###  **Challenge #5**
 
 >Insert the previous function call 
@@ -2060,6 +2483,24 @@ Print the header
 
 ---
 
+## Solution to *Challenge #5*
+```python
+def return_header(filename):
+    fasta = open(filename)
+    for line in fasta:
+        if line[0] == '>':
+            return line
+
+filenames = ['SingleSeq1.fasta',
+              'SingleSeq2.fasta',
+              'SingleSeq3.fasta']
+
+for name in filenames:
+    print return_header(name)
+```
+
+---
+
 ###  **Challenge #6**
 
 Consider two output schemes for exercise 4:
@@ -2067,6 +2508,54 @@ Consider two output schemes for exercise 4:
 1. All the the headers are written to the same output file
 
 2. Each header is written in a separate output file
+
+---
+
+## Solution to *Challenge #6*
+one possible solution
+```python
+def return_header(filename):
+    fasta = open(filename)
+    for line in fasta:
+        if line[0] == '>':
+            return line
+
+filenames = ['SingleSeq1.fasta',
+             'SingleSeq2.fasta',
+             'SingleSeq3.fasta']
+
+output = open("headers.txt", "w")
+
+for name in filenames:
+    output.write(return_header(name) + '\n')
+
+output.close()
+```
+
+---
+
+## Solution to *Challenge #6*
+
+Another possible solution
+
+```python
+def return_header(filename):
+    fasta = open(filename)
+    for line in fasta:
+        if line[0] == '>':
+          return line
+
+filenames = ['SingleSeq1.fasta',
+             'SingleSeq2.fasta',
+             'SingleSeq3.fasta']
+n = 0
+for name in filenames:
+    n = n + 1
+    output = open("header" + str(n) + ".txt", "w")
+    output.write(return_header(name))
+
+output.close()
+```
 
 ---
 
@@ -2307,12 +2796,42 @@ the indication 1 for primary neurons and 2 for secondary neurons)
 
 ---
 
+## Solution to *Challenge #1*
+
+```python
+neuron_lengths = []
+
+for line in open("neuron_data.txt"):
+    neuron_lengths.append(float(line.strip()))
+
+print neuron_lengths
+```
+
+---
+
 ###  **Challenge #2**
 
 > Extend the program so that
 >
 > - read data form `neuron_data-2.txt`
 > - stores primary and secondary neuron lengths to different lists.
+
+---
+
+## Solution to *Challenge #2*
+```python
+primary = []
+secondary = []
+
+for line in open("neuron_data-2.txt"):
+    data = line.split()
+    if data[0] == '1':
+        primary.append(float(data[1]))
+    else:
+        secondary.append(float(data[1]))
+
+print primary, secondary
+```
 
 ---
 
@@ -2338,11 +2857,77 @@ the indication 1 for primary neurons and 2 for secondary neurons)
 
 ---
 
+## Solution to *Challenge #3*
+One possible solution
+
+```
+length_list = []
+
+for line in open("neuron_data.txt"):
+    length_list.append(float(line.strip()))
+
+av = sum(length_list)/float(len(length_list))
+print av
+```
+
+---
+
+## Solution to *Challenge #3*
+
+another possible solution
+
+```python
+primary = []
+secondary = []
+
+for line in open("neuron_data-2.txt"):
+    data = line.split()
+    if data[0] == '1':
+        primary.append(float(data[1]))
+    else:
+        secondary.append(float(data[1]))
+
+primary_av = sum(primary)/float(len(primary))
+secondary_av = sum(secondary)/float(len(secondary))
+
+print "primary neuron average: ",primary_av
+print "secondary neuron average: ", secondary_av
+```
+
+---
+
 ##  **Challenge #4**
 
 > Extend program 3 so that 
 >
 > - it calculates the standard deviation of the neuron length.
+
+---
+
+## Solution to *Challenge #4*
+
+```python
+primary = []
+secondary = []
+
+for line in open("neuron_data-2.txt"):
+    data = line.split()
+    if data[0] == '1':
+      primary.append(float(data[1]))
+    else:
+      secondary.append(float(data[1]))
+
+primary_av = sum(primary)/len(primary)
+
+import math
+
+total = 0.0
+for value in primary:
+    total += (value - primary_av) ** 2
+    stddev = math.sqrt(total / len(primary))
+
+print primary_av, stddev
+```
 
 ---
 
@@ -2393,6 +2978,22 @@ out.close()
 
 ---
 
+## Solution to *Challenge #5*
+
+```python
+out = open('neuron_data-3.txt', 'w')
+
+data1 =  [1, 2, 2, 1, 1, 2, 1, 2, 2]
+data2 = [16.38, 139.90, 441.46, 29.03, 40.93,
+ 202.07, 142.30, 346.00, 300.00]
+
+for i in xrange(len(data1)):
+    out.write(str(data1[i]) + '\t' +  str(data2[i]) + '\n')
+out.close()
+```
+
+---
+
 ## String formatting
 
 Nice output can be generated by formatting characters:
@@ -2425,6 +3026,37 @@ print  S.format (a,  math.sqrt(a))
 
 ---
 
+## Solution to *Challenge #6*
+```python
+out = open('neuron_data-3.txt', 'w')
+
+data1 =  [1, 2, 2, 1, 1, 2, 1, 2, 2]
+data2 = [16.38, 139.90, 441.46, 29.03, 40.93,
+202.07, 142.30, 346.00, 300.00]
+
+for i in xrange(len(data1)):
+  out.write("%i%s%f%s"%(data1[i],'\t', data2[i],'\n'))
+
+out.close()
+```
+
+If you want to switch two columns:
+
+```python
+Outfile = open('neuron_data-3.txt', 'w')
+
+data1 =  [1, 2, 2, 1, 1, 2, 1, 2, 2]
+data2 = [16.38, 139.90, 441.46, 29.03, 40.93,
+202.07, 142.30, 346.00, 300.00]
+
+for i in xrange(len(data1)):
+    Outfile.write("%i%s%f%s"%(data2[i],'\t', data1[i],'\n'))
+
+Outfile.close()
+```
+
+---
+
 ## Reading and writing tables
 + Read each table column into a different list
 
@@ -2452,6 +3084,30 @@ print  S.format (a,  math.sqrt(a))
 >   3. and the shortest and the longest lengths.
 > + Write the results to a file using string formatting.
 > + You can repeat the exercise for secondary neurons.
+
+---
+
+## Solution to *Challenge #7*
+```python
+data = []
+
+for line in open('neuron_data-2.txt'):
+    columns = line.split()
+    if columns[0] == '1':
+        data.append(float(columns[1]))
+
+n_items = len(data)
+total = sum(data)
+shortest = min(data)
+longest = max(data)
+
+out = open("neuron_data_summary.txt","w")
+out.write("nr of lengths  : %7i \n"%(n_items))
+out.write("tot length     : %7.1f \n"%(total))
+out.write("shortest length: %7.2f \n"% (shortest))
+out.write("longest length : %7.2f \n"%(longest))
+out.close()
+```
 
 ---
 
@@ -2840,6 +3496,50 @@ print data_sorted
 
 ---
 
+## Solution to *Challenge #1*
+One  solution:
+
+```python
+from operator import itemgetter
+data = [
+[5, 10, 4, 3, 2],
+[6, 7, 8, 9, 10],
+]
+
+data.sort(key=itemgetter(1))
+
+for row in data:
+    for i in xrange(len(row)):
+        row[i] = str(row[i]) #replace nr with strings
+
+for elem in data:
+    print "\t".join(elem) + "\n”
+```
+
+---
+
+## Solution to *Challenge #1*
+
+another possible solution:
+
+```python
+from operator import itemgetter
+
+data = [
+[5, 10, 4, 3, 2],
+[6, 7, 8, 9, 10],
+]
+
+data.sort(key=itemgetter(1))
+
+# format table as strings
+for row in data:
+    row = [str(x) for x in row]
+      print "\t".join(row)
+```
+
+---
+
 ### Sort a table by the first column, 
 ### then by the second, then by the third, and so on…
 
@@ -2915,6 +3615,24 @@ Secondary 140.738
 Secondary 214.723
 ```
 
+---
+
+## Solution to *Challenge #2*
+
+```python
+neurons = open("neuron_data.txt")
+
+table1 = []
+table2 = []
+
+for line in neurons:
+    col = line.split()
+    if col[0] == 'Primary':
+        table1.append([col[0],float(col[1])])
+    else:
+        table2.append([col[0],float(col[1])])
+
+```
 
 ---
 
@@ -2925,10 +3643,38 @@ Secondary 214.723
 
 ---
 
+## Solution to *Challenge #3*
+
+```python
+from operator import itemgetter
+
+# sort by second column
+table1.sort(key=itemgetter(1))
+
+#show the three longest neurons
+print table1[-3:]
+```
+
+---
+
 ##  **Challenge #4**
 
 > + Turn the table
 > + calculate the length average
+
+---
+
+## Solution to *Challenge #4*
+
+```python
+# rotate the table
+columns = zip(*table1)
+# take the 1st  column (1st  row of table1)
+lengths = columns[1]
+print lengths
+# print average
+print sum(lengths) / len(lengths)
+```
 
 ---
 
@@ -2938,15 +3684,71 @@ Secondary 214.723
 
 ---
 
+## Solution to *Challenge #5*
+Create an empty table of 10 x 10 cells
+
+```python
+>>> empty_table = [[0]*10 for x in xrange(10)]
+>>> empty_table
+[[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0,
+0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0,
+0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0,
+0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
+```
+
+---
+
 ##  **Challenge #6**
 
 >Fill the table with the numbers from 1 to 100.
 
 ---
 
+## Solution to *Challenge #6*
+Fill the table with the numbers from 1 to 100
+```python
+>>> empty_table = [[0]*10 for x in xrange(10)]
+>>> n = 0
+>>> for row in empty_table:
+...     for i in xrange(len(row)):
+...         n = n + 1
+...         row[i] = str(n)
+...
+>>> empty_table
+[['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'], ['11', '12', '13', '14', '15', '16', '17', '18',
+'19', '20'], ['21', '22', '23', '24', '25', '26', '27', '28', '29', '30'], ['31', '32', '33',
+'34', '35', '36', '37', '38', '39', '40'], ['41', '42', '43', '44', '45', '46', '47', '48', '49',
+'50'], ['51', '52', '53', '54', '55', '56', '57', '58', '59', '60'], ['61', '62', '63', '64',
+'65', '66', '67', '68', '69', '70'], ['71', '72', '73', '74', '75', '76', '77', '78', '79',
+'80'], ['81', '82', '83', '84', '85', '86', '87', '88', '89', '90'], ['91', '92', '93', '94',
+'95', '96', '97', '98', '99', '100']]
+```
+
+---
+
 ##  **Challenge #7**
 
 >Save the table to a tab-separated file.
+
+---
+
+## Solution to *Challenge #7*
+Save the table to a tab-separated file
+```python
+empty_table = [[0]*10 for x in xrange(10)]
+
+n = 0
+for row in empty_table:
+    for i in xrange(len(row)):
+        n = n + 1
+        row[i] = str(n)
+
+outfile = open("table100.txt", "w")
+
+for row in empty_table:
+    outfile.write('\t'.join(row) + '\n')
+outfile.close()
+```
 
 ---
 
@@ -3114,15 +3916,63 @@ True
 
 ---
 
+## Solution to *Challenge #1*
+
+```python
+F = open('rna_seq.fasta')
+Out = open('protein_seq.fasta','w')
+
+seq=''
+for line in F:
+    if line[0] == '>':
+        header = line.split()
+        geneID = header[0]
+        Out.write(geneID + '_protein\n')
+    else:
+        seq = seq + line.strip()
+
+from tgac import codonAMINO
+prot = ''
+for i in range(0,len(seq),3):
+    triplet =seq[i:i+3]
+    if codonAMINO.has_key(triplet): # is the triplet in the dictionary? equivalent to: if triplet in codonAMINO
+        prot = prot + codonAMINO[triplet]
+    else:
+        prot = prot + '?'
+
+Out.write(prot + '\n')
+```
+
+---
+
 ## Challenge #2
 
 > Implement program 1 for the three reading frames
 
 ---
 
+## Solution to *Challenge #2*
+```python
+from tgac import codonAMINO
+
+prot = ''
+for j in range(3):
+    Out.write(str(j) + "-frame\n")
+    for i in range(j,len(seq),3):
+        if codonAMINO.has_key(seq[i:i+3]):
+            prot = prot + codonAMINO[seq[i:i+3]]
+        else:
+            prot = prot + '*'
+
+    Out.write(prot + '\n')
+prot = ''
+```
+
+---
+
 ## Sort values of a dictionary by its keys
 
-```
+```python
 # sort values of a dictionary by its keys
 
 structures = {

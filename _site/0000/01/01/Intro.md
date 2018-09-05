@@ -3,7 +3,7 @@
 
 ---
 
-### In this course you will learn to:
+## In this course you will learn to:
 
 + Read text files (and websites)
 + Selectively extract and manipulate information
@@ -26,17 +26,9 @@ Why are we here?
 
 What are your expectations?
 
+What do you need programming for?
 
----
-Challenge
-
-> #### What do you need programming for?
-> #### What would you like to take home from the course?
-
-Write on a card
-
-> Finish within 7 minutes
-
+What would you like to take home from the course?
 
 ---
 
@@ -45,7 +37,7 @@ Write on a card
 |        | `Day 1 Getting Started`          | `Day 2 Parsing`     | `Day 3 Managing Data` | `Day 4 Libraries`  |
 | --- | --- | --- | --- | ---|
 | `1` | Intro & expectations | Repeating things  | Functions | Searching |
-| `2` | Unix Tutorial | Reading files | Functions | Searching |
+| `2` | Python | Reading files | Functions | Searching |
 | `3` | Phython Shell | Parsing | Data columns | Python Libraries |
 | `4` | Phython Programs | Parsing | Data columns | Python Libraries |
 
