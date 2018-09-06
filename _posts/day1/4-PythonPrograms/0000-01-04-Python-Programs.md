@@ -4,7 +4,7 @@
 >
 > ### Input and output
 
----
+--
 
 ## In this module you can learn
 
@@ -16,11 +16,11 @@
 
 -  How to create your own modules
 
----
+--
 
 <img src="{{site.url}}/img/pp1.png" alt="slot" style="width: 700px;"/>
 
----
+--
 
 ## What is a program?
 ---
@@ -30,7 +30,7 @@
 > 
 > ### lines of code
 
----
+--
 
 ##  **Challenge #1**
 
@@ -39,20 +39,20 @@
 >-  save the file with the name my_print.py and exit
 >-  Open a terminal, go to the directory where you saved `my_print.py` and type at the cursor: `python my_print.py`
 
----
+--
 
 <img src="{{site.url}}/img/pp2.png" alt="slot" style="width: 700px;"/>
 
----
+--
 
 <img src="{{site.url}}/img/pp3.png" alt="slot" style="width: 700px;"/>
 
----
+--
 
 ## Input
 <img src="{{site.url}}/img/pp4.png" alt="slot" style="width: 700px;"/>
 
----
+--
 
 ## Input from the program itself
 ```
@@ -68,7 +68,7 @@ Type a number: 3
 3
 ```
 
----
+--
 
 ## Input from a text file
 
@@ -87,7 +87,7 @@ content = Infile.read()
 print content
 ```
 
----
+--
 
 ## From a Python module
 -  A Python module is a text file (with the `.py` extension) that contains (Python) definitions/assignments
@@ -105,13 +105,13 @@ from insulin import insulin
 print insulin
 ```
 
----
+--
 
 ##  **Challenge #2**
 
 >Write a program that reads something from the keyboard and print it to the screen.
 
----
+--
 
 ##  **Challenge #3**
 
@@ -119,13 +119,13 @@ print insulin
 > 
 > Run it.
 
----
+--
 
 ## Output
 
 <img src="{{site.url}}/img/pp5.png" alt="slot" style="width: 600px;"/>
 
----
+--
 
 ## To the computer screen
 Which command we use?
@@ -144,7 +144,7 @@ outfile.write(insulin)
 outfile.close()
 ```
 
----
+--
 
 ##  **Challenge #4**
 
@@ -158,7 +158,7 @@ Write a program that counts how many times the four bases occur in a DNA sequenc
 
 Test it with a DNA sequence for which you know the result, for instance “AAAACCCGGT”. <br> This approach makes it much easier to discover small program errors.
 
----
+--
 
 ## Solution to challenge #4
 One possible solution
@@ -183,7 +183,7 @@ elem =  dna.count ('G')
 print  elem
 ```
 
----
+--
 
 ## Recap
 
@@ -199,6 +199,6 @@ print  elem
 
 -  comments starts with `#` or `'''`
 
----
+--
 
 # ...

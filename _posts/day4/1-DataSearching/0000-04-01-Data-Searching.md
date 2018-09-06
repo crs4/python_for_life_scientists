@@ -1,48 +1,48 @@
 # Data Searching
 
----
+--
 
 ## Searching (and manipulating) your data
 
 <img src="{{site.url}}/img/geneticcode.png" alt="slot" style="width: 600px;"/>
 
----
+--
 
 <img src="{{site.url}}/img/datser1.png" alt="slot" style="width: 600px;"/>
 
----
+--
 
 <img src="{{site.url}}/img/datser2.png" alt="slot" style="width: 600px;"/>
 
----
+--
 
 <img src="{{site.url}}/img/datser3.png" alt="slot" style="width: 600px;"/>
 
----
+--
 
 <img src="{{site.url}}/img/datser4.png" alt="slot" style="width: 600px;"/>
 
----
+--
 
 <img src="{{site.url}}/img/datser5.png" alt="slot" style="width: 600px;"/>
 
----
+--
 
 <img src="{{site.url}}/img/datser6.png" alt="slot" style="width: 600px;"/>
 
----
+--
 
 <img src="{{site.url}}/img/datser7.png" alt="slot" style="width: 600px;"/>
 
----
+--
 
 <img src="{{site.url}}/img/datser8.png" alt="slot" style="width: 600px;"/>
 
----
+--
 
 <img src="{{site.url}}/img/datser9.png" alt="slot" style="width: 600px;"/>
 
----
+--
 
 #### Let's give a look to the content of the tgac.py: 
 
@@ -76,7 +76,7 @@ AAC N
 etc.
 ```
 
----
+--
 
 ## Dictionaries
 
@@ -92,11 +92,11 @@ d = {key1:value1, key2:value2, …, keyN:valueN}
 
 + Keys must be **unique**, i.e. the same key cannot be associated to more than one value
 
----
+--
 
 <img src="{{site.url}}/img/datser_method.png" alt="slot" style="width: 700px;"/>
 
----
+--
 
 ```
 >>> d = {'pep1':'MGSNKSKPKDASQRRRSLEPAENVHGAGG', \
@@ -125,7 +125,7 @@ d = {key1:value1, key2:value2, …, keyN:valueN}
 { }
 ```
 
----
+--
 
 ```
 >>> dict = {"a":1, "b":2, "c":3}
@@ -146,7 +146,7 @@ d = {key1:value1, key2:value2, …, keyN:valueN}
 True
 ```
 
----
+--
 
 ## Challenge #1
 
@@ -154,7 +154,7 @@ True
 >
 > Use a single reading frame.
 
----
+--
 
 ## Solution to *Challenge #1*
 
@@ -183,13 +183,13 @@ for i in range(0,len(seq),3):
 Out.write(prot + '\n')
 ```
 
----
+--
 
 ## Challenge #2
 
 > Implement program 1 for the three reading frames
 
----
+--
 
 ## Solution to *Challenge #2*
 ```python
@@ -208,7 +208,7 @@ for j in range(3):
 prot = ''
 ```
 
----
+--
 
 ## Sort values of a dictionary by its keys
 
@@ -229,19 +229,19 @@ def sort_dict_by_keys(data):
 print sort_dict_by_keys(structures)
 ```
 
----
+--
 
 ## Remove redundancy
 
 <img src="{{site.url}}/img/redund1.png" alt="slot" style="width: 700px;"/>
 
----
+--
 
 ## Remove redundancy
 
 <img src="{{site.url}}/img/redund2.png" alt="slot" style="width: 700px;"/>
 
----
+--
 
 ```
 Q5XXA6                                                Q7Z769
@@ -261,11 +261,11 @@ Q14667                                                Q14667
 Q9Y5P2                                                Q9NQQ7
 ```
 
----
+--
 
 <img src="{{site.url}}/img/redund3.png" alt="slot" style="width: 700px;"/>
 
----
+--
 
 ## Sets
 - Sets are **unordered** collections of unique objects they are not sequence-like objects and that they cannot contain
@@ -278,13 +278,13 @@ membership in a set.
 - Set operations: **intersection, union, difference, symmetrical
 difference**
 
----
+--
 
 ### Create a new set
 In order to create a set, the method `set(x)` must be used,
 where `x` is a sequence-like object (string, tuple, list)
 
----
+--
 
 | | |
 |----|-----|
@@ -296,7 +296,7 @@ where `x` is a sequence-like object (string, tuple, list)
 | `remove(x)` | removes the element `x` and returns a message of error if `x` is not in the set |
 | `discard()`  |  removes the element `x` without returning any error message if `x` is not in the set |
 
----
+--
 
 ## S1.union(S2)
 The `union()` between 2 sets S1 and S2 creates a new set
@@ -311,7 +311,7 @@ set(['a', 'c', 'b', 'e', 'd'])
 set(['a', 'c', 'b', 'e', 'd'])
 ```
 
----
+--
 
 ## S1.intersection(S2)
 
@@ -327,7 +327,7 @@ set(['c'])
 set(['c'])
 ```
 
----
+--
 
 ## S1.symmetric_difference(S2)or S1 ^ S2
 
@@ -342,7 +342,7 @@ set(['a', 'b', 'e', 'd'])
 set(['a', 'b', 'e', 'd'])
 ```
 
----
+--
 
 ## S1.difference(S2) or S1 - S2
 
@@ -358,3 +358,7 @@ set(['a', 'b'])
 >>> S2 – S1
 set(['e', 'd'])
 ```
+
+--
+
+# ...

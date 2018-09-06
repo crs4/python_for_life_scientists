@@ -1,7 +1,7 @@
 # Parsing data records 
 ## Round 2
 
----
+--
 
 ## Comparing data from different files
 ```
@@ -31,7 +31,7 @@ Q8VCX2
 Q7Z769
 ```
 
----
+--
 
 First, you have to store the 10 Uniprot ID in a data structure
 
@@ -45,7 +45,7 @@ Lists are nice and veeeeery flexible data structures
  'Q8CH62', 'Q9GZY1', 'Q9NQQ7', 'Q8VCX2', 'Q7Z769']
 ```
 
----
+--
 
 ## List data structure
 
@@ -68,13 +68,13 @@ L = []  # the empty list
 
 ```
 
----
+--
 
 ## Operations with lists
 
 <img src="{{site.url}}/img/parsingimgCHANGE_cccp.png" alt="slot" style="width: 700px;"/>
 
----
+--
 
 ## Indexes
 
@@ -95,7 +95,7 @@ L = []  # the empty list
 >>>
 ```
 
----
+--
 
 ## Indexes
 
@@ -107,7 +107,7 @@ An **index** in Python always refers to such a starting point, something that is
 
 We humans in contrast always count the objects themselves.
 
----
+--
 
 ## Changing elements of list - 1 -
 #### The elements of a list can be changed/replaced after the list has been defined
@@ -124,7 +124,7 @@ We humans in contrast always count the objects themselves.
 
 s = any sequence
 
----
+--
 
 ## Changing elements of list - 1 -
 #### The elements of a list can be changed/replaced after the list has been defined
@@ -152,7 +152,7 @@ s = any sequence
 >>>
 ```
 
----
+--
 
 ## Changing elements of list - 2 -
 #### The elements of a list can be changed/replaced after the list has been defined
@@ -167,7 +167,7 @@ s = any sequence
 |l.pop(i) | *returns and removes the element at the given index* | 
 |l.remove(x) | *only removes the given element from the list* |
 
----
+--
 
 ## Changing elements of list - 2 - 
 #### The elements of a list can be changed/replaced after the list has been defined
@@ -196,7 +196,7 @@ s = any sequence
 [1, 3, 5, 7, ['a', 'b'], 'a', 'b']
 ```
 
----
+--
 
 ## Changing elements of list - 3 - 
 #### The elements of a list can be changed/replaced after the list has been defined
@@ -204,12 +204,12 @@ s = any sequence
 **These operations CHANGE the list**
 
 | | |
-| ---------- | ----------- |
+| --------- | ----------- |
 |l.reverse()| *reverses the elements and updates the list* |
 |l.sort()| *sorts the elements of a given list in a specific order - Ascending or Descending.* |
 |sorted(l)| *returns an ordered and iterable list* | 
 
----
+--
 
 ## Changing elements of list - 3 - 
 #### The elements of a list can be changed/replaced after the list has been defined
@@ -231,7 +231,7 @@ s = any sequence
 [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
----
+--
 
 ## Putting together lists and loops
 
@@ -261,7 +261,7 @@ s = any sequence
 The `xrange()` method generates the values upon call, i.e. it does not
 store them into a variable
 
----
+--
 
 ##  **Challenge #1**
 
@@ -270,7 +270,7 @@ store them into a variable
 >-   Store them into a list
 >-   Print the list
 
----
+--
 
 ## Solution to *Challenge #1*
 
@@ -285,14 +285,14 @@ for line in cancer_file:
 print cancer_list
 ```
 
----
+--
 
 ##  **Challenge #2**
 
 >-  Create a list containing Uniprot ACs extracted from a FASTA file
 >-   Print the list
 
----
+--
 
 ## Solution to *Challenge #2*
 
@@ -306,14 +306,14 @@ for line in InputFile:
 print AC_list
 ```
 
----
+--
 
 ##  **Challenge #3**
 
 >-   Read the human FASTA file one record after the other. Check if the record header contains one of the 10 ACs.
 >-   If YES, copy the header to a new file.
 
----
+--
 
 ## Solution to *Challenge #3*
 
@@ -339,7 +339,7 @@ Outfile.close()
 
 *We are not writing the whole record but the header line only*
 
----
+--
 
 ##  **Challenge #4**
 
@@ -357,7 +357,7 @@ MDDREDLVYQAKLAEQAERYDEMVESMKKVAGMDVELTVEERNLLSVAYKNVIGARRASWRIISSIEQKEENKGGEDKLK
 GNYWHAHMGDREQLLQRARLAEQAERYDDMASAMKAVTELNEPLSNEDRNLLSVAYKNVVGARRSSWRVISSIEQKTMADGNEKKLEKVKAYREKIEKELETVCNDVLSLLDKFLIKNCNDFQYESKVFYLKMKGDYYRYLAEVASGEKKNSVVEASEAAYKEAFEISKEQMQPTHPIRLGLALNFSVFYYEIQNAPEQACLLAKQAFDDAIAELDTLNEDSYKDSTLIMQLLRDNLTLWTSDQQDEEAGEGN
 ```
 
----
+--
 
 ## Solution to *Challenge #4*
 One possible solution
@@ -388,7 +388,7 @@ if AC in cancer_list:
   Outfile.write(header+seq)
 ```
 
----
+--
 
 ## Solution to *Challenge #4*
 Another possible solution:
@@ -415,7 +415,7 @@ for line in human_fasta:
 Outfile.close()
 ```
 
----
+--
 
 ## Putting together conditions and loops 
 ### `while` loops
@@ -430,7 +430,7 @@ The while statement is used for executing a set of statements until a given  con
 ...     a = a + 1
 ```
 
----
+--
 
 ## `while` loops
 ### `break`
@@ -446,7 +446,7 @@ The while statement is used for executing a set of statements until a given  con
 1 2 3 4
 ```
 
----
+--
 
 ## The Boolean values `True` and `False`
 `if` and `while` statements return a `False` value when they are applied to:
@@ -455,7 +455,7 @@ The while statement is used for executing a set of statements until a given  con
 - 0
 - Empty data structures: '',(),[],{}
 
----
+--
 
 ## The Boolean values <br>`True` and `False`
 
@@ -476,7 +476,7 @@ True
 >>>
 ```
 
----
+--
 
 ## Reading files with `while`
 
@@ -493,6 +493,6 @@ while line:
 
 > (but usually we won't do it)
 
----
+--
 
 # ...

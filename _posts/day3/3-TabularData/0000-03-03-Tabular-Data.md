@@ -1,6 +1,6 @@
 # Tabular data
 
----
+--
 
 ### In this module you can learn:
 
@@ -14,7 +14,7 @@
 
 -  How to sort
 
----
+--
 
 ## Representing a table as a list of lists:
 
@@ -36,7 +36,7 @@ table = [
 ]
 ```
 
----
+--
 
 ## How would you generate a table from a text file?
 
@@ -51,13 +51,13 @@ for line in T:
 print table
 ```
 
----
+--
 
 ## Overview
 
 <img src="{{site.url}}/img/tabulartable.png" alt="slot" style="width: 700px;"/>
 
----
+--
 
 ### Remove a row and write the table 
 ### to a tab-separated file
@@ -87,7 +87,7 @@ exp     gene1   gene2   gene3   gene4
 4       17      16      1       9
 ```
 
----
+--
 
 ### Insert a row and write to a tab-separated file
 
@@ -120,7 +120,7 @@ exp     gene1   gene2   gene3   gene4
 4       17      16      1       9
 ```
 
----
+--
 
 ### Transpose a table
 
@@ -147,7 +147,7 @@ gene3     2        3         3        1
 gene4     10       11       12        9
 ```
 
----
+--
 
 #### When the argument of a function is a list or a tuple and it is preceded by \*,
 #### it unpacks the list or the tuple and uses each element as an argument to the function
@@ -174,7 +174,7 @@ gene4     10       11       12        9
 True
 ```
 
----
+--
 
 ## Remove a column
 
@@ -204,7 +204,7 @@ exp     gene1        gene2          gene4
 4         17            16            9
 ```
 
----
+--
 
 ## Remove a column (live… 1)
 ```
@@ -232,7 +232,7 @@ exp     gene1        gene2          gene4
 ('gene3', '2', '3', '3', '1')
 ```
 
----
+--
 
 ## Remove a column (live… 2)
 
@@ -247,7 +247,7 @@ exp     gene1        gene2          gene4
 ('4', '17', '16', '9')]
 ```
 
----
+--
 
 ## Replace a column
 ```
@@ -278,7 +278,7 @@ exp     gene1          gene2          gene3         gene4
 3         16            21            20            12
 ```
 
----
+--
 
 ## Sorting
 
@@ -301,7 +301,7 @@ exp     gene1          gene2          gene3         gene4
 
 Methods of lists **MODIFY** the lists in place
 
----
+--
 
 ## The `sorted()` built-in function
 
@@ -319,7 +319,7 @@ Methods of lists **MODIFY** the lists in place
 [10, 9, 8, 7, 6, 6, 5, 3, 2, 1]
 ```
 
----
+--
 
 ## Sorting with `itemgetter`
 
@@ -350,7 +350,7 @@ print data
 5     10        4         3         2
 ```
 
----
+--
 
 ## Sort a table by any column
 
@@ -367,7 +367,7 @@ data_sorted = sorted(data, key = itemgetter(1))
 print data_sorted
 ```
 
----
+--
 
 ##  **Challenge #1**
 
@@ -375,7 +375,7 @@ print data_sorted
 > + convert its elements to strings
 > + and write it to a file
 
----
+--
 
 ## Solution to *Challenge #1*
 One  solution:
@@ -397,7 +397,7 @@ for elem in data:
     print "\t".join(elem) + "\n”
 ```
 
----
+--
 
 ## Solution to *Challenge #1*
 
@@ -419,7 +419,7 @@ for row in data:
       print "\t".join(row)
 ```
 
----
+--
 
 ### Sort a table by the first column, 
 ### then by the second, then by the third, and so on…
@@ -444,7 +444,7 @@ for row in table_sorted:
     print "\t".join(row)
 ```
 
----
+--
 
 ### Also consider that…
 
@@ -454,7 +454,7 @@ table = sorted(table, key=itemgetter(1), reverse=True)
 table = sorted(table, key=itemgetter(1,3), reverse=True)
 ```
 
----
+--
 
 ###  **Challenge #2**
 
@@ -496,7 +496,7 @@ Secondary 140.738
 Secondary 214.723
 ```
 
----
+--
 
 ## Solution to *Challenge #2*
 
@@ -515,14 +515,14 @@ for line in neurons:
 
 ```
 
----
+--
 
 ##  **Challenge #3**
 
 > + Sort the primary neuron’s table
 > + show the three longest neurons
 
----
+--
 
 ## Solution to *Challenge #3*
 
@@ -536,14 +536,14 @@ table1.sort(key=itemgetter(1))
 print table1[-3:]
 ```
 
----
+--
 
 ##  **Challenge #4**
 
 > + Turn the table
 > + calculate the length average
 
----
+--
 
 ## Solution to *Challenge #4*
 
@@ -557,13 +557,13 @@ print lengths
 print sum(lengths) / len(lengths)
 ```
 
----
+--
 
 ##  **Challenge #5**
 
 >Create an empty table of 10 x 10 cells.
 
----
+--
 
 ## Solution to *Challenge #5*
 Create an empty table of 10 x 10 cells
@@ -577,13 +577,13 @@ Create an empty table of 10 x 10 cells
 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 ```
 
----
+--
 
 ##  **Challenge #6**
 
 >Fill the table with the numbers from 1 to 100.
 
----
+--
 
 ## Solution to *Challenge #6*
 Fill the table with the numbers from 1 to 100
@@ -605,13 +605,13 @@ Fill the table with the numbers from 1 to 100
 '95', '96', '97', '98', '99', '100']]
 ```
 
----
+--
 
 ##  **Challenge #7**
 
 >Save the table to a tab-separated file.
 
----
+--
 
 ## Solution to *Challenge #7*
 Save the table to a tab-separated file
@@ -631,6 +631,6 @@ for row in empty_table:
 outfile.close()
 ```
 
----
+--
 
 # ...

@@ -1,6 +1,6 @@
 # The Python Shell
 
----
+--
 
 ## In this module you can learn:
 
@@ -10,7 +10,7 @@
 
 * How to import functions from Python modules
 
----
+--
 
 ### The interactive Python shell
 You can access the shell by typing `python` in a command-line terminal
@@ -25,7 +25,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 You can leave the shell with  `Ctrl-D`
 
----
+--
 
 ## **Challenge #1**
 
@@ -38,7 +38,7 @@ numbers
 >+  Calculate 3x5
 >+  Calculate a power of 2
 
----
+--
 
 ## Variables
 
@@ -61,7 +61,7 @@ Variable names may be composed of
 36
 ```
 
----
+--
 
 ### The **math** module
 
@@ -80,18 +80,18 @@ You can access them by importing the file.
 import math
 ```
 
----
+--
 
 Find the matching pairs of functions and x/y values.
 
 ![slot]({{site.url}}/img/mathgame.png)
 
----
+--
 
 ### Components of Python
 ![slot]({{site.url}}/img/pycomponents.png)
 
----
+--
 
 ### The Dogma of Programming
 
@@ -102,7 +102,7 @@ Find the matching pairs of functions and x/y values.
 * Third, and only if it is really necessary,
 make it fast.
 
----
+--
 
 ## **Challenge #2**
 
@@ -117,7 +117,7 @@ make it fast.
 >
 >*  Print the volume to the screen
 
----
+--
 
 ## Solution to **Challenge #2**
 ```python
@@ -134,7 +134,7 @@ print V
 > 1. f the module is big and we need only one function; 
 > 2. we not using the "." syntax and the name of the variable pi is shorter!
 
----
+--
 
 ## **Challenge #3**
 
@@ -152,7 +152,7 @@ print V
 
 ![slot]({{site.url}}/img/cartesiandistance.png)
 
----
+--
 
 ## Solution to *Challenge #3*
 ```
@@ -170,7 +170,7 @@ dist = math.sqrt((x1-x2)**2 + (y1-y2)**2 + (z1-z2)**2)
 print dist
 ```
 
----
+--
 
 ## Recap
 
@@ -183,6 +183,6 @@ calculator.
 
 +  You can leave the shell by Ctrl-D.
 
----
+--
 
 # ...

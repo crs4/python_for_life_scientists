@@ -1,7 +1,7 @@
 # Parsing data records
 ## ROUND 1
 
----
+--
 
 ## Two sequence records in FASTA format:
 
@@ -21,7 +21,7 @@ LSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYEILNSPEKACSLAK\
 TAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
 ```
 
----
+--
 
 ###  **Challenge #1**
 
@@ -32,7 +32,7 @@ TAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
 >
 > * and print it
 
----
+--
 
 ## Solution to *Challenge #1*
 
@@ -43,7 +43,7 @@ for line in seq:
     print line
 ```
 
----
+--
 
 ## **Challenge #2**
 
@@ -53,7 +53,7 @@ for line in seq:
 > 
 > * and write it to another file.
 
----
+--
 
 ## Solution to *Challenge #2*
 
@@ -67,7 +67,7 @@ for line in seq:
 seq_2.close()
 ```
 
----
+--
 
 ### Writing different things depending on a condition
 
@@ -81,7 +81,7 @@ LSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYEILNSPEKACSLA\
 KTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
 ```
 
----
+--
 
 ## Making choices 
 ### `if/elif/else`
@@ -99,7 +99,7 @@ else:
   statementN
 ```
 
----
+--
 
 ## Check these conditions
 
@@ -113,7 +113,7 @@ else:
 ==    !=     =>    <=    >      <
 ```
 
----
+--
 
 ### The `if/elif/else` construct produces different effects compared with the use of a series of `if` conditions
 
@@ -133,7 +133,7 @@ if 'T' in nucl: print 'T'
 if 'G' in nucl: print 'G'
 ```
 
----
+--
 
 ## **Challenge #3**
 
@@ -148,7 +148,7 @@ VASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYEILNSPEKACSLAKTAFD\
 EAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
 ```
 
----
+--
 
 ## Solution to *Challenge #3*
 
@@ -161,13 +161,13 @@ for line in seq:
 
 ```
 
----
+--
 
 ## **Challenge #4**
 
 > Read a file in FASTA format and write to a new file  only the header of the record.
 
----
+--
 
 ## Solution to *Challenge #4*
 
@@ -182,14 +182,14 @@ for line in fasta:
 header.close()
 ```
 
----
+--
 
 ## **Challenge #5**
 
 
 >Read a file in FASTA format and write to a new file only the sequence (without the header).
 
----
+--
 
 ## Solution to challenge #5
 
@@ -204,14 +204,14 @@ for line in fasta:
 seq.close()
 ```
 
----
+--
 
 ## **Challenge:** 
 ### **Merge programs 4 and 5**
 
 > In other words, read a file in FASTA format and write the header to a file and the sequence to a different one.
 
----
+--
 
 ## Solution to *Challenge #4 and #5* merged
 
@@ -231,7 +231,7 @@ header.close()
 seq.close()
 ```
 
----
+--
 
 ## **Challenge #6**
 
@@ -241,7 +241,7 @@ seq.close()
 >+   Save the header in a variable and the sequence in a different one
 >+   Print header and sequence separately
 
----
+--
 
 ## Solution to *Challenge #6*
 
@@ -259,14 +259,14 @@ for line in seq_fasta:
 print header, seq
 ```
 
----
+--
 
 ## **Challenge #7**
 
 >+   Implement challenge #6 by counting the number of cysteine ("C") residues in the sequence
 >+   Print separately header, sequence and the number of cysteine residues
 
----
+--
 
 ## Solution to *Challenge #7*
 
@@ -286,14 +286,14 @@ num_cys = seq.count("C")
 print header, seq, num_cys
 ```
 
----
+--
 
 ## **Challenge #8**
 
 >+ Read a file in FASTA format line-by-line.
 >+ Print or write the **record** to a file only if the sequence is from Homo sapiens.
 
----
+--
 
 ## Solution to *Challenge #8*
 
@@ -321,7 +321,7 @@ Note the use of `if header`:
 
 Apparently **there is no statement after the condition**
 
----
+--
 
 In Python empty objects in `if` conditions are interpreted as `False` by default.
 
@@ -331,7 +331,7 @@ Therefore `header` here is treated as Boolean:
 * if it is empty it will be interpreted as `False`
 * once it is filled, it becomes `True`
 
----
+--
 
 ## **Challenge #9**
 
@@ -357,7 +357,7 @@ EALQDVEDENQ
 > * Download a Uniprot multiple sequence FASTA file. 
 > * Write the record headers to a new file.
 
----
+--
 
 ## Solution to *Challenge #9*
 
@@ -376,14 +376,14 @@ headers.close()
 >sp|Q04917|1433F_HUMAN 14-3-3 protein eta OS=Homo sapiens GN=YWHAH
 ```
 
----
+--
 
 ## **Challenge #10**
 
 > * Read a multiple sequence FASTA file and 
 > * write the sequences to a new file separated by a blank line
 
----
+--
 
 ## Solution to *Challenge #10*
 
@@ -403,14 +403,14 @@ seqs.close()
 seqs.write(line.strip() + '\n')
 ```
 
----
+--
 
 ## **Challenge #11**
 
 > * Read a file in FASTA format 
 > * and copy to a new file the records' Accession Numbers (AC).
 
----
+--
 
 ## Solution to *Challenge #11*
 
@@ -426,14 +426,14 @@ for line in human_fasta:
 Outfile.close()
 ```
 
----
+--
 
 ### **Challenge #12**
 
 >+   Read FASTA records from a file
 >+   Count (and print) the cysteine residues in each sequence.
 
----
+--
 
 ## Solution to *Challenge #12*
 
@@ -458,7 +458,7 @@ cys_num = seq.count('C')
 print header, ': ', cys_num
 ```
 
----
+--
 
 ## Solution to *Challenge #12*
 
@@ -480,7 +480,7 @@ for line in fasta:
         seq = seq + line.strip()
 ```
 
----
+--
 
 ## **Challenge #13**
 
@@ -488,7 +488,7 @@ for line in fasta:
 > * Read the multiple sequence FASTA file `sprot_prot.fasta` and 
 > * write to a new file only the records from Homo sapiens.
 
----
+--
 
 ## Solution to *Challenge #13*
 One possible solution:
@@ -513,7 +513,7 @@ if "Homo sapiens" in header:
 output.close()
 ```
 
----
+--
 
 ## Solution to *Challenge #13*
 Another possible solution:
@@ -536,7 +536,7 @@ for line in fasta:
 output.close()
 ```
 
----
+--
 
 ## **Challenge #14 homework**
 
@@ -546,7 +546,7 @@ output.close()
     2. Read a multiple sequence file in FASTA format and write to a new file only the records of the sequences having at least two tryptophan residues ('W')
     3. Finally merge the two steps
 
----
+--
 
 ## Solution II to *Challenge #14*
 ```python
@@ -573,7 +573,7 @@ if seq[0] == 'M' and TRP_num > 1:
 outfile.close()
 ```
 
----
+--
 
 ## **Challenge #15 homework**
 
@@ -592,7 +592,7 @@ Gtaccgttgtagctctctcgtaaacacaagaaccaacaccaaacaacatactacaactga
 ...
 ```
 
----
+--
 
 ## Solution II to *Challenge #15*
 
@@ -618,7 +618,7 @@ InputFile.close()
 OutputFile.close()
 ```
 
----
+--
 
 ## Parsing data records
 
@@ -630,6 +630,6 @@ OutputFile.close()
 
 +   Use  lists if you have to compare data from different files
 
----
+--
 
-...
+# ...

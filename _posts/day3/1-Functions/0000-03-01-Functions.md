@@ -5,7 +5,7 @@
 >  
 > ### Why do we use functions?
 
----
+--
 
 ## What's a function?
 **A block of code that performs a specific task**
@@ -17,7 +17,7 @@
 
 * A function can be accessed from different parts of a script or even from different scripts.
 
----
+--
 
 ## Function definition
 
@@ -27,13 +27,13 @@ you have first to *define* it and then to *call* it
 
 <img src="{{site.url}}/img/functions1.png" alt="slot" style="width: 550px;"/>
 
----
+--
 
 ## Function definition
 
 <img src="{{site.url}}/img/functions2.png" alt="slot" style="width: 600px;"/>
 
----
+--
 
 ##  **Challenge #1**
 
@@ -44,7 +44,7 @@ you have first to *define* it and then to *call* it
 
 -    Print the result
 
----
+--
 
 ## Solution to *Challenge #1*
 
@@ -63,7 +63,7 @@ def triangle_area(b, h):
 print triangle_area(2.28, 3.55)
 ```
 
----
+--
 
 ## General remarks
 
@@ -76,7 +76,7 @@ by a colon character followed by *indented instructions*
 
 - The last indented statement marks the end of a function definition
 
----
+--
 
 ### More remarks
 
@@ -94,7 +94,7 @@ def triangle_area(b, h):
 print triangle_area.__doc__
 ```
 
----
+--
 
 ###  **Challenge #2**
 
@@ -108,7 +108,7 @@ print triangle_area.__doc__
 >
 > * and the product of `arg1` and `arg2`.
 
----
+--
 
 ## Solution to *Challenge #2*
 
@@ -122,7 +122,7 @@ def get_values(arg1, arg2):
 print get_values(15, 8)
 ```
 
----
+--
 
 ## Remarks
 
@@ -143,7 +143,7 @@ back a value to the caller.
 >>>
 ```
 
----
+--
 
 ## Function arguments
 
@@ -162,7 +162,7 @@ A function call can be the argument of a function too.
 >>>
 ```
 
----
+--
 
 ## Function arguments
 
@@ -187,7 +187,7 @@ AND
 Functions return multiple values in the form of
 **tuples** as well
 
----
+--
 
 ## Tuples
 
@@ -219,7 +219,7 @@ Tuple = 1
 (3, )
 ```
 
----
+--
 
 ## BUT ...
 ### once you have defined a tuple, you cannot change/replace its elements
@@ -234,7 +234,7 @@ item assignment
 >>>
 ```
 
----
+--
 
 ### Function arguments - *Reprise*
 
@@ -262,7 +262,7 @@ It is possible to assign a name to the arguments of a function. In this case, th
 >>>
 ```
 
----
+--
 
 ## Default arguments
 
@@ -279,7 +279,7 @@ print_funct(10, "ACCTGGCACAA")
 print_funct(10)
 ```
 
----
+--
 
 ## Summary
 
@@ -291,7 +291,7 @@ print_funct(10)
 
 - function arguments
 
----
+--
 
 ###  **Challenge #3**
 
@@ -302,7 +302,7 @@ print_funct(10)
 >
 >returns the distance between the two points.
 
----
+--
 
 ## Solution to *Challenge #3*
 
@@ -321,7 +321,7 @@ p2 = (45.83, 31.11, 92.04)
 print "Distance:", distance(p1, p2)
 ```
 
----
+--
 
 ###  **Challenge #4**
 
@@ -335,7 +335,7 @@ Write a function that:
 
 Print the header
 
----
+--
 
 ## Solution to *Challenge #4*
 
@@ -349,7 +349,7 @@ def return_header(filename):
 print return_header('SingleSeq.fasta')
 ```
 
----
+--
 
 ###  **Challenge #5**
 
@@ -359,7 +359,7 @@ print return_header('SingleSeq.fasta')
 >
 > a list of 3 sequence file names.
 
----
+--
 
 ## Solution to *Challenge #5*
 ```python
@@ -377,7 +377,7 @@ for name in filenames:
     print return_header(name)
 ```
 
----
+--
 
 ###  **Challenge #6**
 
@@ -387,7 +387,7 @@ Consider two output schemes for exercise 4:
 
 2. Each header is written in a separate output file
 
----
+--
 
 ## Solution to *Challenge #6*
 one possible solution
@@ -410,7 +410,7 @@ for name in filenames:
 output.close()
 ```
 
----
+--
 
 ## Solution to *Challenge #6*
 
@@ -435,7 +435,7 @@ for name in filenames:
 output.close()
 ```
 
----
+--
 
 ## General remarks
 
@@ -452,7 +452,7 @@ are first searched in the function namespace and subsequently,
 if they are not found in the function body, they are searched in
 the script (module) global namespace.
 
----
+--
 
 ## Local vs Global
 
@@ -477,7 +477,7 @@ NameError: name 'x' is not defined
 and it is not recognised by the `print` statement <br> 
 in the main script  even after the function call
 
----
+--
 
 ## Local vs Global
 
@@ -503,7 +503,7 @@ is made global using the **global** statement <br>
 but is recognized by the `print` statement in the main script <br>
 only after the function call
 
----
+--
 
 ## Local vs Global
 
@@ -518,7 +518,7 @@ only after the function call
 
 `y` is recognized when `h()` is called as it is a global name.
 
----
+--
 
 ## The  number  of  arguments  can  be  variable  
 
@@ -530,7 +530,7 @@ only after the function call
 
 - 2nd  case     (\**args)=>     dictionary of arguments
 
----
+--
 
 - 1st  case     (\*args) =>     tuple of arguments
 
@@ -547,7 +547,7 @@ only after the function call
 (100, 200, ‘ACCTGGCACAA’)
 ```
 
----
+--
 
 - 2nd  case     (\**args)=>     dictionary of arguments
 
@@ -561,7 +561,7 @@ only after the function call
 {'num': 100, 'seq': 'ACCTGGCACAA', 'num2': 200}
 ```
 
----
+--
 
 # ...
 

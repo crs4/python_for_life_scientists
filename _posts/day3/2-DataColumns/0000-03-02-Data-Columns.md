@@ -3,7 +3,7 @@
 
 ### Reading  data from a table and writing data to a table
 
----
+--
 
 ### After this module you can:
 
@@ -15,7 +15,7 @@
 
 + Write a list of numbers to a text file
 
----
+--
 
 ## Kick Start
 
@@ -23,7 +23,7 @@
 
 > ##### Dendrites are the minor fibers that branch out from the neuron, which carry the nerve signal in centripetal direction (towards the soma, the cell body of the neuron). 
 
----
+--
 
 ```
 neuron_data.txt (data on dendrites lengths)
@@ -54,7 +54,7 @@ the indication 1 for primary neurons and 2 for secondary neurons)
 2         300.00
 ```
 
----
+--
 
 ## What do we have to do?
 
@@ -71,7 +71,7 @@ the indication 1 for primary neurons and 2 for secondary neurons)
 
 > **Our Goal  is to beat Excel at its own game!**
 
----
+--
 
 #### Some useful built-in functions
 
@@ -86,7 +86,7 @@ the indication 1 for primary neurons and 2 for secondary neurons)
 | `str()` | Converts an object into a string |
 | `repr()` | Converts an object into a string |
 
----
+--
 
 ##  **Challenge #1**
 
@@ -95,7 +95,7 @@ the indication 1 for primary neurons and 2 for secondary neurons)
 > - reads the file with neuron lengths (neuron_data.txt)
 > - stores neuron lengths as floating point numbers into a list.
 
----
+--
 
 ## Solution to *Challenge #1*
 
@@ -108,7 +108,7 @@ for line in open("neuron_data.txt"):
 print neuron_lengths
 ```
 
----
+--
 
 ###  **Challenge #2**
 
@@ -117,7 +117,7 @@ print neuron_lengths
 > - read data form `neuron_data-2.txt`
 > - stores primary and secondary neuron lengths to different lists.
 
----
+--
 
 ## Solution to *Challenge #2*
 ```python
@@ -134,7 +134,7 @@ for line in open("neuron_data-2.txt"):
 print primary, secondary
 ```
 
----
+--
 
 ## Manipulating data in the columns
 
@@ -147,7 +147,7 @@ print primary, secondary
 <img src="{{site.url}}/img/builtin.png" alt="slot" style="width: 450px;"/>
 
 
----
+--
 
 ##  **Challenge #3**
 
@@ -156,7 +156,7 @@ print primary, secondary
 > + calculates the neuron length average separately for primary and secondary neurons
 > + Print the two averages: which neurons are on average longer?
 
----
+--
 
 ## Solution to *Challenge #3*
 One possible solution
@@ -171,7 +171,7 @@ av = sum(length_list)/float(len(length_list))
 print av
 ```
 
----
+--
 
 ## Solution to *Challenge #3*
 
@@ -195,7 +195,7 @@ print "primary neuron average: ",primary_av
 print "secondary neuron average: ", secondary_av
 ```
 
----
+--
 
 ##  **Challenge #4**
 
@@ -203,7 +203,7 @@ print "secondary neuron average: ", secondary_av
 >
 > - it calculates the standard deviation of the neuron length.
 
----
+--
 
 ## Solution to *Challenge #4*
 
@@ -230,7 +230,7 @@ for value in primary:
 print primary_av, stddev
 ```
 
----
+--
 
 ## How to **write** data to columns
 
@@ -257,7 +257,7 @@ TypeError: expected a character buffer object
 
 #### !!! The argument of the `write()` function MUST be a string
 
----
+--
 
 ## String concatenation
 
@@ -269,7 +269,7 @@ out.write(str(1) + '\t' + str(16.38) + '\n')
 out.close()
 ```
 
----
+--
 
 ## **Challenge #5**
 
@@ -277,7 +277,7 @@ out.close()
 >
 > Do it using **string concatenation**.
 
----
+--
 
 ## Solution to *Challenge #5*
 
@@ -293,7 +293,7 @@ for i in xrange(len(data1)):
 out.close()
 ```
 
----
+--
 
 ## String formatting
 
@@ -317,7 +317,7 @@ S = 'The square root of {0} is  {1}'
 print  S.format (a,  math.sqrt(a))
 ```
 
----
+--
 
 ##  **Challenge #6**
 
@@ -325,7 +325,7 @@ print  S.format (a,  math.sqrt(a))
 >
 > Do it using **string formatting**.
 
----
+--
 
 ## Solution to *Challenge #6*
 ```python
@@ -356,7 +356,7 @@ for i in xrange(len(data1)):
 Outfile.close()
 ```
 
----
+--
 
 ## Reading and writing tables
 + Read each table column into a different list
@@ -365,14 +365,14 @@ Outfile.close()
 
 +  You can write the columns in a different order
 
----
+--
 
 ## Match the formatting expressions and their result
 
 <img src="{{site.url}}/img/expression_values.png" alt="slot" style="width: 700px;"/>
 
 
----
+--
 
 ##  **Challenge #7**
 
@@ -386,7 +386,7 @@ Outfile.close()
 > + Write the results to a file using string formatting.
 > + You can repeat the exercise for secondary neurons.
 
----
+--
 
 ## Solution to *Challenge #7*
 ```python
@@ -410,6 +410,6 @@ out.write("longest length : %7.2f \n"%(longest))
 out.close()
 ```
 
----
+--
 
 # ...

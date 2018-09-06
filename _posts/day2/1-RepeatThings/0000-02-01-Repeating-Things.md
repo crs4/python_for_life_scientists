@@ -1,6 +1,6 @@
 # Repeating things
 
----
+--
 
 ## Counting amino acids
 
@@ -16,7 +16,7 @@ for amino_acid in "ACDEFGHIKLMNPQRSTVWY":
   print amino_acid, number
 ```
 
----
+--
 
 ## Repetitive tasks
 Consider the solutions of challenge #4 from previous session:
@@ -41,7 +41,7 @@ elem =  dna.count ("G")
 print  elem
 ```
 
----
+--
 
 ## Loops with for
 
@@ -56,7 +56,7 @@ for base in "ACTG":
 
 The commands that are repeated must be **indented** <br> **(shifted right by four spaces)**.
 
----
+--
 
 ## Compare
 ```python
@@ -75,7 +75,7 @@ print dna.count("G")
 ```
 Why or why not?
 
----
+--
 
 ## Use a `for` loop <br>to read a file line by line
 ```python
@@ -93,7 +93,7 @@ for line in src_human:
   print line
 ```
 
----
+--
 
 ###  **Challenge #1**
 
@@ -109,7 +109,7 @@ Write a program that:
 > 2. Prints the whole sequence 
 > 3. Prints the sequence residue by residue.
 
----
+--
 
 ## Solution to challenge #1
 ```python
@@ -123,7 +123,7 @@ for aa in seq:
   print aa
 ```
 
----
+--
 
 ## **Challenge #2**
 
@@ -132,7 +132,7 @@ Write a file and program that:
 >
 > * Prints its content line by line.
 
----
+--
 
 ## Solution to *Challenge #2*
 ```python
@@ -142,17 +142,17 @@ for line in telomerase:
   print line
 ```
 
----
+--
 
 <img src="{{site.url}}/img/pp8.png" alt="slot" style="width: 700px;"/>
 
----
+--
 
 ##  **Challenge #3**
 
 > Which amino acid is the most frequent in the sequence of the telomerase reverse transcriptase isoform 1?
 
----
+--
 
 ## Solution to *Challenge #3*
 ```python
@@ -166,12 +166,12 @@ for aa in "ACDEFGHKILMNPQRSTVYW":
   print aa, round(aa_freq, 3)
 ```
 
----
+--
 
 ## Recap
 
 <img src="{{site.url}}/img/pp9.png" alt="slot" style="width: 700px;"/>
 
----
+--
 
 # ...
