@@ -66,7 +66,7 @@ codonAMINO =  {'GCU':'A','GCC':'A','GCA':'A', 'GCG':'A',
 ```
 ```
 >>> for k in codonAMINO.keys():
-...             print k, codonAMINO[k]
+...             print(k, codonAMINO[k])
 GUC V
 AUA I
 GUA V
@@ -226,7 +226,7 @@ def sort_dict_by_keys(data):
     keys.sort()
     return [data[k] for k in keys]
 
-print sort_dict_by_keys(structures)
+print(sort_dict_by_keys(structures))
 ```
 
 --

@@ -48,7 +48,7 @@ table = []
 for line in T:
     table.append(line.split())
 
-print table
+print(table)
 ```
 
 --
@@ -135,7 +135,7 @@ for line in T:
 columns = zip(*table)
 
 for elem in columns:
-    print '\t'.join(elem)
+    print('\t'.join(elem))
 ```
 #### These command generate this table:
 
@@ -192,7 +192,7 @@ columns.pop(3)
 rows = zip(*columns)
 
 for elem in rows:
-    print '\t'.join(elem)
+    print('\t'.join(elem))
 ```
 #### This generates:
 
@@ -266,7 +266,7 @@ columns.insert(3, ['gene3', '20', '20', '20'])
 rows = zip(*columns)
 
 for elem in rows:
-    print '\t'.join(elem)
+    print('\t'.join(elem))
 ```
 
 #### The resulting table:
@@ -343,7 +343,7 @@ data = [
 
 data.sort(key = itemgetter(1))
 
-print data
+print(data)
 
 6     7         8         9         10
 
@@ -364,7 +364,7 @@ data = [
 
 data_sorted = sorted(data, key = itemgetter(1))
 
-print data_sorted
+print(data_sorted)
 ```
 
 --
@@ -394,7 +394,7 @@ for row in data:
         row[i] = str(row[i]) #replace nr with strings
 
 for elem in data:
-    print "\t".join(elem) + "\n”
+    print("\t".join(elem) + "\n")
 ```
 
 --
@@ -416,7 +416,7 @@ data.sort(key=itemgetter(1))
 # format table as strings
 for row in data:
     row = [str(x) for x in row]
-      print "\t".join(row)
+      print("\t".join(row))
 ```
 
 --
@@ -424,7 +424,7 @@ for row in data:
 ### Sort a table by the first column, 
 ### then by the second, then by the third, and so on…
 
-```
+```python
 from operator import itemgetter
 in_file = open("random_distribution.tsv")
 
@@ -441,7 +441,7 @@ table_sorted = sorted(table, key = itemgetter(1, 2))
 # format table as strings
 for row in table_sorted:
     row = [str(x) for x in row]
-    print "\t".join(row)
+    print("\t".join(row))
 ```
 
 --
@@ -533,7 +533,7 @@ from operator import itemgetter
 table1.sort(key=itemgetter(1))
 
 #show the three longest neurons
-print table1[-3:]
+print(table1[-3:])
 ```
 
 --
@@ -552,9 +552,9 @@ print table1[-3:]
 columns = zip(*table1)
 # take the 1st  column (1st  row of table1)
 lengths = columns[1]
-print lengths
+print(lengths)
 # print average
-print sum(lengths) / len(lengths)
+print(sum(lengths) / len(lengths))
 ```
 
 --

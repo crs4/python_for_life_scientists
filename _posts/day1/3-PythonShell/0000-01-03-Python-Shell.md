@@ -108,14 +108,16 @@ make it fast.
 
 
 > The diameter of a cell is 10 μm.
->
->* What volume does that cell have given it is a perfect sphere?
->
->*  Use Python to do the calculation.
->
->*  Use variables for the parameters.
->
->*  Print the volume to the screen
+
+* What volume does that cell have given it is a perfect sphere?
+
+*  Use Python to do the calculation.
+
+*  Use variables for the parameters.
+
+*  Print the volume to the screen
+
+![slot]({{site.url}}/img/volume-sfera.png)
 
 --
 
@@ -124,7 +126,7 @@ make it fast.
 from math import pi
 R = 10.0
 V = (4.0/3.0)*pi*(R**3)
-print V
+print(V)
 ```
 + in this case we import a specific object from math instead of importing the whole `math` module
 
@@ -155,7 +157,7 @@ print V
 --
 
 ## Solution to *Challenge #3*
-```
+```python
 import math
 
 x1 = 43.64
@@ -167,7 +169,7 @@ y2 = 31.11
 z2 = 92.04
 
 dist = math.sqrt((x1-x2)**2 + (y1-y2)**2 + (z1-z2)**2)
-print dist
+print(dist)
 ```
 
 --

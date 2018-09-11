@@ -254,7 +254,7 @@ s = any sequence
 []
 # the xrange()method is more commonly used in for loops than range()
 >>>for i in xrange(5):
-…             print i
+…             print(i)
 …
 0,1,2,3,4
 ```
@@ -282,7 +282,7 @@ cancer_list = []
 for line in cancer_file:
   AC = line.strip()
   cancer_list.append(AC)
-print cancer_list
+print(cancer_list)
 ```
 
 --
@@ -303,7 +303,7 @@ for line in InputFile:
   if line[0] == '>':
     fields = line.split('|')
     AC_list.append(fields[1])
-print AC_list
+print(AC_list)
 ```
 
 --
@@ -426,7 +426,7 @@ The while statement is used for executing a set of statements until a given  con
 ```
 >>> a = 1
 >>> while a < 5:
-...     print a,
+...     print(a)
 ...     a = a + 1
 ```
 
@@ -439,9 +439,9 @@ The while statement is used for executing a set of statements until a given  con
 >>> a = 1
 >>> while a > 0:
 ...     if a == 5: break
-...     print a,
+...     print(a)
 ...     a = a + 1
-... else: print "loop terminated"
+... else: print("loop terminated")
 ...
 1 2 3 4
 ```
@@ -463,12 +463,12 @@ The statements in an `if` or a `while` block are executed only if the condition 
 
 ```
 >>> p = 'protein'
->>> if p: print 'True'
+>>> if p: print('True')
 ...
 True
 >>> n = 0
 >>> while 1:
-...     print n,
+...     print(n)
 ...     n = n + 1
 ...     if n > 5: break
 ...

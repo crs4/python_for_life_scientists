@@ -13,7 +13,7 @@ insulin = "GIVEQCCTSICSLYQLENYCFVNQHLCGSHLVEALYLVGERGFFYTPKT"
 
 for amino_acid in "ACDEFGHIKLMNPQRSTVWY":
   number = insulin.count(amino_acid)
-  print amino_acid, number
+  print(amino_acid, number)
 ```
 
 --
@@ -24,21 +24,21 @@ Consider the solutions of challenge #4 from previous session:
 ```python
 dna = "AGCTTCGA"
 
-print dna.count("A")
-print dna.count("C")
-print dna.count("T")
-print dna.count("G")
+print(dna.count("A"))
+print(dna.count("C"))
+print(dna.count("T"))
+print(dna.count("G"))
 ```
 ```python
 dna = "AGCTTCGA"
-elem =  dna.count ("A")
-print  elem
+elem = dna.count ("A")
+print(elem)
 elem =  dna.count ("C")
-print  elem
+print(elem)
 elem =  dna.count ("T")
-print  elem
+print(elem)
 elem =  dna.count ("G")
-print  elem
+print(elem)
 ```
 
 --
@@ -51,7 +51,7 @@ The `for` command repeats other commands:
 dna = "AGCTTCGA"
 
 for base in "ACTG":
-  print dna.count(base)
+  print(dna.count(base))
 ```
 
 The commands that are repeated must be **indented** <br> **(shifted right by four spaces)**.
@@ -62,16 +62,16 @@ The commands that are repeated must be **indented** <br> **(shifted right by fou
 ```python
 dna = "AGCTTCGA"
 for base in "ACTG":
-  print dna.count(base)
+  print(dna.count(base))
 ```
 Would you prefer this implementation?
 ```python
 dna = "AGCTTCGA"
 
-print dna.count("A")
-print dna.count("C")
-print dna.count("T")
-print dna.count("G")
+print(dna.count("A"))
+print(dna.count("C"))
+print(dna.count("T"))
+print(dna.count("G"))
 ```
 Why or why not?
 
@@ -81,16 +81,16 @@ Why or why not?
 ```python
 Input_file = open('my_file.txt')
 for line in Input_file:
-  print line
+  print(line)
 ```
 
 ## Look how beautiful it can be…
 ```python
-import urllib
+import urllib.request
 url = 'http://www.uniprot.org/uniprot/P12931.fasta'
-src_human = urllib.urlopen(url)
+src_human = urllib.request.urlopen(url)
 for line in src_human:
-  print line
+  print(line)
 ```
 
 --
@@ -117,10 +117,10 @@ telomerase = open("telomerase.txt")
 
 seq = telomerase.read()
 
-print seq
+print(seq)
 
 for aa in seq:
-  print aa
+  print(aa)
 ```
 
 --
@@ -139,7 +139,7 @@ Write a file and program that:
 telomerase = open("telomerase.txt")
 
 for line in telomerase:
-  print line
+  print(line)
 ```
 
 --
@@ -163,7 +163,7 @@ seq = telomerase.read()
 for aa in "ACDEFGHKILMNPQRSTVYW":
   aa_count = seq.count(aa)
   aa_freq = aa_count/float(len(seq))
-  print aa, round(aa_freq, 3)
+  print(aa, round(aa_freq, 3))
 ```
 
 --

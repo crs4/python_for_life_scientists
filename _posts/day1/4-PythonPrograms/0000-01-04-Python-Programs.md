@@ -57,14 +57,14 @@
 ## Input from the program itself
 ```
 a = 3
-print a
+print(a)
 ```
 ---
 ## Input from the keyboard
 ```
 >>> a = raw_input("Type a number: ")
 Type a number: 3
->>> print a
+>>> print(a)
 3
 ```
 
@@ -102,7 +102,7 @@ insulin = "GIVEQCCTSICSLYQLENYCNFVNQHLCGSHLVEALYLVCGERGFFYTPKT"
 #### Python program my_first_import.py
 ```python
 from insulin import insulin
-print insulin
+print(insulin)
 ```
 
 --
@@ -165,22 +165,22 @@ One possible solution
 ```python
 dna = 'AGCTTCGA'
 
-print dna.count('A')
-print dna.count('C')
-print dna.count('T')
-print dna.count('G')
+print(dna.count('A'))
+print(dna.count('C'))
+print(dna.count('T'))
+print(dna.count('G'))
 ```
 Another possible solution:
 ```python
 dna = 'AGCTTCGA'
-elem =  dna.count ('A')
-print  elem
+elem = dna.count ('A')
+print(elem)
 elem =  dna.count ('C')
-print  elem
+print(elem)
 elem =  dna.count ('T')
-print  elem
+print(elem)
 elem =  dna.count ('G')
-print  elem
+print(elem)
 ```
 
 --
@@ -189,7 +189,7 @@ print  elem
 
 -  string variables contain text
 
--  `print` writes to the screen
+-  `print()` writes to the screen
 
 -  you can use functions to do things
 

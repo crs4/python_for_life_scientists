@@ -53,14 +53,15 @@ def triangle_area(b, h):
     A = (b*h)/2.0 # function  body
     return A      # function  body
 
-print triangle_area(2.28, 3.55)
+area = triangle_area(2.28, 3.55)
+print(area)
 ```
 
 ```python
 def triangle_area(b, h):
     return (b*h)/2.0
 
-print triangle_area(2.28, 3.55)
+print(triangle_area(2.28, 3.55))
 ```
 
 --
@@ -91,7 +92,7 @@ def triangle_area(b, h):
     '''Returns the area of a triangle'''  
     return (b*h)/2.0
 
-print triangle_area.__doc__
+print(triangle_area.__doc__)
 ```
 
 --
@@ -119,7 +120,7 @@ def get_values(arg1, arg2):
     p = arg1 * arg2
     return s, d, p
 
-print get_values(15, 8)
+print(get_values(15, 8))
 ```
 
 --
@@ -138,7 +139,7 @@ back a value to the caller.
 ...     return x + y
 ...
 >>> s = j(1, 100)
->>> print s
+>>> print(s)
 101
 >>>
 ```
@@ -155,7 +156,7 @@ A function call can be the argument of a function too.
 ...     return x + 1
 ...
 >>> def print_arg(y):
-...     print y
+...     print(y)
 ...
 >>> print_arg(increment(5))
 6
@@ -170,7 +171,7 @@ Multiple parameters can be passed to a function. In this case, the order of the 
 
 ```
 >>> def print_funct(num, seq):
-...     print num, seq
+...     print(num, seq)
 ...     return
 ...
 >>> print_funct(10, "ACCTGGCACAA")
@@ -243,18 +244,18 @@ item assignment
 ...     return a + b, a*b, a-b
 
 >>> sum, prod, diff = f(20, 2)
->>> print sum
+>>> print(sum)
 
 >>> result = f(20, 2)
->>> print result
->>> print result[0]
+>>> print(result)
+>>> print(result[0])
 ```
 ---
 It is possible to assign a name to the arguments of a function. In this case, the order is not important
 
 ```
 >>> def print_funct(num, seq):
-...     print num, seq
+...     print(num, seq)
 ...     return
 ...
 >>> print_funct(seq = "ACCTGGCACAA", num = 10)
@@ -271,7 +272,7 @@ It is also possible to use default arguments (optional). <br> <br> These optiona
 
 ```python
 def print_funct(num, seq = "A"):
-    print num, seq
+    print(num, seq)
     return
 
 print_funct(10, "ACCTGGCACAA")
@@ -318,7 +319,7 @@ def distance(p1, p2):
 p1 = (43.64, 30.72, 88.95)
 p2 = (45.83, 31.11, 92.04)
 
-print "Distance:", distance(p1, p2)
+print("Distance:", distance(p1, p2))
 ```
 
 --
@@ -346,7 +347,7 @@ def return_header(filename):
       if line[0] == '>':
         return line
 
-print return_header('SingleSeq.fasta')
+print(return_header('SingleSeq.fasta'))
 ```
 
 --
@@ -374,7 +375,7 @@ filenames = ['SingleSeq1.fasta',
               'SingleSeq3.fasta']
 
 for name in filenames:
-    print return_header(name)
+    print(return_header(name))
 ```
 
 --
@@ -461,13 +462,13 @@ the script (module) global namespace.
 ...     x = 100
 ...     return x
 ...
->>> print x
+>>> print(x)
 Traceback (most recent call last):
 File "<stdin>", line 1, in <module>
 NameError: name 'x' is not defined
 >>> f()
 100
->>> print x
+>>> print(x)
 Traceback (most recent call last):
 File "<stdin>", line 1, in <module>
 NameError: name 'x' is not defined
@@ -487,13 +488,13 @@ in the main script  even after the function call
 ...     x = 200
 ...     return x
 ...
->>> print x
+>>> print(x)
 Traceback (most recent call last):
 File "<stdin>", line 1, in <module>
 NameError: name 'x' is not defined
 >>> g()
 200
->>> print x
+>>> print(x)
 200
 >>>
 ```
@@ -510,7 +511,7 @@ only after the function call
 ```
 >>> y = "ACCTGGCACAA"
 >>> def h():
-...     print y
+...     print(y)
 ...
 >>> h()
 'ACCTGGCACAA'
@@ -536,7 +537,7 @@ only after the function call
 
 ```
 >>> def print_args(*args):
-...     print args
+...     print(args)
 ...     return
 ...
 >>> print_args(1,2,3,4,5)
@@ -553,7 +554,7 @@ only after the function call
 
 ```
 >>> def print_args2(**args):
-...     print args
+...     print(args)
 ...     return
 ...
 >>>  print_args2(num  =  100,  num2  =  200, seq  =

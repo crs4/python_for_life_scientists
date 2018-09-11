@@ -40,7 +40,7 @@ TAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
 seq = open("SingleSeq.fasta")
 
 for line in seq:
-    print line
+    print(line)
 ```
 
 --
@@ -119,18 +119,18 @@ else:
 
 ```python
 nucl = ['A','C','T','G']
-if 'A' in nucl: print 'A'
-elif 'C' in nucl: print 'C'
-elif 'T' in nucl: print 'T'
-else: print 'G'
+if 'A' in nucl: print('A')
+elif 'C' in nucl: print('C')
+elif 'T' in nucl: print('T')
+else: print('G')
 ```
 
 ```python
 nucl = ['A','C','T','G']
-if 'A' in nucl: print 'A'
-if 'C' in nucl: print 'C'
-if 'T' in nucl: print 'T'
-if 'G' in nucl: print 'G'
+if 'A' in nucl: print('A')
+if 'C' in nucl: print('C')
+if 'T' in nucl: print('T')
+if 'G' in nucl: print('G')
 ```
 
 --
@@ -157,7 +157,7 @@ seq = open("SingleSeq.fasta")
 
 for line in seq:
     if line[0] == '>':
-        print line
+        print(line)
 
 ```
 
@@ -173,7 +173,7 @@ for line in seq:
 
 ```python
 fasta = open('SingleSeq.fasta')
-header = open('header.txt', 'w’)
+header = open('header.txt', 'w')
 
 for line in fasta:
     if line[0] == '>':
@@ -256,7 +256,7 @@ for line in seq_fasta:
     else:
         seq = seq + line.strip()
 
-print header, seq
+print(header, seq)
 ```
 
 --
@@ -283,7 +283,7 @@ for line in seq_fasta:
 
 num_cys = seq.count("C")
 
-print header, seq, num_cys
+print(header, seq, num_cys)
 ```
 
 --
@@ -312,9 +312,9 @@ for line in seq_fasta:
             seq = seq + line
 
 if header:
-    print header + seq
+    print(header + seq)
 else:
-    print "The record is not from H. sapiens"
+    print("The record is not from H. sapiens")
 ```
 
 Note the use of `if header`:
@@ -450,12 +450,12 @@ for line in fasta:
         seq = seq + line.strip()
     elif line[0] == '>' and seq != '':
         cys_num = seq.count('C')
-        print header, ': ', cys_num
+        print(header, ': ', cys_num)
         header = line[4:10]
         seq = ''
 
 cys_num = seq.count('C')
-print header, ': ', cys_num
+print(header, ': ', cys_num)
 ```
 
 --
@@ -473,7 +473,7 @@ for line in fasta:
     if line[0]=='>':
         if seq:
             cys_num = seq.count('C')
-            print header, ':' , cys_num
+            print(header, ':' , cys_num)
         header = line.split('|')[1]
         seq = ''
     else:
