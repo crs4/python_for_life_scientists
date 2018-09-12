@@ -17,13 +17,17 @@ You can access the shell by typing `python` in a command-line terminal
 
 ```
 $ python
-Python 2.7.9 (default, Apr  2 2015, 15:33:21)
-[GCC 4.9.2] on linux2
+Python 3.7.0 (default, Jun 28 2018, 08:04:48)
+[MSC v.1912 64 bit (AMD64)] :: Anaconda, Inc. on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-You can leave the shell with  `Ctrl-D`
+You can leave the shell by typing  `exit()`
+
+```
+>>> exit()
+```
 
 --
 
@@ -183,8 +187,123 @@ calculator.
 
 +  Modules are containers for data and functions
 
-+  You can leave the shell by Ctrl-D.
++  You can leave the shell by Ctrl-D or typing `exit()`
 
 --
+
+## IPython
+
+- The default interactive Python shell can sometimes feel to basic. 
+
+- Coding Python from the command line isn't a fun experience when you begin getting into longer form code. 
+
+> There is an alternative called *"IPython"* 
+
+--
+
+## What is Ipython
+
+ IPython gives you all that you get in the basic interpreter but with a lot extra:
+
+ - Line numbers
+ - Run Native Shell Commands (cd, ls, command history etc)
+ - Syntax Highlighting (it uses color to differentiate parts of Python code)
+ - Proper Indentation 
+ - Tab Completion
+ - Rich History (use {% octicon arrow-up height:25px %} and {% octicon arrow-down height:25px %} to browse history)
+ - Help Inline
+ - Pasting Blocks of Code
+
+--
+
+## Installing IPython
+
+1. Open Anaconda prompt
+
+2. Install IPython using `conda` with the following command:
+```
+conda install ipython
+```
+
+3. Answer `y` and wait while installing
+
+--
+
+## Running IPYTHON
+
+- Type the following command on `anaconda prompt`
+```
+ipython
+```
+
+![ipython]({{site.url}}/img/ipython_shell.png)
+
+--
+
+## Solution to **Challenge #2**
+
+![ipython]({{site.url}}/img/ipython_sphera.png)
+
+--
+
+> Help Inline
+
+![ipython]({{site.url}}/img/ipython_features.png)
+
+> Tab Completion
+
+--
+
+## Jupyter Notebook
+
+- The Jupyter Notebook is a web application to allows you to edit and run your notebooks via a web browser.
+- It integrates code and its output into a single document that combines visualisations, narrative text, mathematical equations, and other rich media. 
+
+---
+### Installling Jupyter
+1. Open Anaconda prompt
+
+2. Install Jupyter using `conda` with the following command:
+```
+conda install jupyter
+```
+
+--
+
+## Running Jupiter Notebook 
+- Start the Jupyter Notebook by running the following command 
+```
+jupyter notebook
+```
+
+![ipython]({{site.url}}/img/jupyter_run.png)
+
+--
+
+- #### When you start the notebook, a tab will open if you have a web browser open. 
+
+- #### It will run the Jupyter Notebook on a local port, such as `http://localhost:8888` (or some other port). 
+
+- #### The notebook will list out the contents of your computer in a directory format. 
+
+<img src="{{site.url}}/img/jupyter_starting.png" alt="slot" style="height: 425px;"/>
+
+--
+
+#### You can create new "notebooks" by clicking "New" and then selecting `Python 3`
+
+<img src="{{site.url}}/img/jupyter_browser.png" alt="slot" style="height: 550px;"/>
+
+--
+
+#### Execute by clicking `Run` 
+
+![ipython]({{site.url}}/img/jupyter_hello.png)
+
+--
+
+## Solution to **Challenge #2**
+
+![ipython]({{site.url}}/img/jupyter_sphera.png)
 
 # ...
