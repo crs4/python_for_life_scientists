@@ -280,6 +280,14 @@ jupyter notebook
 
 --
 
+## Running Jupiter Notebook 
+
++ You can also start the Jupyter Notebook from the start menu.
+
+![ipython]({{site.url}}/img/jupyter_startmenu.png)
+
+--
+
 - #### When you start the notebook, a tab will open if you have a web browser open. 
 
 - #### It will run the Jupyter Notebook on a local port, such as `http://localhost:8888` (or some other port). 
@@ -305,5 +313,7 @@ jupyter notebook
 ## Solution to **Challenge #2**
 
 ![ipython]({{site.url}}/img/jupyter_sphera.png)
+
+--
 
 # ...
