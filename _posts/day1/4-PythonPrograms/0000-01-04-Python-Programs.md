@@ -62,7 +62,7 @@ print(a)
 ---
 ## Input from the keyboard
 ```
->>> a = raw_input("Type a number: ")
+>>> a = input("Type a number: ")
 Type a number: 3
 >>> print(a)
 3
@@ -193,7 +193,7 @@ print(elem)
 
 -  you can use functions to do things
 
--  you can enter text with `raw_input()`    
+-  you can enter text with `input()`    
 
 -  `write()` writes to an open file
 
