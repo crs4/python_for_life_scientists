@@ -97,7 +97,7 @@ for line in src_human:
 
 ###  **Challenge #1**
 
-https://www.uniprot.org/uniprot/Q9UQ24.fasta
+#### https://www.ncbi.nlm.nih.gov/protein/NP_937983.2?report=fasta
 > * Retrieve the 1132-residue sequence of human telomerase reverse transcriptase isoform 1 from the NCBI protein database.
 > * Choose the FASTA format. 
 > * Copy the sequence to a text file (`telomerase.txt`).

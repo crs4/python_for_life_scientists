@@ -35,7 +35,7 @@
 ##  **Challenge #1**
 
 >-  Open a text file, write:
->-  type `"This is the output of my first program"`
+>-  type `print("This is the output of my first program")`
 >-  save the file with the name my_print.py and exit
 >-  Open a terminal, go to the directory where you saved `my_print.py` and type at the cursor: `python my_print.py`
 
@@ -72,7 +72,12 @@ Type a number: 3
 
 ## Input from a text file
 
--  We need to “access” an existing input file
+```text
+insulin.txt
+GIVEQCCTSICSLYQLENYCNFVNQHLCGSHLVEALYLVCGERGFFYTPKT
+```
+
+-  We need to “access” an existing input file 
 
 -  And read its content
 
