@@ -294,6 +294,131 @@ print_funct(10)
 
 --
 
+## General remarks
+
+-  Python uses **dynamical** namespaces: when a function is called, *its namespace is automatically created*
+
+- The variables defined in the body of a function live in its *local* namespace 
+and not in the script (or module) *global* namespace
+
+- Local objects can be made global using the **global** statement
+
+- When a function is called, names of the objects used in its body
+are first searched in the function namespace and subsequently,
+if they are not found in the function body, they are searched in
+the script (module) global namespace.
+
+--
+
+## Local vs Global
+
+```
+>>> def f():
+...     x = 100
+...     return x
+...
+>>> print(x)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'x' is not defined
+>>> f()
+100
+>>> print(x)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'x' is not defined
+>>>
+```
+`x` is a local name of the function `f()` namespace <br> 
+and it is not recognised by the `print` statement <br> 
+in the main script  even after the function call
+
+--
+
+## Local vs Global
+
+```
+>>> def g():
+...     global x
+...     x = 200
+...     return x
+...
+>>> print(x)
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+NameError: name 'x' is not defined
+>>> g()
+200
+>>> print(x)
+200
+>>>
+```
+
+The variable `x`, defined in the body of the `g()` function,<br>
+is made global using the **global** statement <br>
+but is recognized by the `print` statement in the main script <br>
+only after the function call
+
+--
+
+## Local vs Global
+
+```
+>>> y = "ACCTGGCACAA"
+>>> def h():
+...     print(y)
+...
+>>> h()
+'ACCTGGCACAA'
+```
+
+`y` is recognized when `h()` is called as it is a global name.
+
+--
+
+## The  number  of  arguments  can  be  variable  
+
+(i.e.  can  change  from  one function call to the other) <br>
+
+> In this case, you can use \* or \** symbols.
+
+- 1st  case     (\*args) =>     tuple of arguments
+
+- 2nd  case     (\**args)=>     dictionary of arguments
+
+--
+
+- 1st  case     (\*args) =>     tuple of arguments
+
+```
+>>> def print_args(*args):
+...     print(args)
+...     return
+...
+>>> print_args(1,2,3,4,5)
+(1, 2, 3, 4, 5)
+>>> print_args("Hello world!")
+(‘Hello world!’,)
+>>> print_args(100, 200, "ACCTGGCACAA")
+(100, 200, ‘ACCTGGCACAA’)
+```
+
+--
+
+- 2nd  case     (\**args)=>     dictionary of arguments
+
+```
+>>> def print_args2(**args):
+...     print(args)
+...     return
+...
+>>>  print_args2(num  =  100,  num2  =  200, seq  =
+"ACCTGGCACAA")
+{'num': 100, 'seq': 'ACCTGGCACAA', 'num2': 200}
+```
+
+--
+
 ###  **Challenge #3**
 
 
@@ -302,6 +427,8 @@ print_funct(10)
 >two points  [x1, y1, z1] and [x2, y2, z2]  and 
 >
 >returns the distance between the two points.
+
+![slot]({{site.url}}/img/cartesiandistance.png)
 
 --
 
@@ -434,132 +561,6 @@ for name in filenames:
     output.write(return_header(name))
 
 output.close()
-```
-
---
-
-## General remarks
-
--  Python uses **dynamical** namespaces: when a function is
-called, *its namespace is automatically created*
-
-- The variables defined in the body of a function live in its *local* namespace 
-and not in the script (or module) *global* namespace
-
-- Local objects can be made global using the **global** statement
-
-- When a function is called, names of the objects used in its body
-are first searched in the function namespace and subsequently,
-if they are not found in the function body, they are searched in
-the script (module) global namespace.
-
---
-
-## Local vs Global
-
-```
->>> def f():
-...     x = 100
-...     return x
-...
->>> print(x)
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-NameError: name 'x' is not defined
->>> f()
-100
->>> print(x)
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-NameError: name 'x' is not defined
->>>
-```
-`x` is a local name of the function `f()` namespace <br> 
-and it is not recognised by the `print` statement <br> 
-in the main script  even after the function call
-
---
-
-## Local vs Global
-
-```
->>> def g():
-...     global x
-...     x = 200
-...     return x
-...
->>> print(x)
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-NameError: name 'x' is not defined
->>> g()
-200
->>> print(x)
-200
->>>
-```
-
-The variable `x`, defined in the body of the `g()` function,<br>
-is made global using the **global** statement <br>
-but is recognized by the `print` statement in the main script <br>
-only after the function call
-
---
-
-## Local vs Global
-
-```
->>> y = "ACCTGGCACAA"
->>> def h():
-...     print(y)
-...
->>> h()
-'ACCTGGCACAA'
-```
-
-`y` is recognized when `h()` is called as it is a global name.
-
---
-
-## The  number  of  arguments  can  be  variable  
-
-(i.e.  can  change  from  one function call to the other) <br>
-
-> In this case, you can use \* or \** symbols.
-
-- 1st  case     (\*args) =>     tuple of arguments
-
-- 2nd  case     (\**args)=>     dictionary of arguments
-
---
-
-- 1st  case     (\*args) =>     tuple of arguments
-
-```
->>> def print_args(*args):
-...     print(args)
-...     return
-...
->>> print_args(1,2,3,4,5)
-(1, 2, 3, 4, 5)
->>> print_args("Hello world!")
-(‘Hello world!’,)
->>> print_args(100, 200, "ACCTGGCACAA")
-(100, 200, ‘ACCTGGCACAA’)
-```
-
---
-
-- 2nd  case     (\**args)=>     dictionary of arguments
-
-```
->>> def print_args2(**args):
-...     print(args)
-...     return
-...
->>>  print_args2(num  =  100,  num2  =  200, seq  =
-"ACCTGGCACAA")
-{'num': 100, 'seq': 'ACCTGGCACAA', 'num2': 200}
 ```
 
 --

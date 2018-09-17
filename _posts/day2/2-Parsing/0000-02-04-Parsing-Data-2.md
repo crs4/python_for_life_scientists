@@ -4,8 +4,8 @@
 --
 
 ## Comparing data from different files
-```
-SwissProt-Human.fasta
+```text
+SwissProt-Human.fasta (from previous module)
 >sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
 MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSS
 WRVISSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFY
@@ -16,8 +16,8 @@ AGEGEN
 ...
 ```
 ---
-```
-cancer-expressed.txt
+```text
+cancer-expressed.txt (copy and paste to create it)
 
 Q5XXA6
 Q9Y5P2
