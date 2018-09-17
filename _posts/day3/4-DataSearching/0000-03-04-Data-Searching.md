@@ -329,21 +329,6 @@ set(['c'])
 
 --
 
-## S1.symmetric_difference(S2)or S1 ^ S2
-
-`symmetric_difference()` of two sets S1 and S2 creates a new set with elements in either S1 or S2 but not both
-
-```
->>> S1 = set(['a','b','c'])
->>> S2 = set (['c','d','e'])
->>> S1.symmetric_difference(S2)
-set(['a', 'b', 'e', 'd'])
->>> S1 ^ S2
-set(['a', 'b', 'e', 'd'])
-```
-
---
-
 ## S1.difference(S2) or S1 - S2
 
 The  `difference()`  of  two  sets  S1  and  S2  creates  a  new  set with elements in S1 but not in S2
@@ -357,6 +342,21 @@ set(['a', 'b'])
 set(['a', 'b'])
 >>> S2 – S1
 set(['e', 'd'])
+```
+
+--
+
+## S1.symmetric_difference(S2) or S1 ^ S2
+
+`symmetric_difference()` of two sets S1 and S2 creates a new set with elements in either S1 or S2 but not both
+
+```
+>>> S1 = set(['a','b','c'])
+>>> S2 = set (['c','d','e'])
+>>> S1.symmetric_difference(S2)
+set(['a', 'b', 'e', 'd'])
+>>> S1 ^ S2
+set(['a', 'b', 'e', 'd'])
 ```
 
 --
