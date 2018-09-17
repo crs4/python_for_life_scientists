@@ -31,19 +31,6 @@ You can leave the shell by typing  `exit()`
 
 --
 
-## **Challenge #1**
-
-### Open a Python interactive session (the Python shell):
-
->+  Calculate the sum and difference of two
-numbers
->+  Divide two numbers. Try 5/3.
->+ Then try 5.0/3
->+  Calculate 3x5
->+  Calculate a power of 2
-
---
-
 ## Variables
 
 Variables are containers for data.
@@ -64,6 +51,34 @@ Variable names may be composed of
 >> silk_one2
 36
 ```
+
+--
+## Arithmetic Operators
+
+Operator | Example | Meaning | Result
+--- | --- | --- | --- 
+ + (unary) | +a | Unary Positive | a
+ + (binary) | a + b | Addition | Sum of a and b
+ - (unary) | -a | Unary Negation | Value equal to a but opposite in sign
+ - (binary) | a - b | Subtraction | b subtracted from a
+ * | a * b | Multiplication | Product of a and b
+ / | a / b | Division  | Quotient when a is divided by b. The result always has type float.
+ %  | a % b | Modulus |	Remainder when a is divided by b
+ // | a // b | Floor Division (also called Integer Division) | Quotient when a is divided by b, rounded to the next smallest whole number
+ ** | a ** b | Exponentiation | a raised to the power of b
+
+--
+
+## **Challenge #1**
+
+### Open a Python interactive session (the Python shell):
+
+>+  Calculate the sum and difference of two
+numbers
+>+  Divide two numbers. Try 5/3.
+>+ Then try 5.0/3
+>+  Calculate 3x5
+>+  Calculate a power of 2
 
 --
 
