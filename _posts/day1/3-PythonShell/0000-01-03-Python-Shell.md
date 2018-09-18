@@ -53,6 +53,7 @@ Variable names may be composed of
 ```
 
 --
+
 ## Arithmetic Operators
 
 Operator | Example | Meaning | Result
@@ -91,7 +92,7 @@ numbers
 >+ Then try 5.0/3
 >+ Calculate 3x5
 >+ Calculate a power of 2
->+ Calculate 4 * 3 ** 2 * 5
+>+ Calculate 4x3^2x5
 
 --
 
