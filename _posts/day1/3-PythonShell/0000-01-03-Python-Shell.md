@@ -69,10 +69,10 @@ Operator | Example | Meaning | Result
 ### Arithmetic Operators 2/2
 
 Operator | Example | Meaning | Result
---- | --- | --- | --- 
- / | a / b | Division  | Quotient when a is divided by b. The result always has type float.
+--- | --- | --- | ------ 
+ / | a / b | Division  | Quotient when a is divided by b. Result is a float.
  %  | a % b | Modulus |	Remainder when a is divided by b
- // | a // b | Floor Division (also called Integer Division) | Quotient when a is divided by b, rounded to the next smallest whole number
+ // | a // b | Floor Division | Quotient, rounded to the next smallest whole number
  ** | a ** b | Exponentiation | a raised to the power of b
 
 --
@@ -81,10 +81,7 @@ Operator | Example | Meaning | Result
 
 Precedence | Operator | Description
 ------ | ------ | ------
-lowest  |	or | Boolean OR
- . | and |	Boolean AND
- . | not |	Boolean NOT
- . | +, - |	addition, subtraction
+lowest | +, - |	addition, subtraction
  . | *, /, //, % |	multiplication, division, floor division, modulo
  . | +x, -x | unary positive, unary negation
 highest | ** | exponentiation
@@ -175,7 +172,7 @@ print(V)
 <br>
 ### Advantages
 
-> 1. f the module is big and we need only one function; 
+> 1. the module is big and we need only one function; 
 > 2. we not using the "." syntax and the name of the variable pi is shorter!
 
 --
