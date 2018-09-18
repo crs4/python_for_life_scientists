@@ -32,7 +32,7 @@ reveal_path: reveal.js/
 
 # Don't change anything below
 markdown: redcarpet
-highlighter: pygments
+highlighter: rouge
 markdown_ext: ignoreme
 
 plugins:

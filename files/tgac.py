@@ -1,0 +1,12 @@
+codonAMINO =  {'GCU':'A','GCC':'A','GCA':'A', 'GCG':'A',
+'CGU':'R','CGC':'R','CGA':'R','CGG':'R','AGA':'R','AGG':'R',
+'UCU':'S','UCC':'S','UCA':'S','UCG':'S','AGU':'S','AGC':'S',
+'AUU':'I','AUC':'I','AUA':'I','AUU':'I','AUC':'I','AUA':'I',
+'UUA':'L','UUG':'L','CUU':'L','CUC':'L','CUA':'L','CUG':'L',
+'GGU':'G','GGC':'G','GGA':'G','GGG':'G','AAU':'N','AAC':'N',
+'GUU':'V','GUC':'V','GUA':'V','GUG':'V','GAU':'D','GAC':'D',
+'ACU':'T','ACC':'T','ACA':'T','ACG':'T','UGU':'C','UGC':'C',
+'CCU':'P','CCC':'P','CCA':'P','CCG':'P','CAA':'Q','CAG':'Q',
+'GAA':'E','GAG':'E','CAU':'H','CAC':'H','AAA':'K','AAG':'K',
+'UUU':'F','UUC':'F','UAU':'Y','UAC':'Y','AUG':'M','UGG':'W',
+'AUG':'START','UAG':'STOP', 'UGA':'STOP', 'UAA':'STOP' }

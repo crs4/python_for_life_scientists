@@ -18,13 +18,16 @@
 
 ## Representing a table as a list of lists:
 
-```
+```text
+Copy and paste in file table-1.txt
+
 exp      gene1      gene2      gene3      gene4
 1          17        19        2              10
 2          2        336        3              11
 3          16        21        3              12
 4          17        16        1              9
 ```
+
 
 ```
 table = [
@@ -40,7 +43,7 @@ table = [
 
 ## How would you generate a table from a text file?
 
-```
+```python
 T = open("table-1.txt")
 
 table = []
@@ -321,142 +324,7 @@ Methods of lists **MODIFY** the lists in place
 
 --
 
-## Sorting with `itemgetter`
-
-```
->>> from operator import itemgetter
->>> L = ['ACCTGGCCA','ACTG','TACGGCAGGAGACG','TTGGATC']
->>> itemgetter(1)(L)
-'ACTG'
->>> itemgetter(1,-1)(L)
-('ACTG', 'TTGGATC')
-```
-
-### Sort a table by any column
-```
-from operator import itemgetter
-
-data = [
-[5, 10, 4, 3, 2],
-[6, 7, 8, 9, 10],
-]
-
-data.sort(key = itemgetter(1))
-
-print(data)
-
-6     7         8         9         10
-
-5     10        4         3         2
-```
-
---
-
-## Sort a table by any column
-
-```
-from operator import itemgetter
-
-data = [
-[5, 10, 4, 3, 2],
-[6, 7, 8, 9, 10],
-]
-
-data_sorted = sorted(data, key = itemgetter(1))
-
-print(data_sorted)
-```
-
---
-
-##  **Challenge #1**
-
-> + Sort a table
-> + convert its elements to strings
-> + and write it to a file
-
---
-
-## Solution to *Challenge #1*
-One  solution:
-
-```python
-from operator import itemgetter
-data = [
-[5, 10, 4, 3, 2],
-[6, 7, 8, 9, 10],
-]
-
-data.sort(key=itemgetter(1))
-
-for row in data:
-    for i in xrange(len(row)):
-        row[i] = str(row[i]) #replace nr with strings
-
-for elem in data:
-    print("\t".join(elem) + "\n")
-```
-
---
-
-## Solution to *Challenge #1*
-
-another possible solution:
-
-```python
-from operator import itemgetter
-
-data = [
-[5, 10, 4, 3, 2],
-[6, 7, 8, 9, 10],
-]
-
-data.sort(key=itemgetter(1))
-
-# format table as strings
-for row in data:
-    row = [str(x) for x in row]
-      print("\t".join(row))
-```
-
---
-
-### Sort a table by the first column, 
-### then by the second, then by the third, and so on…
-
-```python
-from operator import itemgetter
-in_file = open("random_distribution.tsv")
-
-# read table to floats
-table = []
-for line in in_file:
-    rows = line.split()
-    rows = [float(x) for x in rows]
-    table.append(rows)
-
-# sort the table by second, then by third column
-table_sorted = sorted(table, key = itemgetter(1, 2))
-
-# format table as strings
-for row in table_sorted:
-    row = [str(x) for x in row]
-    print("\t".join(row))
-```
-
---
-
-### Also consider that…
-
-```
-table = sorted(table, key=itemgetter(1), reverse=True)
-
-table = sorted(table, key=itemgetter(1,3), reverse=True)
-```
-
---
-
-###  **Challenge #2**
+###  **Challenge #1**
 
 From `neuron_data.txt` generate two tables, one for primary and one for secondary neurons
 
@@ -498,7 +366,7 @@ Secondary 214.723
 
 --
 
-## Solution to *Challenge #2*
+## Solution to *Challenge #1*
 
 ```python
 neurons = open("neuron_data.txt")
@@ -517,30 +385,9 @@ for line in neurons:
 
 --
 
-##  **Challenge #3**
+##  **Challenge #2**
 
-> + Sort the primary neuron’s table
-> + show the three longest neurons
-
---
-
-## Solution to *Challenge #3*
-
-```python
-from operator import itemgetter
-
-# sort by second column
-table1.sort(key=itemgetter(1))
-
-#show the three longest neurons
-print(table1[-3:])
-```
-
---
-
-##  **Challenge #4**
-
-> + Turn the table
+> + Traspose the table
 > + calculate the length average
 
 --
@@ -559,13 +406,13 @@ print(sum(lengths) / len(lengths))
 
 --
 
-##  **Challenge #5**
+##  **Challenge #3**
 
 >Create an empty table of 10 x 10 cells.
 
 --
 
-## Solution to *Challenge #5*
+## Solution to *Challenge #3*
 Create an empty table of 10 x 10 cells
 
 ```python
@@ -579,7 +426,7 @@ Create an empty table of 10 x 10 cells
 
 --
 
-##  **Challenge #6**
+##  **Challenge #4**
 
 >Fill the table with the numbers from 1 to 100.
 
@@ -607,13 +454,13 @@ Fill the table with the numbers from 1 to 100
 
 --
 
-##  **Challenge #7**
+##  **Challenge #5**
 
 >Save the table to a tab-separated file.
 
 --
 
-## Solution to *Challenge #7*
+## Solution to *Challenge #5*
 Save the table to a tab-separated file
 ```python
 empty_table = [[0]*10 for x in xrange(10)]
