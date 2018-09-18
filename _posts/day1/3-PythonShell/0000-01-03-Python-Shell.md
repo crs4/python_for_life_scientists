@@ -66,6 +66,18 @@ Operator | Example | Meaning | Result
  %  | a % b | Modulus |	Remainder when a is divided by b
  // | a // b | Floor Division (also called Integer Division) | Quotient when a is divided by b, rounded to the next smallest whole number
  ** | a ** b | Exponentiation | a raised to the power of b
+ 
+### Operator precedence
+
+Precedence | Operator | Description
+------ | ------ | ------
+lowest  |	or | Boolean OR
+ . | and |	Boolean AND
+ . | not |	Boolean NOT
+ . | +, - |	addition, subtraction
+ . | *, /, //, % |	multiplication, division, floor division, modulo
+ . | +x, -x | unary positive, unary negation
+highest | ** | exponentiation
 
 --
 
@@ -75,10 +87,11 @@ Operator | Example | Meaning | Result
 
 >+  Calculate the sum and difference of two
 numbers
->+  Divide two numbers. Try 5/3.
+>+ Divide two numbers. Try 5/3.
 >+ Then try 5.0/3
->+  Calculate 3x5
->+  Calculate a power of 2
+>+ Calculate 3x5
+>+ Calculate a power of 2
+>+ Calculate 4 * 3 ** 2 * 5
 
 --
 
