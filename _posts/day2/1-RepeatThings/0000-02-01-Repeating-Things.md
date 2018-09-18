@@ -11,7 +11,7 @@
 # insulin [Homo sapiens] GI:386828
 insulin = "GIVEQCCTSICSLYQLENYCFVNQHLCGSHLVEALYLVGERGFFYTPKT"
 
-for amino_acid in "ACDEFGHIKLMNPQRSTVWY":
+for amino_acid in "ABCDEFGHIKLMNPQRSTVWY":
   number = insulin.count(amino_acid)
   print(amino_acid, number)
 ```
@@ -148,6 +148,31 @@ for line in telomerase:
 
 --
 
+## Manipulating Strings
+
+```python
+s = "my fat cat\n"
+
+len(s)      =>  11
+
+s.split()   =>  ['my', 'fat', 'cat']
+
+s[-6]       =>  't'
+
+s.upper()   =>  'MY FAT CAT\n'
+
+s.strip()   =>  'my fat cat'
+
+s.replace('c','r')  =>   'my fat rat\n'
+
+s.find('fat')   =>  3
+
+s[7:10]         =>  'cat'
+```
+
+--
+
+
 ##  **Challenge #3**
 
 > Which amino acid is the most frequent in the sequence of the telomerase reverse transcriptase isoform 1?
@@ -165,12 +190,6 @@ for aa in "ACDEFGHKILMNPQRSTVYW":
   aa_freq = aa_count/float(len(seq))
   print(aa, round(aa_freq, 3))
 ```
-
---
-
-## Recap
-
-<img src="{{site.url}}/img/pp9.png" alt="slot" style="width: 700px;"/>
 
 --
 
