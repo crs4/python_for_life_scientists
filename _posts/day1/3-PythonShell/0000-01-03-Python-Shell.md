@@ -54,7 +54,7 @@ Variable names may be composed of
 
 --
 
-## Arithmetic Operators 1/2
+### Arithmetic Operators 1/2
 
 Operator | Example | Meaning | Result
 --- | --- | --- | --- 
@@ -66,7 +66,7 @@ Operator | Example | Meaning | Result
 
 --
 
-## Arithmetic Operators 2/2
+### Arithmetic Operators 2/2
 
 Operator | Example | Meaning | Result
 --- | --- | --- | --- 
@@ -76,8 +76,8 @@ Operator | Example | Meaning | Result
  ** | a ** b | Exponentiation | a raised to the power of b
 
 --
- 
-## Arithmetic operators precedence
+
+### Arithmetic operators precedence
 
 Precedence | Operator | Description
 ------ | ------ | ------
