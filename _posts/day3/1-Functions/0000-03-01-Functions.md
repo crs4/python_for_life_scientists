@@ -455,10 +455,8 @@ print("Distance:", distance(p1, p2))
 
 Write a function that:
 
->-  Takes as input a file name (of a FASTA file).
->
+>-  Takes as input a file name (of a FASTA file). `SingleSeq.fasta`
 >-  Opens the file.
->
 >-  Returns the header of the sequence record.
 
 Print the header
@@ -475,92 +473,6 @@ def return_header(filename):
         return line
 
 print(return_header('SingleSeq.fasta'))
-```
-
---
-
-###  **Challenge #5**
-
->Insert the previous function call 
->
-> in a for loop running on 
->
-> a list of 3 sequence file names.
-
---
-
-## Solution to *Challenge #5*
-```python
-def return_header(filename):
-    fasta = open(filename)
-    for line in fasta:
-        if line[0] == '>':
-            return line
-
-filenames = ['SingleSeq1.fasta',
-              'SingleSeq2.fasta',
-              'SingleSeq3.fasta']
-
-for name in filenames:
-    print(return_header(name))
-```
-
---
-
-###  **Challenge #6**
-
-Consider two output schemes for exercise 4:
-
-1. All the the headers are written to the same output file
-
-2. Each header is written in a separate output file
-
---
-
-## Solution to *Challenge #6*
-one possible solution
-```python
-def return_header(filename):
-    fasta = open(filename)
-    for line in fasta:
-        if line[0] == '>':
-            return line
-
-filenames = ['SingleSeq1.fasta',
-             'SingleSeq2.fasta',
-             'SingleSeq3.fasta']
-
-output = open("headers.txt", "w")
-
-for name in filenames:
-    output.write(return_header(name) + '\n')
-
-output.close()
-```
-
---
-
-## Solution to *Challenge #6*
-
-Another possible solution
-
-```python
-def return_header(filename):
-    fasta = open(filename)
-    for line in fasta:
-        if line[0] == '>':
-          return line
-
-filenames = ['SingleSeq1.fasta',
-             'SingleSeq2.fasta',
-             'SingleSeq3.fasta']
-n = 0
-for name in filenames:
-    n = n + 1
-    output = open("header" + str(n) + ".txt", "w")
-    output.write(return_header(name))
-
-output.close()
 ```
 
 --
