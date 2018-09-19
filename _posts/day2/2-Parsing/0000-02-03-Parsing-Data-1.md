@@ -342,17 +342,16 @@ Therefore `header` here is treated as Boolean:
 
 ```text
 SwissProt-Human.fasta
->sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
-MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSSWRVI
-SSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFYLKMKGDYF
-RYLSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYYEILNSPEKACS
-LAKTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
->sp|P62258|1433E_HUMAN 14-3-3 protein epsilon OS=Homo sapiens
-MDDREDLVYQAKLAEQAERYDEMVESMKKVAGMDVELTVEERNLLSVAYKNVIGARRASWR
-IISSIEQKEENKGGEDKLKMIREYRQMVETELKLICCDILDVLDKHLIPAANTGESKVFYY
-KMKGDYHRYLAEFATGNDRKEAAENSLVAYKAASDIAMTELPPTHPIRLGLALNFSVFYYE
-ILNSPDRACRLAKAAFDDAIAELDTLSEESYKDSTLIMQLLRDNLTLWTSDMQGDGEEQNK
-EALQDVEDENQ
+>sp|P61513|RL37A_HUMAN 60S ribosomal protein L37a OS=Homo sapiens ...
+MAKRTKKVGIVGKYGTRYGASLRKMVKKIEISQHAKYTCSFCGKTKMKRRAVGIWHCGSC
+MKTVAGGAWTYNTTSAVTVKSAIRRLKELKDQ
+>sp|P17812|PYRG1_HUMAN CTP synthase 1 OS=Homo sapiens ...
+MKYILVTGGVISGIGKGIIASSVGTILKSCGLHVTSIKIDPYINIDAGTFSPYEHGEVFV
+LDDGGEVDLDLGNYERFLDIRLTKDNNLTTGKIYQYVINKERKGDYLGKTVQVVPHITDA
+IQEWVMRQALIPVDEDGLEPQVCVIELGGTVGDIESMPFIEAFRQFQFKVKRENFCNIHV
+SLVPQPSSTGEQKTKPTQNSVRELRGLGLSPDLVVCRCSNPLDTSVKEKISMFCHVEPEQ
+VICVHDVSSIYRVPLLLEEQGVVDYFLRRLDLPIERQPRKMLMKWKEMADRYDRLLETCS
+IALVGKYTKFSDSYASVIKALEHSALAINHKLEIKYIDSADLEPITSQEEPVRYHEAWQK
 ...
 ```
 > * Download a Uniprot multiple sequence FASTA file. https://www.uniprot.org/uniprot
@@ -372,9 +371,10 @@ for line in fasta:
 
 headers.close()
 
->sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
->sp|P62258|1433E_HUMAN 14-3-3 protein epsilon OS=Homo sapiens
->sp|Q04917|1433F_HUMAN 14-3-3 protein eta OS=Homo sapiens GN=YWHAH
+>sp|P61513|RL37A_HUMAN 60S ribosomal protein L37a OS=Homo sapiens ...
+>sp|P17812|PYRG1_HUMAN CTP synthase 1 OS=Homo sapiens ...
+>sp|Q02878|RL6_HUMAN 60S ribosomal protein L6 OS=Homo sapiens ...
+>sp|P61026|RAB10_HUMAN Ras-related protein Rab-10 OS=Homo sapiens ...
 ```
 
 --
@@ -389,7 +389,7 @@ headers.close()
 ## Solution to *Challenge #10*
 
 ```python
-fasta = open('SwissProt-Human.fasta.fasta')
+fasta = open('SwissProt-Human.fasta')
 seqs = open('seqs.txt', 'w')
 
 for line in fasta:
@@ -408,8 +408,14 @@ seqs.write(line.strip() + '\n')
 
 ## **Challenge #11**
 
-> * Read a file in FASTA format 
+> * Read a file in FASTA format `SwissProt-Human.fasta`
 > * and copy to a new file the records' Accession Numbers (AC).
+
+```python
+>sp|P17812|PYRG1_HUMAN CTP synthase 1 OS=Homo sapiens
+
+P17812
+```
 
 --
 
@@ -426,131 +432,6 @@ for line in human_fasta:
 
 Outfile.close()
 ```
-
---
-
-### **Challenge #12**
-+ Download a Uniprot multiple sequence FASTA for 'DNA directed RNA polymerase https://www.uniprot.org/uniprot/?query=DNA-directed+RNA+polymerase
-+ Copy and Paste in `sprot_prot.fasta`
-
----
->+   Read FASTA records from file `sprot_prot.fasta`
->+   Count (and print) the cysteine residues in each sequence.
-
---
-
-## Solution to *Challenge #12*
-
-One possible solution:
-```python
-fasta = open('sprot_prot.fasta')
-
-seq = ''
-
-for line in fasta:
-    if line[0] == '>' and seq == '':
-        header = line[4:10]
-    elif line[0] != '>':
-        seq = seq + line.strip()
-    elif line[0] == '>' and seq != '':
-        cys_num = seq.count('C')
-        print(header, ': ', cys_num)
-        header = line[4:10]
-        seq = ''
-
-cys_num = seq.count('C')
-print(header, ': ', cys_num)
-```
-
---
-
-## Solution to *Challenge #12*
-
-Another possible solution:
-
-```python
-fasta = open('sprot_prot.fasta')
-
-seq = ''
-
-for line in fasta:
-    if line[0]=='>':
-        if seq:
-            cys_num = seq.count('C')
-            print(header, ':' , cys_num)
-        header = line.split('|')[1]
-        seq = ''
-    else:
-        seq = seq + line.strip()
-```
-
---
-
-## **Challenge #13**
-
-
-> * Read the multiple sequence FASTA file `sprot_prot.fasta` and 
-> * write to a new file only the records from Homo sapiens.
-
---
-
-## Solution to *Challenge #13*
-One possible solution:
-```python
-fasta = open('sprot_prot.fasta')
-output = open('homo_sapiens.fasta', 'w')
-seq = ''
-for line in fasta:
-    if line[0] == '>' and seq == '':
-        header = line
-    elif line[0] != '>':
-        seq = seq + line
-    elif line[0] == '>' and seq != '':
-        if "Homo sapiens" in header:
-              output.write(header + seq)
-        header = line
-        seq = ''   
-
-if "Homo sapiens" in header:
-  output.write(header + seq)
-
-output.close()
-```
-
---
-
-## Solution to *Challenge #13*
-Another possible solution:
-```python
-fasta = open('sprot_prot.fasta')
-output = open('sprot_human.fasta', 'w')
-
-seq = ''
-
-for line in fasta:
-  if line[0]=='>':
-    if seq:
-      if "Homo sapiens" in header:
-        output.write(header + seq)
-    header = line
-    seq = ''
-  else:
-    seq = seq + line
-
-output.close()
-```
-
---
-
-## Parsing data records
-
-+ Start by visually inspecting the file you want to parse
-
-+   Identify the information you want to extract
-
-+   Identify separators to select your information using if conditions
-
-+   Use  lists if you have to compare data from different files
 
 --
 

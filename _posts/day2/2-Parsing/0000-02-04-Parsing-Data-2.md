@@ -6,28 +6,27 @@
 ## Comparing data from different files
 ```text
 SwissProt-Human.fasta (from previous module)
->sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
-MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSS
-WRVISSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFY
-LKMKGDYFRYLSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFY
-YEILNSPEKACSLAKTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGD
-AGEGEN
-...
+>sp|P61513|RL37A_HUMAN 60S ribosomal protein L37a OS=Homo sapiens ...
+MAKRTKKVGIVGKYGTRYGASLRKMVKKIEISQHAKYTCSFCGKTKMKRRAVGIWHCGSC
+MKTVAGGAWTYNTTSAVTVKSAIRRLKELKDQ
+>sp|P17812|PYRG1_HUMAN CTP synthase 1 OS=Homo sapiens ...
+MKYILVTGGVISGIGKGIIASSVGTILKSCGLHVTSIKIDPYINIDAGTFSPYEHGEVFV
+LDDGGEVDLDLGNYERFLDIRLTKDNNLTTGKIYQYVINKERKGDYLGKTVQVVPHITDA
 ...
 ```
 ---
 ```text
 cancer-expressed.txt (copy and paste to create it)
 
-Q5XXA6
+Q86YS6
 Q9Y5P2
 Q14667
-O75387
-Q8WV07
-Q8CH62
-Q9GZY1
-Q9NQQ7
-Q8VCX2
+Q3MIT2
+Q9H0K6
+Q96N64
+P61927
+Q96HA9
+I3L0S3
 Q7Z769
 ```
 
@@ -40,9 +39,19 @@ First, you have to store the 10 Uniprot ID in a data structure
 
 Lists are nice and veeeeery flexible data structures
 
-```
-['Q5XXA6', 'Q9Y5P2', 'Q14667', 'O75387', 'Q8WV07',
- 'Q8CH62', 'Q9GZY1', 'Q9NQQ7', 'Q8VCX2', 'Q7Z769']
+```python
+[
+'Q86YS6',
+'Q9Y5P2',
+'Q14667',
+'Q3MIT2',
+'Q9H0K6',
+'Q96N64',
+'P61927',
+'Q96HA9',
+'I3L0S3',
+'Q7Z769'
+]
 ```
 
 --
@@ -72,13 +81,40 @@ L = []  # the empty list
 
 ## Operations with lists
 
-<img src="{{site.url}}/img/parsingimgCHANGE_cccp.png" alt="slot" style="width: 700px;"/>
+![]({{site.url}}/img/parsingimgCHANGE_cccp.png)
+
+--
+
+## Operations with lists
+
+```python
+L = [1, 2, 3, 4, 5]
+>>> 2 in L
+True
+>>> 8 in L
+False
+>>> len(L)
+5
+>>> min(L)
+1
+>>> max(L)
+5
+```
+```python
+>>> L*2
+[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+>>> 2*L
+[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+T = ['a','b','c']
+>>> L + T
+[1, 2, 3, 4, 5, 'a', 'b', 'c']
+```
 
 --
 
 ## Indexes
 
-```
+```python
 >>> L = [1,"hello",12.1,[1,2,"three"],"seq",(1,2)]
 >>> L[0]  # indexing
 1
@@ -88,12 +124,24 @@ L = []  # the empty list
 'three'
 >>> L[-1]  # negative indexing
 (1, 2)
->>> L[2:4]
-[12.1, [1, 2, 'three']]  # slicing
->>> L[2:]
-[12.1, [1, 2, 'three'], 'seq', (1, 2)] #slicing shorthand
->>>
+>>> L[2:4] # slicing
+[12.1, [1, 2, 'three']]  
+>>> L[2:]  #slicing shorthand
+[12.1, [1, 2, 'three'], 'seq', (1, 2)]
 ```
+```python
+>>> G = [1, 2, 3, 4, 5, 'a', 'b', 'c']
+>>> G[2:7]        
+[3, 4, 5, 'a', 'b']
+>>> G[2:7:2]
+[3, 5, 'b']
+>>> G[2:7:3]
+[3, 'a']
+
+```
+
+
+
 
 --
 
@@ -266,9 +314,9 @@ store them into a variable
 ##  **Challenge #1**
 
 
->-  Read 10 SwissProt ACs from a file
->-   Store them into a list
->-   Print the list
+>-  Read 10 SwissProt ACs from a file (`cancer-expressed.txt`)
+>-  Store them into a list
+>-  Print the list
 
 --
 
@@ -289,8 +337,8 @@ print(cancer_list)
 
 ##  **Challenge #2**
 
->-  Create a list containing Uniprot ACs extracted from a FASTA file
->-   Print the list
+>-  Create a list containing Uniprot ACs extracted from a FASTA file (`SwissProtHuman.fasta`)
+>-  Print the list
 
 --
 
@@ -338,82 +386,6 @@ Outfile.close()
 ```
 
 *We are not writing the whole record but the header line only*
-
---
-
-##  **Challenge #4**
-
-* Read a multiple sequence file in FASTA format 
-* and write to a new file only the records the Uniprot ACs of which are present in the list created in Program 1
-
->Check the file `SwissProt-Human.fasta`
-
-```
->sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
-MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSSWRVISSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFYLKMKGDYFRYLSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYYEILNSPEKACSLAKTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
->sp|P62258|1433E_HUMAN 14-3-3 protein epsilon OS=Homo sapiens
-MDDREDLVYQAKLAEQAERYDEMVESMKKVAGMDVELTVEERNLLSVAYKNVIGARRASWRIISSIEQKEENKGGEDKLKMIREYRQMVETELKLICCDILDVLDKHLIPAANTGESKVFYYKMKGDYHRYLAEFATGNDRKEAAENSLVAYKAASDIAMTELPPTHPIRLGLALNFSVFYYEILNSPDRACRLAKAAFDDAIAELDTLSEESYKDSTLIMQLLRDNLTLWTSDMQGDGEEQNKEALQDVEDENQ
->sp|Q04917|1433F_HUMAN 14-3-3 protein eta OS=Homo sapiens
-GNYWHAHMGDREQLLQRARLAEQAERYDDMASAMKAVTELNEPLSNEDRNLLSVAYKNVVGARRSSWRVISSIEQKTMADGNEKKLEKVKAYREKIEKELETVCNDVLSLLDKFLIKNCNDFQYESKVFYLKMKGDYYRYLAEVASGEKKNSVVEASEAAYKEAFEISKEQMQPTHPIRLGLALNFSVFYYEIQNAPEQACLLAKQAFDDAIAELDTLNEDSYKDSTLIMQLLRDNLTLWTSDQQDEEAGEGN
-```
-
---
-
-## Solution to *Challenge #4*
-One possible solution
-```
-cancer_file = open('cancer-expressed.txt')
-human_fasta = open('SwissProt-Human.fasta')
-Outfile = open('cancer_expressed.fasta','w')
-
-cancer_list = []
-seq = ''
-
-for line in cancer_file:
-  AC = line.strip()
-  cancer_list.append(AC)
-
-for line in human_fasta:
-  if line[0] == '>':
-    if seq:
-      if AC in cancer_list:
-        Outfile.write(header + seq)
-      header = line
-      AC = line.split('|')[1]
-      seq = ''
-  else:
-    seq = seq + line
-
-if AC in cancer_list:
-  Outfile.write(header+seq)
-```
-
---
-
-## Solution to *Challenge #4*
-Another possible solution:
-```python
-cancer_file = open('cancer-expressed.txt')
-human_fasta = open('SwissProt-Human.fasta')
-Outfile = open('cancer_expressed.fasta','w')
-
-cancer_list = []
-
-for line in cancer_file:
-  AC = line.strip()
-  cancer_list.append(AC)
-
-for line in human_fasta:
-  if line[0] == ">":
-    field = line.split("|")
-    AC = field[1]
-    if AC in cancer_list:
-      Outfile.write(line)
-  else:
-    if AC in cancer_list:
-      Outfile.write(line)
-Outfile.close()
-```
 
 --
 
@@ -492,6 +464,18 @@ while line:
 ```
 
 > (but usually we won't do it)
+
+--
+
+## Parsing data records
+
++ Start by visually inspecting the file you want to parse
+
++   Identify the information you want to extract
+
++   Identify separators to select your information using if conditions
+
++   Use  lists if you have to compare data from different files
 
 --
 
