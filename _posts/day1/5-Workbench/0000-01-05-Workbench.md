@@ -129,7 +129,6 @@ Launch `Spyder` from the start menu.
 
 > You can use packages particular to a Python project without installing them system wide and thus avoiding potential version conflicts.
 
-- pip
 - virtualenv
 - conda
 
@@ -137,9 +136,22 @@ Launch `Spyder` from the start menu.
 
 ## Other Tools
 
++ pip
 + iPython
 + Jupyter
 + IDLE
+
+--
+
+## Pip
+
+pip is a package management system used to install and manage software 
+packages written in Python. 
+
+Many packages can be found in the default source 
+for packages and their dependencies — Python Package Index 
+
+https://pypi.org/
 
 --
 
