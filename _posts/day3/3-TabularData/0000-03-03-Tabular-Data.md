@@ -10,9 +10,9 @@
 
 -  How to delete rows and columns
 
--  How to sort columns
+-  Sorting
 
--  How to sort
+
 
 --
 
@@ -168,9 +168,9 @@ gene4     10       11       12        9
 >>> x = [1, 2, 3]
 >>> y = [4, 5, 6]
 >>> zipped = zip(x, y)
->>> zipped
+>>> zipped_list = list(zipped)
 [(1, 4), (2, 5), (3, 6)]
->>> x2, y2 = zip(*zipped)
+>>> x2, y2 = zip(*zipped_list)
 >>> x2, y2
 ((1, 2, 3), (4, 5, 6))
 >>> x == list(x2) and y == list(y2)
@@ -188,7 +188,7 @@ table = []
 for line in T:
     table.append(line.split())
 
-columns = zip(*table)
+columns = list(zip(*table))
 
 columns.pop(3)
 
@@ -345,7 +345,6 @@ Primary      355.702
 Primary      53.566
 Secondary 202.075
 Secondary 142.301
-neuron_data.txt
 Primary      327.777
 Secondary 99.782
 Secondary 104.875
@@ -392,11 +391,11 @@ for line in neurons:
 
 --
 
-## Solution to *Challenge #4*
+## Solution to *Challenge #2*
 
 ```python
 # rotate the table
-columns = zip(*table1)
+columns = list(zip(*table1))
 # take the 1st  column (1st  row of table1)
 lengths = columns[1]
 print(lengths)
@@ -416,7 +415,7 @@ print(sum(lengths) / len(lengths))
 Create an empty table of 10 x 10 cells
 
 ```python
->>> empty_table = [[0]*10 for x in xrange(10)]
+>>> empty_table = [[0]*10 for x in range(10)]
 >>> empty_table
 [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0,
 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0,
@@ -432,13 +431,13 @@ Create an empty table of 10 x 10 cells
 
 --
 
-## Solution to *Challenge #6*
+## Solution to *Challenge #4*
 Fill the table with the numbers from 1 to 100
 ```python
->>> empty_table = [[0]*10 for x in xrange(10)]
+>>> empty_table = [[0]*10 for x in range(10)]
 >>> n = 0
 >>> for row in empty_table:
-...     for i in xrange(len(row)):
+...     for i in range(len(row)):
 ...         n = n + 1
 ...         row[i] = str(n)
 ...
@@ -463,11 +462,11 @@ Fill the table with the numbers from 1 to 100
 ## Solution to *Challenge #5*
 Save the table to a tab-separated file
 ```python
-empty_table = [[0]*10 for x in xrange(10)]
+empty_table = [[0]*10 for x in range(10)]
 
 n = 0
 for row in empty_table:
-    for i in xrange(len(row)):
+    for i in range(len(row)):
         n = n + 1
         row[i] = str(n)
 
