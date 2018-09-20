@@ -261,7 +261,7 @@ table = []
 for line in T:
     table.append(line.split())
 
-columns = zip(*table)
+columns = list(zip(*table))
 
 columns.pop(3)
 columns.insert(3, ['gene3', '20', '20', '20'])
