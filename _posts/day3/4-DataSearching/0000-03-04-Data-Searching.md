@@ -222,7 +222,7 @@ structures = {
 }
 
 def sort_dict_by_keys(data):
-    keys = data.keys()
+    keys = list(data.keys())
     keys.sort()
     return [data[k] for k in keys]
 
