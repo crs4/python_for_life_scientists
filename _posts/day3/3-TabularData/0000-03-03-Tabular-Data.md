@@ -62,6 +62,51 @@ print(table)
 
 --
 
+## Overview
+
+```python
+# create an empty table
+>>> table = [[0]*5 for x in range(3)]
+>>> print(table)
+[[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+
+# create a  "random" table
+>>> table = [[x]*5 for x in range(3)]
+>>> print(table)
+[[0, 0, 0, 0, 0], [1, 1, 1, 1, 1], [2, 2, 2, 2, 2]]
+
+# access a column
+>>> columns = zip(*table)
+>>> print(columns)
+[(0, 1, 2), (0, 1, 2), (0, 1, 2), (0, 1, 2), (0, 1, 2)]
+>>> fourth = columns[3]
+>>> print(fourth)
+(0, 1, 2)
+```
+
+--
+
+## Overview
+
+```python
+# access a cell
+>>> third = table[2]
+>>> print(third)
+[1, 1, 1, 1, 1]
+
+# insert a row
+>>> table.insert(0, third)
+>>> print(table)
+[[1, 1, 1, 1, 1], [0, 0, 0, 0, 0], [1, 1, 1, 1, 1], [2, 2, 2, 2, 2]]
+
+# delete a row
+>>> table.pop(2)
+>>> print(table)
+[[1, 1, 1, 1, 1], [0, 0, 0, 0, 0], [2, 2, 2, 2, 2]]
+```
+
+--
+
 ### Remove a row and write the table 
 ### to a tab-separated file
 
@@ -148,33 +193,6 @@ gene1     17       2        16       17
 gene2     19       336      21       16
 gene3     2        3         3        1
 gene4     10       11       12        9
-```
-
---
-
-#### When the argument of a function is a list or a tuple and it is preceded by \*,
-#### it unpacks the list or the tuple and uses each element as an argument to the function
-
-```
->>> range(*(0,10,2))
-[0, 2, 4, 6, 8]
->>>
-```
-
-#### `zip(*zipped)` means
-#### "**use each element of `zipped` as an argument to zip**".
-
-```
->>> x = [1, 2, 3]
->>> y = [4, 5, 6]
->>> zipped = zip(x, y)
->>> zipped
-[(1, 4), (2, 5), (3, 6)]
->>> x2, y2 = zip(*zipped)
->>> x2, y2
-((1, 2, 3), (4, 5, 6))
->>> x == list(x2) and y == list(y2)
-True
 ```
 
 --
