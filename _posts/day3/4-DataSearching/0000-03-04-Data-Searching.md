@@ -115,7 +115,7 @@ d = {key1:value1, key2:value2, …, keyN:valueN}
 ```
 
 ```
->>> del d['pep2']
+>>> del(d['pep2'])
 >>> d
 {'pep1' : 'MGSNKSKPKDASQRRRSLEPAENVHGAGG',
 'pep3' : 'ASADGHRGPSAAFAPAAA'}
@@ -132,7 +132,7 @@ d = {key1:value1, key2:value2, …, keyN:valueN}
 >>> dict.keys()     #list of dictionary keys
 ['a', 'c', 'b']
 
->>> keys = dict.keys()
+>>> keys = list(dict.keys())
 >>> keys.sort() #sort keys
 ['a', 'b', 'c']
 
@@ -142,7 +142,7 @@ d = {key1:value1, key2:value2, …, keyN:valueN}
 >>> dict.items() #tuple of dictionary (key,value) pairs
 [('a', 1), ('c', 3), ('b', 2)]
 
->>> dict.has_key("a")   #True if dict has key "a", else False
+>>> "a" in dict   #True if dict has key "a", else False
 True
 ```
 
@@ -175,7 +175,7 @@ from tgac import codonAMINO
 prot = ''
 for i in range(0,len(seq),3):
     triplet =seq[i:i+3]
-    if codonAMINO.has_key(triplet): # is the triplet in the dictionary? equivalent to: if triplet in codonAMINO
+    if triplet in codonAMINO: # is the triplet in the  dictionary? 
         prot = prot + codonAMINO[triplet]
     else:
         prot = prot + '?'
@@ -199,7 +199,7 @@ prot = ''
 for j in range(3):
     Out.write(str(j) + "-frame\n")
     for i in range(j,len(seq),3):
-        if codonAMINO.has_key(seq[i:i+3]):
+        if seq[i:i+3] in codonAMINO:
             prot = prot + codonAMINO[seq[i:i+3]]
         else:
             prot = prot + '*'
