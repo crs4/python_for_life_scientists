@@ -1,23 +1,7 @@
 # Python<br>for<br>Life Scientists
 ## Managing biological data with Python
 
----
-
-## In this course you will learn to:
-
-+ Read text files (and websites)
-+ Selectively extract and manipulate information
-+ Manage tabular data
-+ Manage sequence data
-+ Combine programs to pipelines
-+ Use libraries
-+ PROGRAM!
-
-*At the end of this course you won’t be expert programmers, but “high level beginners”*
-
-> ##### Therefore your future as programmers strongly depends on your will to not stop programming when you go back home
-
----
+--
 
 ## Getting started
 
@@ -30,17 +14,56 @@ What do you need programming for?
 
 What would you like to take home from the course?
 
----
+--
+
+## In this course you will learn to:
+
++ Read text files 
++ Selectively extract and manipulate information
++ Manage tabular data
++ Manage sequence data
++ Use libraries
++ PROGRAM!
+
+*At the end of this course you won’t be expert programmers, but “high level beginners”*
+
+> ##### Therefore your future as programmers strongly depends on your will to not stop programming when you go back home
+
+--
+
+## into the backpack
+
+- Python for Everybody: Exploring Data In Python 3 <br>https://www.py4e.com/book
+
+- Automate the Boring Stuff with Python<br>https://automatetheboringstuff.com 
+
+- Think Python: How to Think Like a Computer Scientist<br>http://greenteapress.com/wp/think-python-2e
+
+- The Hitchhiker’s Guide to Python!<br>http://docs.python-guide.org/en/latest
+
+--
+
+# about these slides
+https://github.com/ratzeni/python_for_life_scientists
+
+|  |  |
+|-------|
+| `ESC` |  Show the slide overview |
+| `HOME` | Go to Index page |
+| `Alt` + `click` | Zoom in on |
+
+--
 
 ### How is going to work
 
-|        | `Day 1 Getting Started`          | `Day 2 Parsing`     | `Day 3 Managing Data` | `Day 4 Libraries`  |
+|        | `Day 1 Getting Started`          | `Day 2 Parsing`     | `Day 3 Managing Data` | `Day 4 Libraries Practicals`  |
 | --- | --- | --- | --- | ---|
-| `1` | Intro & expectations | Repeating things  | Functions | Searching |
-| `2` | Python | Reading files | Functions | Searching |
-| `3` | Phython Shell | Parsing | Data columns | Python Libraries |
-| `4` | Phython Programs | Parsing | Data columns | Python Libraries |
+| `1` | Intro & expectations | Repeating things  | Functions | Python libraries |
+| `2` | Python | Reading files | Functions | Practicals |
+| `3` | Python Shell | Parsing | Data columns | Practicals |
+| `4` | Python Programs | Parsing | Searching | Practicals |
 
----
+--
 
 # ...
+

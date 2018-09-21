@@ -283,7 +283,7 @@ s = any sequence
 
 ## Putting together lists and loops
 
-`range()` and `xrange()` built-in functions
+`range()`  built-in functions
 
 ```
 >>> range(10)
@@ -300,14 +300,7 @@ s = any sequence
 []
 >>> range(1, 0)
 []
-# the xrange()method is more commonly used in for loops than range()
->>>for i in xrange(5):
-…             print(i)
-…
-0,1,2,3,4
 ```
-The `xrange()` method generates the values upon call, i.e. it does not
-store them into a variable
 
 --
 

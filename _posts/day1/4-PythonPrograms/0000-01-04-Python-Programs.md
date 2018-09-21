@@ -41,10 +41,6 @@
 
 --
 
-<img src="{{site.url}}/img/pp2.png" alt="slot" style="width: 700px;"/>
-
---
-
 <img src="{{site.url}}/img/pp3.png" alt="slot" style="width: 700px;"/>
 
 --

@@ -11,7 +11,7 @@
 # insulin [Homo sapiens] GI:386828
 insulin = "GIVEQCCTSICSLYQLENYCFVNQHLCGSHLVEALYLVGERGFFYTPKT"
 
-for amino_acid in "ABCDEFGHIKLMNPQRSTVWY":
+for amino_acid in "ACDEFGHIKLMNPQRSTVWY":
   number = insulin.count(amino_acid)
   print(amino_acid, number)
 ```
