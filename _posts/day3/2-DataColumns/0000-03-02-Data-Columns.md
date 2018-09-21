@@ -253,7 +253,7 @@ data1 =  [1, 2, 2, 1, 1, 2, 1, 2, 2]
 data2 = [16.38, 139.90, 441.46, 29.03, 40.93,
  202.07, 142.30, 346.00, 300.00]
 
-for i in xrange(len(data1)):
+for i in range(len(data1)):
     out.write(str(data1[i]) + '\t' +  str(data2[i]) + '\n')
 out.close()
 ```
@@ -290,6 +290,18 @@ https://pyformat.info
 
 --
 
+## Match the formatting expressions and their result
+
+<img src="{{site.url}}/img/expression_values.png" alt="slot" style="width: 900px;"/>
+
+--
+
+## Match the formatting expressions and their result - solution
+
+<img src="{{site.url}}/img/expression_values_right.png" alt="slot" style="width: 900px;"/>
+
+--
+
 ##  **Challenge #5**
 
 > Use two lists with data from `neuron_data-2.txt` to write a table identical to `neuron_data-2.txt`. 
@@ -306,7 +318,7 @@ data1 =  [1, 2, 2, 1, 1, 2, 1, 2, 2]
 data2 = [16.38, 139.90, 441.46, 29.03, 40.93,
 202.07, 142.30, 346.00, 300.00]
 
-for i in xrange(len(data1)):
+for i in range(len(data1)):
   out.write("{:d}{:s}{:f}{:s}".format(data1[i],'\t', data2[i],'\n'))
 
 out.close()
@@ -321,23 +333,11 @@ data1 =  [1, 2, 2, 1, 1, 2, 1, 2, 2]
 data2 = [16.38, 139.90, 441.46, 29.03, 40.93,
 202.07, 142.30, 346.00, 300.00]
 
-for i in xrange(len(data1)):
+for i in range(len(data1)):
     Outfile.write("{:d}{:s}{:f}{:s}".format(data2[i],'\t', data1[i],'\n'))
 
 Outfile.close()
 ```
-
---
-
-## Match the formatting expressions and their result
-
-<img src="{{site.url}}/img/expression_values.png" alt="slot" style="width: 900px;"/>
-
---
-
-## Match the formatting expressions and their result - solution
-
-<img src="{{site.url}}/img/expression_values_right.png" alt="slot" style="width: 900px;"/>
 
 --
 
