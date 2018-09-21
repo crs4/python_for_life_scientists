@@ -39,7 +39,7 @@ We're looking at next-generation sequencing reads in FASTQ format and, from a
  * create multiple samples of records from a single file
  * put all together with a minimal user interface
 
-{{ site.github_url }}/files/sampling
+{{ site.github_url }}/tree/gh-pages/files/sampling
 
 --
 
