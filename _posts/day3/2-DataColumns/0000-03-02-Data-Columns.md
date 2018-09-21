@@ -329,18 +329,15 @@ Outfile.close()
 
 --
 
-## Reading and writing tables
-+ Read each table column into a different list
-
-+  Use a for loop running over the length of the list to write the elements of the lists to a file (using string concatenation or formatting)
-
-+  You can write the columns in a different order
-
---
-
 ## Match the formatting expressions and their result
 
 <img src="{{site.url}}/img/expression_values.png" alt="slot" style="width: 900px;"/>
+
+--
+
+## Match the formatting expressions and their result - solution
+
+<img src="{{site.url}}/img/expression_values_right.png" alt="slot" style="width: 900px;"/>
 
 --
 
