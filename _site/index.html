@@ -309,8 +309,8 @@ https://github.com/ratzeni/python_for_life_scientists
 | --- | --- | --- | --- | ---|
 | `1` | Intro & expectations | Repeating things  | Functions | Python libraries |
 | `2` | Python | Reading files | Functions | Practicals |
-| `3` | Phython Shell | Parsing | Data columns | Practicals |
-| `4` | Phython Programs | Parsing | Searching | Practicals |
+| `3` | Python Shell | Parsing | Data columns | Practicals |
+| `4` | Python Programs | Parsing | Searching | Practicals |
 
 --
 
@@ -329,7 +329,7 @@ https://github.com/ratzeni/python_for_life_scientists
 
 --
 
-## Python is not a snake but a frequent thought 
+### Python is not a snake but a frequent thought 
 
 + Christmas holidays of 1989. Guido Van Rossum is bored, but instead of preparing the Christmas tree he starts to create a new programming language.
 
@@ -606,19 +606,6 @@ You can leave the shell by typing  `exit()`
 
 --
 
-## **Challenge #1**
-
-### Open a Python interactive session (the Python shell):
-
->+  Calculate the sum and difference of two
-numbers
->+  Divide two numbers. Try 5/3.
->+ Then try 5.0/3
->+  Calculate 3x5
->+  Calculate a power of 2
-
---
-
 ## Variables
 
 Variables are containers for data.
@@ -639,6 +626,54 @@ Variable names may be composed of
 >> silk_one2
 36
 ```
+
+--
+
+### Arithmetic Operators 1/2
+
+Operator | Example | Meaning | Result
+--- | --- | --- | --- 
+ + (unary) | +a | Unary Positive | a
+ + (binary) | a + b | Addition | Sum of a and b
+ - (unary) | -a | Unary Negation | Value equal to a but opposite in sign
+ - (binary) | a - b | Subtraction | b subtracted from a
+ * | a * b | Multiplication | Product of a and b
+
+--
+
+### Arithmetic Operators 2/2
+
+Operator | Example | Meaning | Result
+--- | --- | --- | ------ 
+ / | a / b | Division  | Quotient when a is divided by b. Result is a float.
+ %  | a % b | Modulus |	Remainder when a is divided by b
+ // | a // b | Floor Division | Quotient, rounded to the next smallest whole number
+ ** | a ** b | Exponentiation | a raised to the power of b
+
+--
+
+### Arithmetic operators precedence
+
+Precedence | Operator | Description
+------ | ------ | ------
+lowest | +, - |	addition, subtraction
+ . | *, /, //, % |	multiplication, division, floor division, modulo
+ . | +x, -x | unary positive, unary negation
+highest | ** | exponentiation
+
+--
+
+## **Challenge #1**
+
+### Open a Python interactive session (the Python shell):
+
+>+  Calculate the sum and difference of two
+numbers
+>+ Divide two numbers. Try 5/3.
+>+ Then try 5.0/3
+>+ Calculate 3x5
+>+ Calculate a power of 2
+>+ Calculate 4x3^2x5
 
 --
 
@@ -712,7 +747,7 @@ print(V)
 <br>
 ### Advantages
 
-> 1. f the module is big and we need only one function; 
+> 1. the module is big and we need only one function; 
 > 2. we not using the "." syntax and the name of the variable pi is shorter!
 
 --
@@ -938,10 +973,6 @@ jupyter notebook
 >-  type `print("This is the output of my first program")`
 >-  save the file with the name my_print.py and exit
 >-  Open a terminal, go to the directory where you saved `my_print.py` and type at the cursor: `python my_print.py`
-
---
-
-<img src="http://localhost:4000/img/pp2.png" alt="slot" style="width: 700px;"/>
 
 --
 
@@ -1243,7 +1274,6 @@ Launch `Spyder` from the start menu.
 
 > You can use packages particular to a Python project without installing them system wide and thus avoiding potential version conflicts.
 
-- pip
 - virtualenv
 - conda
 
@@ -1251,9 +1281,22 @@ Launch `Spyder` from the start menu.
 
 ## Other Tools
 
++ pip
 + iPython
 + Jupyter
 + IDLE
+
+--
+
+## Pip
+
+pip is a package management system used to install and manage software 
+packages written in Python. 
+
+Many packages can be found in the default source 
+for packages and their dependencies — Python Package Index 
+
+https://pypi.org/
 
 --
 
@@ -1409,7 +1452,7 @@ for line in src_human:
 
 ###  **Challenge #1**
 
-#### https://www.ncbi.nlm.nih.gov/protein/NP_937983.2?report=fasta
+#### https://www.ncbi.nlm.nih.gov/protein/NP_937983.2
 > * Retrieve the 1132-residue sequence of human telomerase reverse transcriptase isoform 1 from the NCBI protein database.
 > * Choose the FASTA format. 
 > * Copy the sequence to a text file (`telomerase.txt`).
@@ -1460,6 +1503,31 @@ for line in telomerase:
 
 --
 
+## Manipulating Strings
+
+```python
+s = "my fat cat\n"
+
+len(s)      =>  11
+
+s.split()   =>  ['my', 'fat', 'cat']
+
+s[-6]       =>  't'
+
+s.upper()   =>  'MY FAT CAT\n'
+
+s.strip()   =>  'my fat cat'
+
+s.replace('c','r')  =>   'my fat rat\n'
+
+s.find('fat')   =>  3
+
+s[7:10]         =>  'cat'
+```
+
+--
+
+
 ##  **Challenge #3**
 
 > Which amino acid is the most frequent in the sequence of the telomerase reverse transcriptase isoform 1?
@@ -1480,12 +1548,6 @@ for aa in "ACDEFGHKILMNPQRSTVYW":
 
 --
 
-## Recap
-
-<img src="http://localhost:4000/img/pp9.png" alt="slot" style="width: 700px;"/>
-
---
-
 # ...
 </script>
 </section>
@@ -1500,8 +1562,10 @@ for aa in "ACDEFGHKILMNPQRSTVYW":
 
 - FASTA-like
 - GenBank-like
-- Tables
+- Tables (TSV, CSV)
 - XML-like
+- JSON
+- YAML
 
 --
 
@@ -1525,6 +1589,168 @@ for aa in "ACDEFGHKILMNPQRSTVYW":
 
 --
 
+## CSV
+### comma separated value
+
+```yamlex
+"Lane","Sample_ID","Sample_Name","Sample_Plate","Sample_Well","I7_Index_ID","index","I5_Index_ID","index2","Sample_Project","Description"
+1,"SAMPLE-IN-POOL18-0194-R0001","244-18 ",,,"N701","TAAGGCGA","E501","GCGATCTA","Project","Project"
+1,"SAMPLE-IN-POOL18-0195-R0001","246-18P ",,,"N702","CGTACTAG","E501","GCGATCTA","Project","Project"
+1,"SAMPLE-IN-POOL18-0196-R0001","246-18M ",,,"N703","AGGCAGAA","E501","GCGATCTA","Project","Project"
+1,"SAMPLE-IN-POOL18-0197-R0001","248-18R1 ",,,"N704","TCCTGAGC","E501","GCGATCTA","Project","Project"
+1,"SAMPLE-IN-POOL18-0198-R0001","260-18 ",,,"N712","GTAGAGGA","E501","GCGATCTA","Project","Project"
+1,"SAMPLE-IN-POOL18-0199-R0001","465-15 ",,,"N706","TAGGCATG","E501","GCGATCTA","Project","Project"
+1,"SAMPLE-IN-POOL18-0200-R0001","341-16 ",,,"N707","CTCTCTAC","E501","GCGATCTA","Project","Project"
+1,"SAMPLE-IN-POOL18-0201-R0001","276-18 ",,,"N708","CAGAGAGG","E501","GCGATCTA","Project","Project"
+1,"SAMPLE-IN-POOL18-0202-R0001","276-18P ",,,"N709","GCTACGCT","E501","GCGATCTA","Project","Project"
+1,"SAMPLE-IN-POOL18-0203-R0001","355-16 ",,,"N710","CGAGGCTG","E501","GCGATCTA","Project","Project"
+1,"SAMPLE-IN-POOL18-0204-R0001","285-18 ",,,"N711","AAGAGGCA","E501","GCGATCTA","Project","Project"
+1,"SAMPLE-IN-POOL18-0205-R0001","465-15P ",,,"N701","TAAGGCGA","E502","ATAGAGAG","Project","Project"
+1,"SAMPLE-IN-POOL18-0206-R0001","288-18M ",,,"N702","CGTACTAG","E502","ATAGAGAG","Project","Project"
+1,"SAMPLE-IN-POOL18-0207-R0001","302-18P ",,,"N703","AGGCAGAA","E502","ATAGAGAG","Project","Project"
+1,"SAMPLE-IN-POOL18-0208-R0001","140-18 ",,,"N704","TCCTGAGC","E502","ATAGAGAG","Project","Project"
+1,"SAMPLE-IN-POOL18-0209-R0001","286-18 ",,,"N712","GTAGAGGA","E502","ATAGAGAG","Project","Project"
+1,"SAMPLE-IN-POOL18-0210-R0001","288-18P",,,"N706","TAGGCATG","E502","ATAGAGAG","Project","Project"
+1,"SAMPLE-IN-POOL18-0211-R0001","301-18 ",,,"N707","CTCTCTAC","E502","ATAGAGAG","Project","Project"
+1,"DNA18-0079-R0001",60086,,,"H714","GCTCATGA","H505","CTCCTTAC","Project","Project"
+2,"SAMPLE-IN-POOL18-0194-R0001","244-18 ",,,"N701","TAAGGCGA","E501","GCGATCTA","Project","Project"
+2,"SAMPLE-IN-POOL18-0195-R0001","246-18P ",,,"N702","CGTACTAG","E501","GCGATCTA","Project","Project"
+2,"SAMPLE-IN-POOL18-0196-R0001","246-18M ",,,"N703","AGGCAGAA","E501","GCGATCTA","Project","Project"
+2,"SAMPLE-IN-POOL18-0197-R0001","248-18R1 ",,,"N704","TCCTGAGC","E501","GCGATCTA","Project","Project"
+2,"SAMPLE-IN-POOL18-0198-R0001","260-18 ",,,"N712","GTAGAGGA","E501","GCGATCTA","Project","Project"
+2,"SAMPLE-IN-POOL18-0199-R0001","465-15 ",,,"N706","TAGGCATG","E501","GCGATCTA","Project","Project"
+2,"SAMPLE-IN-POOL18-0200-R0001","341-16 ",,,"N707","CTCTCTAC","E501","GCGATCTA","Project","Project"
+2,"SAMPLE-IN-POOL18-0201-R0001","276-18 ",,,"N708","CAGAGAGG","E501","GCGATCTA","Project","Project"
+2,"SAMPLE-IN-POOL18-0202-R0001","276-18P ",,,"N709","GCTACGCT","E501","GCGATCTA","Project","Project"
+2,"SAMPLE-IN-POOL18-0203-R0001","355-16 ",,,"N710","CGAGGCTG","E501","GCGATCTA","Project","Project"
+2,"SAMPLE-IN-POOL18-0204-R0001","285-18 ",,,"N711","AAGAGGCA","E501","GCGATCTA","Project","Project"
+2,"SAMPLE-IN-POOL18-0205-R0001","465-15P ",,,"N701","TAAGGCGA","E502","ATAGAGAG","Project","Project"
+2,"SAMPLE-IN-POOL18-0206-R0001","288-18M ",,,"N702","CGTACTAG","E502","ATAGAGAG","Project","Project"
+2,"SAMPLE-IN-POOL18-0207-R0001","302-18P ",,,"N703","AGGCAGAA","E502","ATAGAGAG","Project","Project"
+2,"SAMPLE-IN-POOL18-0208-R0001","140-18 ",,,"N704","TCCTGAGC","E502","ATAGAGAG","Project","Project"
+2,"SAMPLE-IN-POOL18-0209-R0001","286-18 ",,,"N712","GTAGAGGA","E502","ATAGAGAG","Project","Project"
+2,"SAMPLE-IN-POOL18-0210-R0001","288-18P",,,"N706","TAGGCATG","E502","ATAGAGAG","Project","Project"
+2,"SAMPLE-IN-POOL18-0211-R0001","301-18 ",,,"N707","CTCTCTAC","E502","ATAGAGAG","Project","Project"
+2,"DNA18-0079-R0001",60086,,,"H714","GCTCATGA","H505","CTCCTTAC","Project","Project"
+3,"SAMPLE-IN-POOL18-0212-R0001","302-18 ",,,"N701","TAAGGCGA","E501","GCGATCTA","Project","Project"
+3,"SAMPLE-IN-POOL18-0213-R0001","289-18",,,"N703","AGGCAGAA","E501","GCGATCTA","Project","Project"
+3,"SAMPLE-IN-POOL18-0214-R0001","299-18",,,"N704","TCCTGAGC","E501","GCGATCTA","Project","Project"
+3,"SAMPLE-IN-POOL18-0215-R0001","300-18",,,"N712","GTAGAGGA","E501","GCGATCTA","Project","Project"
+3,"SAMPLE-IN-POOL18-0216-R0001","303-18",,,"N706","TAGGCATG","E501","GCGATCTA","Project","Project"
+3,"SAMPLE-IN-POOL18-0217-R0001","303-18P ",,,"N707","CTCTCTAC","E501","GCGATCTA","Project","Project"
+3,"SAMPLE-IN-POOL18-0218-R0001","303-18M ",,,"N708","CAGAGAGG","E501","GCGATCTA","Project","Project"
+3,"SAMPLE-IN-POOL18-0219-R0001","304-18 ",,,"N709","GCTACGCT","E501","GCGATCTA","Project","Project"
+3,"SAMPLE-IN-POOL18-0220-R0001","320-18 ",,,"N710","CGAGGCTG","E501","GCGATCTA","Project","Project"
+3,"SAMPLE-IN-POOL18-0221-R0001","322-18",,,"N711","AAGAGGCA","E501","GCGATCTA","Project","Project"
+3,"SAMPLE-IN-POOL18-0222-R0001","325-18",,,"N701","TAAGGCGA","E502","ATAGAGAG","Project","Project"
+3,"SAMPLE-IN-POOL18-0223-R0001","352-16",,,"N702","CGTACTAG","E502","ATAGAGAG","Project","Project"
+3,"SAMPLE-IN-POOL18-0224-R0001","342-18",,,"N703","AGGCAGAA","E502","ATAGAGAG","Project","Project"
+3,"SAMPLE-IN-POOL18-0225-R0001","342-18S1",,,"N704","TCCTGAGC","E502","ATAGAGAG","Project","Project"
+3,"SAMPLE-IN-POOL18-0226-R0001","343-18",,,"N712","GTAGAGGA","E502","ATAGAGAG","Project","Project"
+3,"SAMPLE-IN-POOL18-0227-R0001","345-18",,,"N706","TAGGCATG","E502","ATAGAGAG","Project","Project"
+3,"SAMPLE-IN-POOL18-0228-R0001","346-18",,,"N707","CTCTCTAC","E502","ATAGAGAG","Project","Project"
+3,"SAMPLE-IN-POOL18-0229-R0001","171-18",,,"N708","CAGAGAGG","E502","ATAGAGAG","Project","Project"
+3,"DNA18-0079-R0001",60086,,,"H714","GCTCATGA","H505","CTCCTTAC","Project","Project"
+4,"SAMPLE-IN-POOL18-0212-R0001","302-18 ",,,"N701","TAAGGCGA","E501","GCGATCTA","Project","Project"
+4,"SAMPLE-IN-POOL18-0213-R0001","289-18",,,"N703","AGGCAGAA","E501","GCGATCTA","Project","Project"
+4,"SAMPLE-IN-POOL18-0214-R0001","299-18",,,"N704","TCCTGAGC","E501","GCGATCTA","Project","Project"
+4,"SAMPLE-IN-POOL18-0215-R0001","300-18",,,"N712","GTAGAGGA","E501","GCGATCTA","Project","Project"
+4,"SAMPLE-IN-POOL18-0216-R0001","303-18",,,"N706","TAGGCATG","E501","GCGATCTA","Project","Project"
+4,"SAMPLE-IN-POOL18-0217-R0001","303-18P ",,,"N707","CTCTCTAC","E501","GCGATCTA","Project","Project"
+4,"SAMPLE-IN-POOL18-0218-R0001","303-18M ",,,"N708","CAGAGAGG","E501","GCGATCTA","Project","Project"
+4,"SAMPLE-IN-POOL18-0219-R0001","304-18 ",,,"N709","GCTACGCT","E501","GCGATCTA","Project","Project"
+4,"SAMPLE-IN-POOL18-0220-R0001","320-18 ",,,"N710","CGAGGCTG","E501","GCGATCTA","Project","Project"
+4,"SAMPLE-IN-POOL18-0221-R0001","322-18",,,"N711","AAGAGGCA","E501","GCGATCTA","Project","Project"
+4,"SAMPLE-IN-POOL18-0222-R0001","325-18",,,"N701","TAAGGCGA","E502","ATAGAGAG","Project","Project"
+4,"SAMPLE-IN-POOL18-0223-R0001","352-16",,,"N702","CGTACTAG","E502","ATAGAGAG","Project","Project"
+4,"SAMPLE-IN-POOL18-0224-R0001","342-18",,,"N703","AGGCAGAA","E502","ATAGAGAG","Project","Project"
+4,"SAMPLE-IN-POOL18-0225-R0001","342-18S1",,,"N704","TCCTGAGC","E502","ATAGAGAG","Project","Project"
+4,"SAMPLE-IN-POOL18-0226-R0001","343-18",,,"N712","GTAGAGGA","E502","ATAGAGAG","Project","Project"
+4,"SAMPLE-IN-POOL18-0227-R0001","345-18",,,"N706","TAGGCATG","E502","ATAGAGAG","Project","Project"
+4,"SAMPLE-IN-POOL18-0228-R0001","346-18",,,"N707","CTCTCTAC","E502","ATAGAGAG","Project","Project"
+4,"SAMPLE-IN-POOL18-0229-R0001","171-18",,,"N708","CAGAGAGG","E502","ATAGAGAG","Project","Project"
+4,"DNA18-0079-R0001",60086,,,"H714","GCTCATGA","H505","CTCCTTAC","Project","Project"
+5,"SAMPLE-IN-POOL18-0230-R0001","276-18M",,,"N701","TAAGGCGA","E501","GCGATCTA","Project","Project"
+5,"SAMPLE-IN-POOL18-0231-R0001","240-18",,,"N702","CGTACTAG","E501","GCGATCTA","Project","Project"
+5,"SAMPLE-IN-POOL18-0232-R0001","178-18",,,"N703","AGGCAGAA","E501","GCGATCTA","Project","Project"
+5,"SAMPLE-IN-POOL18-0233-R0001","250-18",,,"N704","TCCTGAGC","E501","GCGATCTA","Project","Project"
+5,"SAMPLE-IN-POOL18-0234-R0001","70-16",,,"N712","GTAGAGGA","E501","GCGATCTA","Project","Project"
+5,"SAMPLE-IN-POOL18-0235-R0001","282-18",,,"N706","TAGGCATG","E501","GCGATCTA","Project","Project"
+5,"SAMPLE-IN-POOL18-0236-R0001","288-18",,,"N707","CTCTCTAC","E501","GCGATCTA","Project","Project"
+5,"SAMPLE-IN-POOL18-0237-R0001","302-18M",,,"N708","CAGAGAGG","E501","GCGATCTA","Project","Project"
+5,"SAMPLE-IN-POOL18-0238-R0001","321-18",,,"N709","GCTACGCT","E501","GCGATCTA","Project","Project"
+5,"SAMPLE-IN-POOL18-0239-R0001","91-15R1",,,"N710","CGAGGCTG","E501","GCGATCTA","Project","Project"
+5,"SAMPLE-IN-POOL18-0240-R0001","348-18",,,"N711","AAGAGGCA","E501","GCGATCTA","Project","Project"
+5,"SAMPLE-IN-POOL18-0241-R0001","349-18",,,"N701","TAAGGCGA","E502","ATAGAGAG","Project","Project"
+5,"SAMPLE-IN-POOL18-0242-R0001","349-18P",,,"N702","CGTACTAG","E502","ATAGAGAG","Project","Project"
+5,"SAMPLE-IN-POOL18-0243-R0001","349-18M",,,"N703","AGGCAGAA","E502","ATAGAGAG","Project","Project"
+5,"SAMPLE-IN-POOL18-0244-R0001","350-18",,,"N704","TCCTGAGC","E502","ATAGAGAG","Project","Project"
+5,"SAMPLE-IN-POOL18-0245-R0001","350-18M",,,"N712","GTAGAGGA","E502","ATAGAGAG","Project","Project"
+5,"SAMPLE-IN-POOL18-0246-R0001","352-18",,,"N706","TAGGCATG","E502","ATAGAGAG","Project","Project"
+5,"SAMPLE-IN-POOL18-0247-R0001","246-18",,,"N707","CTCTCTAC","E502","ATAGAGAG","Project","Project"
+5,"DNA18-0080-R0001",60090,,,"H705","GGACTCCT","H506","TATGCAGT","Project","Project"
+6,"SAMPLE-IN-POOL18-0230-R0001","276-18M",,,"N701","TAAGGCGA","E501","GCGATCTA","Project","Project"
+6,"SAMPLE-IN-POOL18-0231-R0001","240-18",,,"N702","CGTACTAG","E501","GCGATCTA","Project","Project"
+6,"SAMPLE-IN-POOL18-0232-R0001","178-18",,,"N703","AGGCAGAA","E501","GCGATCTA","Project","Project"
+6,"SAMPLE-IN-POOL18-0233-R0001","250-18",,,"N704","TCCTGAGC","E501","GCGATCTA","Project","Project"
+6,"SAMPLE-IN-POOL18-0234-R0001","70-16",,,"N712","GTAGAGGA","E501","GCGATCTA","Project","Project"
+6,"SAMPLE-IN-POOL18-0235-R0001","282-18",,,"N706","TAGGCATG","E501","GCGATCTA","Project","Project"
+6,"SAMPLE-IN-POOL18-0236-R0001","288-18",,,"N707","CTCTCTAC","E501","GCGATCTA","Project","Project"
+6,"SAMPLE-IN-POOL18-0237-R0001","302-18M",,,"N708","CAGAGAGG","E501","GCGATCTA","Project","Project"
+6,"SAMPLE-IN-POOL18-0238-R0001","321-18",,,"N709","GCTACGCT","E501","GCGATCTA","Project","Project"
+6,"SAMPLE-IN-POOL18-0239-R0001","91-15R1",,,"N710","CGAGGCTG","E501","GCGATCTA","Project","Project"
+6,"SAMPLE-IN-POOL18-0240-R0001","348-18",,,"N711","AAGAGGCA","E501","GCGATCTA","Project","Project"
+6,"SAMPLE-IN-POOL18-0241-R0001","349-18",,,"N701","TAAGGCGA","E502","ATAGAGAG","Project","Project"
+6,"SAMPLE-IN-POOL18-0242-R0001","349-18P",,,"N702","CGTACTAG","E502","ATAGAGAG","Project","Project"
+6,"SAMPLE-IN-POOL18-0243-R0001","349-18M",,,"N703","AGGCAGAA","E502","ATAGAGAG","Project","Project"
+6,"SAMPLE-IN-POOL18-0244-R0001","350-18",,,"N704","TCCTGAGC","E502","ATAGAGAG","Project","Project"
+6,"SAMPLE-IN-POOL18-0245-R0001","350-18M",,,"N712","GTAGAGGA","E502","ATAGAGAG","Project","Project"
+6,"SAMPLE-IN-POOL18-0246-R0001","352-18",,,"N706","TAGGCATG","E502","ATAGAGAG","Project","Project"
+6,"SAMPLE-IN-POOL18-0247-R0001","246-18",,,"N707","CTCTCTAC","E502","ATAGAGAG","Project","Project"
+6,"DNA18-0080-R0001",60090,,,"H705","GGACTCCT","H506","TATGCAGT","Project","Project"
+7,"SAMPLE-IN-POOL18-0248-R0001","355-18",,,"N701","TAAGGCGA","E503","AGAGGATA","Project","Project"
+7,"SAMPLE-IN-POOL18-0249-R0001","368-18",,,"N702","CGTACTAG","E503","AGAGGATA","Project","Project"
+7,"SAMPLE-IN-POOL18-0250-R0001","138-18",,,"N703","AGGCAGAA","E503","AGAGGATA","Project","Project"
+7,"SAMPLE-IN-POOL18-0251-R0001","279-17",,,"N704","TCCTGAGC","E503","AGAGGATA","Project","Project"
+7,"SAMPLE-IN-POOL18-0252-R0001","419-18",,,"N712","GTAGAGGA","E503","AGAGGATA","Project","Project"
+7,"SAMPLE-IN-POOL18-0253-R0001","368-18P",,,"N706","TAGGCATG","E503","AGAGGATA","Project","Project"
+7,"SAMPLE-IN-POOL18-0254-R0001","368-18M",,,"N707","CTCTCTAC","E503","AGAGGATA","Project","Project"
+7,"SAMPLE-IN-POOL18-0255-R0001","370-18",,,"N708","CAGAGAGG","E503","AGAGGATA","Project","Project"
+7,"SAMPLE-IN-POOL18-0256-R0001","391-18",,,"N709","GCTACGCT","E503","AGAGGATA","Project","Project"
+7,"SAMPLE-IN-POOL18-0257-R0001","393-18",,,"N710","CGAGGCTG","E503","AGAGGATA","Project","Project"
+7,"SAMPLE-IN-POOL18-0258-R0001","398-18",,,"N711","AAGAGGCA","E503","AGAGGATA","Project","Project"
+7,"SAMPLE-IN-POOL18-0259-R0001","400-18",,,"N701","TAAGGCGA","E504","TCTACTCT","Project","Project"
+7,"SAMPLE-IN-POOL18-0260-R0001","302-18S1",,,"N702","CGTACTAG","E504","TCTACTCT","Project","Project"
+7,"SAMPLE-IN-POOL18-0261-R0001","406-18",,,"N703","AGGCAGAA","E504","TCTACTCT","Project","Project"
+7,"SAMPLE-IN-POOL18-0262-R0001","416-18",,,"N704","TCCTGAGC","E504","TCTACTCT","Project","Project"
+7,"SAMPLE-IN-POOL18-0263-R0001","417-18",,,"N712","GTAGAGGA","E504","TCTACTCT","Project","Project"
+7,"SAMPLE-IN-POOL18-0264-R0001","418-18",,,"N706","TAGGCATG","E504","TCTACTCT","Project","Project"
+7,"SAMPLE-IN-POOL18-0265-R0001","332-18",,,"N702","CGTACTAG","E502","ATAGAGAG","Project","Project"
+7,"DNA18-0080-R0001",60090,,,"H705","GGACTCCT","H506","TATGCAGT","Project","Project"
+8,"SAMPLE-IN-POOL18-0248-R0001","355-18",,,"N701","TAAGGCGA","E503","AGAGGATA","Project","Project"
+8,"SAMPLE-IN-POOL18-0249-R0001","368-18",,,"N702","CGTACTAG","E503","AGAGGATA","Project","Project"
+8,"SAMPLE-IN-POOL18-0250-R0001","138-18",,,"N703","AGGCAGAA","E503","AGAGGATA","Project","Project"
+8,"SAMPLE-IN-POOL18-0251-R0001","279-17",,,"N704","TCCTGAGC","E503","AGAGGATA","Project","Project"
+8,"SAMPLE-IN-POOL18-0252-R0001","419-18",,,"N712","GTAGAGGA","E503","AGAGGATA","Project","Project"
+8,"SAMPLE-IN-POOL18-0253-R0001","368-18P",,,"N706","TAGGCATG","E503","AGAGGATA","Project","Project"
+8,"SAMPLE-IN-POOL18-0254-R0001","368-18M",,,"N707","CTCTCTAC","E503","AGAGGATA","Project","Project"
+8,"SAMPLE-IN-POOL18-0255-R0001","370-18",,,"N708","CAGAGAGG","E503","AGAGGATA","Project","Project"
+8,"SAMPLE-IN-POOL18-0256-R0001","391-18",,,"N709","GCTACGCT","E503","AGAGGATA","Project","Project"
+8,"SAMPLE-IN-POOL18-0257-R0001","393-18",,,"N710","CGAGGCTG","E503","AGAGGATA","Project","Project"
+8,"SAMPLE-IN-POOL18-0258-R0001","398-18",,,"N711","AAGAGGCA","E503","AGAGGATA","Project","Project"
+8,"SAMPLE-IN-POOL18-0259-R0001","400-18",,,"N701","TAAGGCGA","E504","TCTACTCT","Project","Project"
+8,"SAMPLE-IN-POOL18-0260-R0001","302-18S1",,,"N702","CGTACTAG","E504","TCTACTCT","Project","Project"
+8,"SAMPLE-IN-POOL18-0261-R0001","406-18",,,"N703","AGGCAGAA","E504","TCTACTCT","Project","Project"
+8,"SAMPLE-IN-POOL18-0262-R0001","416-18",,,"N704","TCCTGAGC","E504","TCTACTCT","Project","Project"
+8,"SAMPLE-IN-POOL18-0263-R0001","417-18",,,"N712","GTAGAGGA","E504","TCTACTCT","Project","Project"
+8,"SAMPLE-IN-POOL18-0264-R0001","418-18",,,"N706","TAGGCATG","E504","TCTACTCT","Project","Project"
+8,"SAMPLE-IN-POOL18-0265-R0001","332-18",,,"N702","CGTACTAG","E502","ATAGAGAG","Project","Project"
+8,"DNA18-0080-R0001",60090,,,"H705","GGACTCCT","H506","TATGCAGT","Project","Project"
+
+```
+
+--
+
 ![f6](http://localhost:4000/img/ff6.png)
 
 --
@@ -1534,6 +1760,124 @@ for aa in "ACDEFGHKILMNPQRSTVYW":
 --
 
 ![f8](http://localhost:4000/img/ff8.png)
+
+--
+
+## YAML
+
+```yaml
+samples: /ELS/els9/users/biosciences/projects/agris/samples.tsv
+units: /ELS/els9/users/biosciences/projects/agris/units.tsv
+
+references:
+    basepath: "/ELS/els9/users/biosciences/references"
+    provider: "ncbi"
+    genome_release: "Ovis_aries_4.0"
+
+genome_fasta: "oar_ref_Oar_v4.0_fixChr.fa"
+
+known_variants:
+    dbsnp: "known_variants/dbSNP151_sorted_Ovis_aries.vcf"
+    agris_snp: "known_variants/all.filt.SNP.vcf.gz"
+    agris_indel: "known_variants/all.filt.INDEL.vcf.gz"
+
+paths:
+  to_tmp: "/scratch/users/biox"
+
+rules:
+    bwa-mem:
+        arguments: "-M"
+        platform: "illumina"
+    multiqc:
+        arguments: ""
+    trim_galore_pe:
+        arguments: "--paired -q 20"
+    picard_MarkDuplicates:
+        arguments: "REMOVE_DUPLICATES=false ASSUME_SORTED=true CREATE_INDEX=true"
+    picard_WGSMetrics:
+        arguments: "MINIMUM_MAPPING_QUALITY=-1 MINIMUM_BASE_QUALITY=-1 READ_LENGTH=150 COUNT_UNPAIRED=true"
+    gatk_SplitIntervals:
+        scatter-count: 100
+        mode: BALANCING_WITHOUT_INTERVAL_SUBDIVISION
+        intervals: "/ELS/els9/users/biosciences/references/ncbi/Ovis_aries_4.0/calling_regions/ovis_aries_4.0_calling_regions.intervals"
+    gatk_BQSR:
+        known_sites:
+            - dbsnp
+```
+
+--
+
+## JSON
+
+```json
+{
+    "references": {
+        "basepath": "/ELS/els9/users/biosciences/references",
+        "provider": "ucsc",
+        "genome_release": "hg19"
+    },
+    "genome_fasta": "ucsc.hg19.fasta",
+    "known_variants": {
+        "dbsnp": "known_variants/dbSNP146_chr.vcf",
+        "hapmap": "known_variants/hapmap_3.3.hg19.sites.vcf",
+        "g1k": "known_variants/1000G_phase1.snps.high_confidence.hg19.sites.vcf",
+        "omni": "known_variants/1000G_omni2.5.hg19.sites.vcf",
+        "mills": "known_variants/Mills_and_1000G_gold_standard.indels.hg19.sites.vcf",
+        "ph1_indels": "known_variants/1000G_phase1.indels.hg19.sites.vcf"
+    },
+    "intervals": {
+        "NexteraRapidCaptureExpandedExome": {
+            "bedTarget": "intervals/NexteraRapidCaptureExpandedExome_Target.bed",
+            "probes": "intervals/NexteraRapidCaptureExpandedExome_Probes.HybridSelection",
+            "hsTarget": "intervals/NexteraRapidCaptureExpandedExome_Target.HybridSelection"
+        },
+        "NimblegenSeqCapExomeUTR": {
+            "bedTarget": "intervals/NimblegenSeqCapExomeUTR_Targets.bed",
+            "probes": "intervals/NimblegenSeqCapExomeUTR_Probes.HybridSelection",
+            "hsTarget": "intervals/NimblegenSeqCapExomeUTR_Targets.HybridSelection"
+        },
+        "NexteraRapidCaptureExomev1.2": {
+            "bedTarget": "intervals/NexteraRapidCaptureExomev1.2_Target.bed",
+            "probes": "intervals/NexteraRapidCaptureExomev1.2_Probes.HybridSelection",
+            "hsTarget": "intervals/NexteraRapidCaptureExomev1.2_Target.HybridSelection"
+        },
+        "AgilentSureSelectHumanAllExonV6UTR": {
+            "bedTarget": "intervals/AgilentSureSelectHumanAllExonV6UTR_Target.bed",
+            "probes": "intervals/AgilentSureSelectHumanAllExonV6UTR_Probes.HybridSelection",
+            "hsTarget": "intervals/AgilentSureSelectHumanAllExonV6UTR_Target.HybridSelection"
+        },
+        "AgilentSureSelectHumanAllExonV5UTR": {
+            "bedTarget": "intervals/AgilentSureSelectHumanAllExonV5UTR_Target.bed",
+            "probes": "intervals/AgilentSureSelectHumanAllExonV5UTR_Probes.HybridSelection",
+            "hsTarget": "intervals/AgilentSureSelectHumanAllExonV5UTR_Target.HybridSelection"
+        }
+    },
+    "intervals_default": "NexteraRapidCaptureExomev1.2",
+    "platform": "ILLUMINA",
+    "params_bwa_mem": "-M",
+    "odpd": {
+        "DNA16-0389-R0001": 100
+    },
+    "tmp_dir": "/scratch/users/biox",
+    "samples_intervals": {
+        "DNA16-0389-R0001": "NexteraRapidCaptureExomev1.2"
+    },
+    "samples": {
+        "VASCPR002": [
+            "VASCPR002_S10_L001",
+            "VASCPR002_S10_L004",
+            "VASCPR002_S10_L002",
+            "VASCPR002_S10_L003"
+        ],
+        "RTXPR071": [
+            "RTXPR071_S2_L002",
+            "RTXPR071_S2_L001",
+            "RTXPR071_S2_L004",
+            "RTXPR071_S2_L003"
+        ],
+    }
+}
+```
 
 --
 
@@ -1887,17 +2231,16 @@ Therefore `header` here is treated as Boolean:
 
 ```text
 SwissProt-Human.fasta
->sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
-MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSSWRVI
-SSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFYLKMKGDYF
-RYLSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYYEILNSPEKACS
-LAKTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
->sp|P62258|1433E_HUMAN 14-3-3 protein epsilon OS=Homo sapiens
-MDDREDLVYQAKLAEQAERYDEMVESMKKVAGMDVELTVEERNLLSVAYKNVIGARRASWR
-IISSIEQKEENKGGEDKLKMIREYRQMVETELKLICCDILDVLDKHLIPAANTGESKVFYY
-KMKGDYHRYLAEFATGNDRKEAAENSLVAYKAASDIAMTELPPTHPIRLGLALNFSVFYYE
-ILNSPDRACRLAKAAFDDAIAELDTLSEESYKDSTLIMQLLRDNLTLWTSDMQGDGEEQNK
-EALQDVEDENQ
+>sp|P61513|RL37A_HUMAN 60S ribosomal protein L37a OS=Homo sapiens ...
+MAKRTKKVGIVGKYGTRYGASLRKMVKKIEISQHAKYTCSFCGKTKMKRRAVGIWHCGSC
+MKTVAGGAWTYNTTSAVTVKSAIRRLKELKDQ
+>sp|P17812|PYRG1_HUMAN CTP synthase 1 OS=Homo sapiens ...
+MKYILVTGGVISGIGKGIIASSVGTILKSCGLHVTSIKIDPYINIDAGTFSPYEHGEVFV
+LDDGGEVDLDLGNYERFLDIRLTKDNNLTTGKIYQYVINKERKGDYLGKTVQVVPHITDA
+IQEWVMRQALIPVDEDGLEPQVCVIELGGTVGDIESMPFIEAFRQFQFKVKRENFCNIHV
+SLVPQPSSTGEQKTKPTQNSVRELRGLGLSPDLVVCRCSNPLDTSVKEKISMFCHVEPEQ
+VICVHDVSSIYRVPLLLEEQGVVDYFLRRLDLPIERQPRKMLMKWKEMADRYDRLLETCS
+IALVGKYTKFSDSYASVIKALEHSALAINHKLEIKYIDSADLEPITSQEEPVRYHEAWQK
 ...
 ```
 > * Download a Uniprot multiple sequence FASTA file. https://www.uniprot.org/uniprot
@@ -1917,9 +2260,10 @@ for line in fasta:
 
 headers.close()
 
->sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
->sp|P62258|1433E_HUMAN 14-3-3 protein epsilon OS=Homo sapiens
->sp|Q04917|1433F_HUMAN 14-3-3 protein eta OS=Homo sapiens GN=YWHAH
+>sp|P61513|RL37A_HUMAN 60S ribosomal protein L37a OS=Homo sapiens ...
+>sp|P17812|PYRG1_HUMAN CTP synthase 1 OS=Homo sapiens ...
+>sp|Q02878|RL6_HUMAN 60S ribosomal protein L6 OS=Homo sapiens ...
+>sp|P61026|RAB10_HUMAN Ras-related protein Rab-10 OS=Homo sapiens ...
 ```
 
 --
@@ -1934,7 +2278,7 @@ headers.close()
 ## Solution to *Challenge #10*
 
 ```python
-fasta = open('SwissProt-Human.fasta.fasta')
+fasta = open('SwissProt-Human.fasta')
 seqs = open('seqs.txt', 'w')
 
 for line in fasta:
@@ -1953,8 +2297,14 @@ seqs.write(line.strip() + '\n')
 
 ## **Challenge #11**
 
-> * Read a file in FASTA format 
+> * Read a file in FASTA format `SwissProt-Human.fasta`
 > * and copy to a new file the records' Accession Numbers (AC).
+
+```python
+>sp|P17812|PYRG1_HUMAN CTP synthase 1 OS=Homo sapiens
+
+P17812
+```
 
 --
 
@@ -1974,212 +2324,6 @@ Outfile.close()
 
 --
 
-### **Challenge #12**
-+ Download a Uniprot multiple sequence FASTA for 'DNA directed RNA polymerase https://www.uniprot.org/uniprot/?query=DNA-directed+RNA+polymerase
-+ Copy and Paste in `sprot_prot.fasta`
-
----
->+   Read FASTA records from file `sprot_prot.fasta`
->+   Count (and print) the cysteine residues in each sequence.
-
---
-
-## Solution to *Challenge #12*
-
-One possible solution:
-```python
-fasta = open('sprot_prot.fasta')
-
-seq = ''
-
-for line in fasta:
-    if line[0] == '>' and seq == '':
-        header = line[4:10]
-    elif line[0] != '>':
-        seq = seq + line.strip()
-    elif line[0] == '>' and seq != '':
-        cys_num = seq.count('C')
-        print(header, ': ', cys_num)
-        header = line[4:10]
-        seq = ''
-
-cys_num = seq.count('C')
-print(header, ': ', cys_num)
-```
-
---
-
-## Solution to *Challenge #12*
-
-Another possible solution:
-
-```python
-fasta = open('sprot_prot.fasta')
-
-seq = ''
-
-for line in fasta:
-    if line[0]=='>':
-        if seq:
-            cys_num = seq.count('C')
-            print(header, ':' , cys_num)
-        header = line.split('|')[1]
-        seq = ''
-    else:
-        seq = seq + line.strip()
-```
-
---
-
-## **Challenge #13**
-
-
-> * Read the multiple sequence FASTA file `sprot_prot.fasta` and 
-> * write to a new file only the records from Homo sapiens.
-
---
-
-## Solution to *Challenge #13*
-One possible solution:
-```python
-fasta = open('sprot_prot.fasta')
-output = open('homo_sapiens.fasta', 'w')
-seq = ''
-for line in fasta:
-    if line[0] == '>' and seq == '':
-        header = line
-    elif line[0] != '>':
-        seq = seq + line
-    elif line[0] == '>' and seq != '':
-        if "Homo sapiens" in header:
-              output.write(header + seq)
-        header = line
-        seq = ''   
-
-if "Homo sapiens" in header:
-  output.write(header + seq)
-
-output.close()
-```
-
---
-
-## Solution to *Challenge #13*
-Another possible solution:
-```python
-fasta = open('sprot_prot.fasta')
-output = open('sprot_human.fasta', 'w')
-
-seq = ''
-
-for line in fasta:
-  if line[0]=='>':
-    if seq:
-      if "Homo sapiens" in header:
-        output.write(header + seq)
-    header = line
-    seq = ''
-  else:
-    seq = seq + line
-
-output.close()
-```
-
---
-
-## **Challenge #14 homework**
-
-+  Read a multiple sequence file in FASTA format and only write to a new file the records the sequences of which start with a methionine ('M') and have at least two tryptophan residues ('W')
-
-    1. Read a multiple sequence file in FASTA format and write to a new file only the records of the sequences starting with a methionine ('M')
-    2. Read a multiple sequence file in FASTA format and write to a new file only the records of the sequences having at least two tryptophan residues ('W')
-    3. Finally merge the two steps
-
---
-
-## Solution II to *Challenge #14*
-```python
-fasta = open('SwissProtHuman.fasta','r')
-outfile = open('SwissProtHuman-Filtered.fasta','w')
-
-seq = ''
-
-for line in fasta:
-  if line[0:1] == '>' and seq == '':
-    header = line
-  elif line [0:1] != '>':
-    seq = seq + line
-  elif line[0:1] == '>' and seq != '':
-    TRP_num = seq.count('W')
-    if seq[0] == 'M' and TRP_num > 1:
-      outfile.write(header + seq)
-    seq = ''
-    header = line
-
-TRP_num = seq.count('W')
-if seq[0] == 'M' and TRP_num > 1:
-  outfile.write(header + seq)
-outfile.close()
-```
-
---
-
-## **Challenge #15 homework**
-
-
-* Read a Genbank record (Candida albicans genomic DNA, chromosome 7) https://www.ncbi.nlm.nih.gov/nuccore/AP006852
-* Copy and Paste to new file `ap006852.gbk`
-* Read `ap006852.gbk` and try to write it in FASTA format:
-```
->AP006852
-ccactgtccaatggctcaacacgccaatcatcatacaatacccccaacaggaatcaccaa
-agtactgatgcttctcactatcaatagtttgtactttcaccacacaatagcagatgatcc
-atctaaatccaccttcctatcgatcgtgaccacccccataaaataggtcaactccataaa
-cacctccatcaccaacgctagactcacaacccagaacatgttaatcaaccggtgggccaa
-Gtaccgttgtagctctctcgtaaacacaagaaccaacaccaaacaacatactacaactga
-...
-```
-
---
-
-## Solution II to *Challenge #15*
-
-```python
-InputFile = open("ap006852.gbk")
-OutputFile = open("ap006852.fasta","w")
-flag = 0
-
-for line in InputFile:
-  if line[0:9] == 'ACCESSION':
-    AC = line.split()[1].strip()
-    OutputFile.write('>'+AC+'\n')
-  if line[0:6] == 'ORIGIN':
-    flag = 1
-    continue
-  if flag == 1:
-    fields = line.split()
-    if fields != []:
-      seq = ''.join(fields[1:])
-      OutputFile.write(seq +'\n')
-
-InputFile.close()
-OutputFile.close()
-```
-
---
-
-## Parsing data records
-
-+ Start by visually inspecting the file you want to parse
-
-+   Identify the information you want to extract
-
-+   Identify separators to select your information using if conditions
-
-+   Use  lists if you have to compare data from different files
-
---
-
 # ...
 </script>
 </section>
@@ -2194,28 +2338,27 @@ OutputFile.close()
 ## Comparing data from different files
 ```text
 SwissProt-Human.fasta (from previous module)
->sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
-MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSS
-WRVISSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFY
-LKMKGDYFRYLSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFY
-YEILNSPEKACSLAKTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGD
-AGEGEN
-...
+>sp|P61513|RL37A_HUMAN 60S ribosomal protein L37a OS=Homo sapiens ...
+MAKRTKKVGIVGKYGTRYGASLRKMVKKIEISQHAKYTCSFCGKTKMKRRAVGIWHCGSC
+MKTVAGGAWTYNTTSAVTVKSAIRRLKELKDQ
+>sp|P17812|PYRG1_HUMAN CTP synthase 1 OS=Homo sapiens ...
+MKYILVTGGVISGIGKGIIASSVGTILKSCGLHVTSIKIDPYINIDAGTFSPYEHGEVFV
+LDDGGEVDLDLGNYERFLDIRLTKDNNLTTGKIYQYVINKERKGDYLGKTVQVVPHITDA
 ...
 ```
 ---
 ```text
 cancer-expressed.txt (copy and paste to create it)
 
-Q5XXA6
+Q86YS6
 Q9Y5P2
 Q14667
-O75387
-Q8WV07
-Q8CH62
-Q9GZY1
-Q9NQQ7
-Q8VCX2
+Q3MIT2
+Q9H0K6
+Q96N64
+P61927
+Q96HA9
+I3L0S3
 Q7Z769
 ```
 
@@ -2228,9 +2371,19 @@ First, you have to store the 10 Uniprot ID in a data structure
 
 Lists are nice and veeeeery flexible data structures
 
-```
-['Q5XXA6', 'Q9Y5P2', 'Q14667', 'O75387', 'Q8WV07',
- 'Q8CH62', 'Q9GZY1', 'Q9NQQ7', 'Q8VCX2', 'Q7Z769']
+```python
+[
+'Q86YS6',
+'Q9Y5P2',
+'Q14667',
+'Q3MIT2',
+'Q9H0K6',
+'Q96N64',
+'P61927',
+'Q96HA9',
+'I3L0S3',
+'Q7Z769'
+]
 ```
 
 --
@@ -2260,13 +2413,40 @@ L = []  # the empty list
 
 ## Operations with lists
 
-<img src="http://localhost:4000/img/parsingimgCHANGE_cccp.png" alt="slot" style="width: 700px;"/>
+![](http://localhost:4000/img/parsingimgCHANGE_cccp.png)
+
+--
+
+## Operations with lists
+
+```python
+L = [1, 2, 3, 4, 5]
+>>> 2 in L
+True
+>>> 8 in L
+False
+>>> len(L)
+5
+>>> min(L)
+1
+>>> max(L)
+5
+```
+```python
+>>> L*2
+[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+>>> 2*L
+[1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+T = ['a','b','c']
+>>> L + T
+[1, 2, 3, 4, 5, 'a', 'b', 'c']
+```
 
 --
 
 ## Indexes
 
-```
+```python
 >>> L = [1,"hello",12.1,[1,2,"three"],"seq",(1,2)]
 >>> L[0]  # indexing
 1
@@ -2276,12 +2456,24 @@ L = []  # the empty list
 'three'
 >>> L[-1]  # negative indexing
 (1, 2)
->>> L[2:4]
-[12.1, [1, 2, 'three']]  # slicing
->>> L[2:]
-[12.1, [1, 2, 'three'], 'seq', (1, 2)] #slicing shorthand
->>>
+>>> L[2:4] # slicing
+[12.1, [1, 2, 'three']]  
+>>> L[2:]  #slicing shorthand
+[12.1, [1, 2, 'three'], 'seq', (1, 2)]
 ```
+```python
+>>> G = [1, 2, 3, 4, 5, 'a', 'b', 'c']
+>>> G[2:7]        
+[3, 4, 5, 'a', 'b']
+>>> G[2:7:2]
+[3, 5, 'b']
+>>> G[2:7:3]
+[3, 'a']
+
+```
+
+
+
 
 --
 
@@ -2454,9 +2646,9 @@ store them into a variable
 ##  **Challenge #1**
 
 
->-  Read 10 SwissProt ACs from a file
->-   Store them into a list
->-   Print the list
+>-  Read 10 SwissProt ACs from a file (`cancer-expressed.txt`)
+>-  Store them into a list
+>-  Print the list
 
 --
 
@@ -2477,8 +2669,8 @@ print(cancer_list)
 
 ##  **Challenge #2**
 
->-  Create a list containing Uniprot ACs extracted from a FASTA file
->-   Print the list
+>-  Create a list containing Uniprot ACs extracted from a FASTA file (`SwissProtHuman.fasta`)
+>-  Print the list
 
 --
 
@@ -2526,82 +2718,6 @@ Outfile.close()
 ```
 
 *We are not writing the whole record but the header line only*
-
---
-
-##  **Challenge #4**
-
-* Read a multiple sequence file in FASTA format 
-* and write to a new file only the records the Uniprot ACs of which are present in the list created in Program 1
-
->Check the file `SwissProt-Human.fasta`
-
-```
->sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
-MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSSWRVISSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFYLKMKGDYFRYLSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYYEILNSPEKACSLAKTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
->sp|P62258|1433E_HUMAN 14-3-3 protein epsilon OS=Homo sapiens
-MDDREDLVYQAKLAEQAERYDEMVESMKKVAGMDVELTVEERNLLSVAYKNVIGARRASWRIISSIEQKEENKGGEDKLKMIREYRQMVETELKLICCDILDVLDKHLIPAANTGESKVFYYKMKGDYHRYLAEFATGNDRKEAAENSLVAYKAASDIAMTELPPTHPIRLGLALNFSVFYYEILNSPDRACRLAKAAFDDAIAELDTLSEESYKDSTLIMQLLRDNLTLWTSDMQGDGEEQNKEALQDVEDENQ
->sp|Q04917|1433F_HUMAN 14-3-3 protein eta OS=Homo sapiens
-GNYWHAHMGDREQLLQRARLAEQAERYDDMASAMKAVTELNEPLSNEDRNLLSVAYKNVVGARRSSWRVISSIEQKTMADGNEKKLEKVKAYREKIEKELETVCNDVLSLLDKFLIKNCNDFQYESKVFYLKMKGDYYRYLAEVASGEKKNSVVEASEAAYKEAFEISKEQMQPTHPIRLGLALNFSVFYYEIQNAPEQACLLAKQAFDDAIAELDTLNEDSYKDSTLIMQLLRDNLTLWTSDQQDEEAGEGN
-```
-
---
-
-## Solution to *Challenge #4*
-One possible solution
-```
-cancer_file = open('cancer-expressed.txt')
-human_fasta = open('SwissProt-Human.fasta')
-Outfile = open('cancer_expressed.fasta','w')
-
-cancer_list = []
-seq = ''
-
-for line in cancer_file:
-  AC = line.strip()
-  cancer_list.append(AC)
-
-for line in human_fasta:
-  if line[0] == '>':
-    if seq:
-      if AC in cancer_list:
-        Outfile.write(header + seq)
-      header = line
-      AC = line.split('|')[1]
-      seq = ''
-  else:
-    seq = seq + line
-
-if AC in cancer_list:
-  Outfile.write(header+seq)
-```
-
---
-
-## Solution to *Challenge #4*
-Another possible solution:
-```python
-cancer_file = open('cancer-expressed.txt')
-human_fasta = open('SwissProt-Human.fasta')
-Outfile = open('cancer_expressed.fasta','w')
-
-cancer_list = []
-
-for line in cancer_file:
-  AC = line.strip()
-  cancer_list.append(AC)
-
-for line in human_fasta:
-  if line[0] == ">":
-    field = line.split("|")
-    AC = field[1]
-    if AC in cancer_list:
-      Outfile.write(line)
-  else:
-    if AC in cancer_list:
-      Outfile.write(line)
-Outfile.close()
-```
 
 --
 
@@ -2680,6 +2796,18 @@ while line:
 ```
 
 > (but usually we won't do it)
+
+--
+
+## Parsing data records
+
++ Start by visually inspecting the file you want to parse
+
++   Identify the information you want to extract
+
++   Identify separators to select your information using if conditions
+
++   Use  lists if you have to compare data from different files
 
 --
 
@@ -2770,7 +2898,7 @@ by a colon character followed by *indented instructions*
 
 --
 
-### More remarks
+### Remarks
 
 - You   can   insert   in   the   body   of   a   function   a documentation  string  in  quotation  marks.  This  string can  be  retrieved  using  the `__doc__`  attribute  of  the function object
 
@@ -2784,6 +2912,27 @@ def triangle_area(b, h):
     return (b*h)/2.0
 
 print(triangle_area.__doc__)
+```
+
+--
+
+## More remarks
+
+-  The statement `return` exits a function, optionally passing
+back a value to the caller.
+
+-   A `return`  statement  with  no  arguments  is  the  same  as returning `None`.
+
+-   The returned value can be assigned to a variable
+
+```
+>>> def j(x,y):
+...     return x + y
+...
+>>> s = j(1, 100)
+>>> print(s)
+101
+>>>
 ```
 
 --
@@ -2812,27 +2961,6 @@ def get_values(arg1, arg2):
     return s, d, p
 
 print(get_values(15, 8))
-```
-
---
-
-## Remarks
-
--  The statement `return` exits a function, optionally passing
-back a value to the caller.
-
--   A `return`  statement  with  no  arguments  is  the  same  as returning `None`.
-
--   The returned value can be assigned to a variable
-
-```
->>> def j(x,y):
-...     return x + y
-...
->>> s = j(1, 100)
->>> print(s)
-101
->>>
 ```
 
 --
@@ -2985,7 +3113,7 @@ print_funct(10)
 
 --
 
-## General remarks
+## Variables scope
 
 -  Python uses **dynamical** namespaces: when a function is called, *its namespace is automatically created*
 
@@ -3146,10 +3274,8 @@ print("Distance:", distance(p1, p2))
 
 Write a function that:
 
->-  Takes as input a file name (of a FASTA file).
->
+>-  Takes as input a file name (of a FASTA file). `SingleSeq.fasta`
 >-  Opens the file.
->
 >-  Returns the header of the sequence record.
 
 Print the header
@@ -3166,92 +3292,6 @@ def return_header(filename):
         return line
 
 print(return_header('SingleSeq.fasta'))
-```
-
---
-
-###  **Challenge #5**
-
->Insert the previous function call 
->
-> in a for loop running on 
->
-> a list of 3 sequence file names.
-
---
-
-## Solution to *Challenge #5*
-```python
-def return_header(filename):
-    fasta = open(filename)
-    for line in fasta:
-        if line[0] == '>':
-            return line
-
-filenames = ['SingleSeq1.fasta',
-              'SingleSeq2.fasta',
-              'SingleSeq3.fasta']
-
-for name in filenames:
-    print(return_header(name))
-```
-
---
-
-###  **Challenge #6**
-
-Consider two output schemes for exercise 4:
-
-1. All the the headers are written to the same output file
-
-2. Each header is written in a separate output file
-
---
-
-## Solution to *Challenge #6*
-one possible solution
-```python
-def return_header(filename):
-    fasta = open(filename)
-    for line in fasta:
-        if line[0] == '>':
-            return line
-
-filenames = ['SingleSeq1.fasta',
-             'SingleSeq2.fasta',
-             'SingleSeq3.fasta']
-
-output = open("headers.txt", "w")
-
-for name in filenames:
-    output.write(return_header(name) + '\n')
-
-output.close()
-```
-
---
-
-## Solution to *Challenge #6*
-
-Another possible solution
-
-```python
-def return_header(filename):
-    fasta = open(filename)
-    for line in fasta:
-        if line[0] == '>':
-          return line
-
-filenames = ['SingleSeq1.fasta',
-             'SingleSeq2.fasta',
-             'SingleSeq3.fasta']
-n = 0
-for name in filenames:
-    n = n + 1
-    output = open("header" + str(n) + ".txt", "w")
-    output.write(return_header(name))
-
-output.close()
 ```
 
 --
@@ -3545,8 +3585,6 @@ print("{:s}".format('text'))
 text
 print("{0:.2f}".format(1.1234))
 1.12
-print("{0:.4f}".format(1.1234))
-1.1234
 ```
 ```python
 import math
@@ -3558,6 +3596,7 @@ The square root of 25.00 is     5
 print("The square root of {:10.2f} is {:5.2f}".format(a, math.sqrt(a)))
 The square root of      25.00 is  5.00
 ```
+https://pyformat.info
 
 --
 
@@ -3611,8 +3650,7 @@ Outfile.close()
 
 ## Match the formatting expressions and their result
 
-<img src="http://localhost:4000/img/expression_values.png" alt="slot" style="width: 700px;"/>
-
+<img src="http://localhost:4000/img/expression_values.png" alt="slot" style="width: 900px;"/>
 
 --
 
@@ -3672,21 +3710,24 @@ out.close()
 
 -  How to delete rows and columns
 
--  How to sort columns
+-  Sorting
 
--  How to sort
+
 
 --
 
 ## Representing a table as a list of lists:
 
-```
+```text
+Copy and paste in file table-1.txt
+
 exp      gene1      gene2      gene3      gene4
 1          17        19        2              10
 2          2        336        3              11
 3          16        21        3              12
 4          17        16        1              9
 ```
+
 
 ```
 table = [
@@ -3702,7 +3743,7 @@ table = [
 
 ## How would you generate a table from a text file?
 
-```
+```python
 T = open("table-1.txt")
 
 table = []
@@ -3827,9 +3868,9 @@ gene4     10       11       12        9
 >>> x = [1, 2, 3]
 >>> y = [4, 5, 6]
 >>> zipped = zip(x, y)
->>> zipped
+>>> zipped_list = list(zipped)
 [(1, 4), (2, 5), (3, 6)]
->>> x2, y2 = zip(*zipped)
+>>> x2, y2 = zip(*zipped_list)
 >>> x2, y2
 ((1, 2, 3), (4, 5, 6))
 >>> x == list(x2) and y == list(y2)
@@ -3847,7 +3888,7 @@ table = []
 for line in T:
     table.append(line.split())
 
-columns = zip(*table)
+columns = list(zip(*table))
 
 columns.pop(3)
 
@@ -3920,7 +3961,7 @@ table = []
 for line in T:
     table.append(line.split())
 
-columns = zip(*table)
+columns = list(zip(*table))
 
 columns.pop(3)
 columns.insert(3, ['gene3', '20', '20', '20'])
@@ -3983,142 +4024,7 @@ Methods of lists **MODIFY** the lists in place
 
 --
 
-## Sorting with `itemgetter`
-
-```
->>> from operator import itemgetter
->>> L = ['ACCTGGCCA','ACTG','TACGGCAGGAGACG','TTGGATC']
->>> itemgetter(1)(L)
-'ACTG'
->>> itemgetter(1,-1)(L)
-('ACTG', 'TTGGATC')
-```
-
-### Sort a table by any column
-```
-from operator import itemgetter
-
-data = [
-[5, 10, 4, 3, 2],
-[6, 7, 8, 9, 10],
-]
-
-data.sort(key = itemgetter(1))
-
-print(data)
-
-6     7         8         9         10
-
-5     10        4         3         2
-```
-
---
-
-## Sort a table by any column
-
-```
-from operator import itemgetter
-
-data = [
-[5, 10, 4, 3, 2],
-[6, 7, 8, 9, 10],
-]
-
-data_sorted = sorted(data, key = itemgetter(1))
-
-print(data_sorted)
-```
-
---
-
-##  **Challenge #1**
-
-> + Sort a table
-> + convert its elements to strings
-> + and write it to a file
-
---
-
-## Solution to *Challenge #1*
-One  solution:
-
-```python
-from operator import itemgetter
-data = [
-[5, 10, 4, 3, 2],
-[6, 7, 8, 9, 10],
-]
-
-data.sort(key=itemgetter(1))
-
-for row in data:
-    for i in xrange(len(row)):
-        row[i] = str(row[i]) #replace nr with strings
-
-for elem in data:
-    print("\t".join(elem) + "\n")
-```
-
---
-
-## Solution to *Challenge #1*
-
-another possible solution:
-
-```python
-from operator import itemgetter
-
-data = [
-[5, 10, 4, 3, 2],
-[6, 7, 8, 9, 10],
-]
-
-data.sort(key=itemgetter(1))
-
-# format table as strings
-for row in data:
-    row = [str(x) for x in row]
-      print("\t".join(row))
-```
-
---
-
-### Sort a table by the first column, 
-### then by the second, then by the third, and so on…
-
-```python
-from operator import itemgetter
-in_file = open("random_distribution.tsv")
-
-# read table to floats
-table = []
-for line in in_file:
-    rows = line.split()
-    rows = [float(x) for x in rows]
-    table.append(rows)
-
-# sort the table by second, then by third column
-table_sorted = sorted(table, key = itemgetter(1, 2))
-
-# format table as strings
-for row in table_sorted:
-    row = [str(x) for x in row]
-    print("\t".join(row))
-```
-
---
-
-### Also consider that…
-
-```
-table = sorted(table, key=itemgetter(1), reverse=True)
-
-table = sorted(table, key=itemgetter(1,3), reverse=True)
-```
-
---
-
-###  **Challenge #2**
+###  **Challenge #1**
 
 From `neuron_data.txt` generate two tables, one for primary and one for secondary neurons
 
@@ -4139,7 +4045,6 @@ Primary      355.702
 Primary      53.566
 Secondary 202.075
 Secondary 142.301
-neuron_data.txt
 Primary      327.777
 Secondary 99.782
 Secondary 104.875
@@ -4160,7 +4065,7 @@ Secondary 214.723
 
 --
 
-## Solution to *Challenge #2*
+## Solution to *Challenge #1*
 
 ```python
 neurons = open("neuron_data.txt")
@@ -4179,39 +4084,18 @@ for line in neurons:
 
 --
 
-##  **Challenge #3**
+##  **Challenge #2**
 
-> + Sort the primary neuron’s table
-> + show the three longest neurons
-
---
-
-## Solution to *Challenge #3*
-
-```python
-from operator import itemgetter
-
-# sort by second column
-table1.sort(key=itemgetter(1))
-
-#show the three longest neurons
-print(table1[-3:])
-```
-
---
-
-##  **Challenge #4**
-
-> + Turn the table
+> + Traspose the table
 > + calculate the length average
 
 --
 
-## Solution to *Challenge #4*
+## Solution to *Challenge #2*
 
 ```python
 # rotate the table
-columns = zip(*table1)
+columns = list(zip(*table1))
 # take the 1st  column (1st  row of table1)
 lengths = columns[1]
 print(lengths)
@@ -4221,17 +4105,17 @@ print(sum(lengths) / len(lengths))
 
 --
 
-##  **Challenge #5**
+##  **Challenge #3**
 
 >Create an empty table of 10 x 10 cells.
 
 --
 
-## Solution to *Challenge #5*
+## Solution to *Challenge #3*
 Create an empty table of 10 x 10 cells
 
 ```python
->>> empty_table = [[0]*10 for x in xrange(10)]
+>>> empty_table = [[0]*10 for x in range(10)]
 >>> empty_table
 [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0,
 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0,
@@ -4241,19 +4125,19 @@ Create an empty table of 10 x 10 cells
 
 --
 
-##  **Challenge #6**
+##  **Challenge #4**
 
 >Fill the table with the numbers from 1 to 100.
 
 --
 
-## Solution to *Challenge #6*
+## Solution to *Challenge #4*
 Fill the table with the numbers from 1 to 100
 ```python
->>> empty_table = [[0]*10 for x in xrange(10)]
+>>> empty_table = [[0]*10 for x in range(10)]
 >>> n = 0
 >>> for row in empty_table:
-...     for i in xrange(len(row)):
+...     for i in range(len(row)):
 ...         n = n + 1
 ...         row[i] = str(n)
 ...
@@ -4269,20 +4153,20 @@ Fill the table with the numbers from 1 to 100
 
 --
 
-##  **Challenge #7**
+##  **Challenge #5**
 
 >Save the table to a tab-separated file.
 
 --
 
-## Solution to *Challenge #7*
+## Solution to *Challenge #5*
 Save the table to a tab-separated file
 ```python
-empty_table = [[0]*10 for x in xrange(10)]
+empty_table = [[0]*10 for x in range(10)]
 
 n = 0
 for row in empty_table:
-    for i in xrange(len(row)):
+    for i in range(len(row)):
         n = n + 1
         row[i] = str(n)
 
@@ -4418,7 +4302,7 @@ d = {key1:value1, key2:value2, …, keyN:valueN}
 ```
 
 ```
->>> del d['pep2']
+>>> del(d['pep2'])
 >>> d
 {'pep1' : 'MGSNKSKPKDASQRRRSLEPAENVHGAGG',
 'pep3' : 'ASADGHRGPSAAFAPAAA'}
@@ -4435,7 +4319,7 @@ d = {key1:value1, key2:value2, …, keyN:valueN}
 >>> dict.keys()     #list of dictionary keys
 ['a', 'c', 'b']
 
->>> keys = dict.keys()
+>>> keys = list(dict.keys())
 >>> keys.sort() #sort keys
 ['a', 'b', 'c']
 
@@ -4445,7 +4329,7 @@ d = {key1:value1, key2:value2, …, keyN:valueN}
 >>> dict.items() #tuple of dictionary (key,value) pairs
 [('a', 1), ('c', 3), ('b', 2)]
 
->>> dict.has_key("a")   #True if dict has key "a", else False
+>>> "a" in dict   #True if dict has key "a", else False
 True
 ```
 
@@ -4478,7 +4362,7 @@ from tgac import codonAMINO
 prot = ''
 for i in range(0,len(seq),3):
     triplet =seq[i:i+3]
-    if codonAMINO.has_key(triplet): # is the triplet in the dictionary? equivalent to: if triplet in codonAMINO
+    if triplet in codonAMINO: # is the triplet in the  dictionary? 
         prot = prot + codonAMINO[triplet]
     else:
         prot = prot + '?'
@@ -4502,7 +4386,7 @@ prot = ''
 for j in range(3):
     Out.write(str(j) + "-frame\n")
     for i in range(j,len(seq),3):
-        if codonAMINO.has_key(seq[i:i+3]):
+        if seq[i:i+3] in codonAMINO:
             prot = prot + codonAMINO[seq[i:i+3]]
         else:
             prot = prot + '*'
@@ -4525,7 +4409,7 @@ structures = {
 }
 
 def sort_dict_by_keys(data):
-    keys = data.keys()
+    keys = list(data.keys())
     keys.sort()
     return [data[k] for k in keys]
 
@@ -4632,21 +4516,6 @@ set(['c'])
 
 --
 
-## S1.symmetric_difference(S2)or S1 ^ S2
-
-`symmetric_difference()` of two sets S1 and S2 creates a new set with elements in either S1 or S2 but not both
-
-```
->>> S1 = set(['a','b','c'])
->>> S2 = set (['c','d','e'])
->>> S1.symmetric_difference(S2)
-set(['a', 'b', 'e', 'd'])
->>> S1 ^ S2
-set(['a', 'b', 'e', 'd'])
-```
-
---
-
 ## S1.difference(S2) or S1 - S2
 
 The  `difference()`  of  two  sets  S1  and  S2  creates  a  new  set with elements in S1 but not in S2
@@ -4664,6 +4533,21 @@ set(['e', 'd'])
 
 --
 
+## S1.symmetric_difference(S2) or S1 ^ S2
+
+`symmetric_difference()` of two sets S1 and S2 creates a new set with elements in either S1 or S2 but not both
+
+```
+>>> S1 = set(['a','b','c'])
+>>> S2 = set (['c','d','e'])
+>>> S1.symmetric_difference(S2)
+set(['a', 'b', 'e', 'd'])
+>>> S1 ^ S2
+set(['a', 'b', 'e', 'd'])
+```
+
+--
+
 # ...
 
 </script>
@@ -4672,6 +4556,47 @@ set(['e', 'd'])
 <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
 <script type="text/template">
 # Python Libraries
+
+--
+
+## Python Standard Library
+
+The Python Standard Library is a huge set of useful modules distributed with every standard Python installation.
+
+The library contains built-in modules that provide access to 
+system functionality such as file I/O that would otherwise be inaccessible to Python programmers, as well as modules written in Python that provide standardized solutions for many problems that occur in everyday programming.
+
+It is important to become familiar with the Python Standard Library since many problems can be solved quickly if you are familiar with the range of things that these libraries can do. 
+
+https://docs.python.org/3/library/index.html
+
+--
+
+### Sampling a FASTQ file
+
+In this practical, we will softly touch three modules of the Python Standard 
+Library:
+
+* argparse
+* random
+* sys
+
+--
+
+### Sampling a FASTQ file
+
+A common task in Bioinformatics is to take a data file  and generate random 
+samples from it.
+
+We're looking at next-generation sequencing reads in FASTQ format and, from a
+ given file, we want to:
+ 
+ * sample a 10% of reads 
+ * sample a given number of reads
+ * create multiple samples of records from a single file
+ * put all together with a minimal user interface
+
+https://crs4.github.io/python_for_life_scientists/files/sampling
 
 --
 
@@ -4691,10 +4616,90 @@ http://pandas.pydata.org/pandas-docs/version/0.16.0/tutorials.html
 
 <section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$" data-notes="^Note:">
 <script type="text/template">
-# Hackathon
+# Practicals
 
 --
 
+## **Challenge #14**
+
++  Read a multiple sequence file in FASTA format and only write to a new file the records the sequences of which start with a methionine ('M') and have at least two tryptophan residues ('W')
+
+    1. Read a multiple sequence file in FASTA format and write to a new file only the records of the sequences starting with a methionine ('M')
+    2. Read a multiple sequence file in FASTA format and write to a new file only the records of the sequences having at least two tryptophan residues ('W')
+    3. Finally merge the two steps
+
+--
+
+## Solution to *Challenge #14*
+```python
+fasta = open('SwissProtHuman.fasta','r')
+outfile = open('SwissProtHuman-Filtered.fasta','w')
+
+seq = ''
+
+for line in fasta:
+  if line[0:1] == '>' and seq == '':
+    header = line
+  elif line [0:1] != '>':
+    seq = seq + line
+  elif line[0:1] == '>' and seq != '':
+    TRP_num = seq.count('W')
+    if seq[0] == 'M' and TRP_num > 1:
+      outfile.write(header + seq)
+    seq = ''
+    header = line
+
+TRP_num = seq.count('W')
+if seq[0] == 'M' and TRP_num > 1:
+  outfile.write(header + seq)
+outfile.close()
+```
+
+--
+
+## **Challenge #15**
+
+
+* Read a Genbank record (Candida albicans genomic DNA, chromosome 7) https://www.ncbi.nlm.nih.gov/nuccore/AP006852
+* Copy and Paste to new file `ap006852.gbk`
+* Read `ap006852.gbk` and try to write it in FASTA format:
+```
+>AP006852
+ccactgtccaatggctcaacacgccaatcatcatacaatacccccaacaggaatcaccaa
+agtactgatgcttctcactatcaatagtttgtactttcaccacacaatagcagatgatcc
+atctaaatccaccttcctatcgatcgtgaccacccccataaaataggtcaactccataaa
+cacctccatcaccaacgctagactcacaacccagaacatgttaatcaaccggtgggccaa
+Gtaccgttgtagctctctcgtaaacacaagaaccaacaccaaacaacatactacaactga
+...
+```
+
+--
+
+## Solution to *Challenge #15*
+
+```python
+InputFile = open("ap006852.gbk")
+OutputFile = open("ap006852.fasta","w")
+flag = 0
+
+for line in InputFile:
+  if line[0:9] == 'ACCESSION':
+    AC = line.split()[1].strip()
+    OutputFile.write('>'+AC+'\n')
+  if line[0:6] == 'ORIGIN':
+    flag = 1
+    continue
+  if flag == 1:
+    fields = line.split()
+    if fields != []:
+      seq = ''.join(fields[1:])
+      OutputFile.write(seq +'\n')
+
+InputFile.close()
+OutputFile.close()
+```
+
+--
 
 
 --
@@ -4708,7 +4713,7 @@ http://pandas.pydata.org/pandas-docs/version/0.16.0/tutorials.html
 
 --
 
-##  **Challenge #4**
+##  **Challenge #1**
 
 > - read data form `neuron_data-2.txt`
 > - stores primary and secondary neuron lengths to different lists. 
@@ -4717,7 +4722,7 @@ http://pandas.pydata.org/pandas-docs/version/0.16.0/tutorials.html
 
 --
 
-## Solution to *Challenge #4*
+## Solution to *Challenge #1*
 
 ```python
 primary = []
@@ -4741,6 +4746,200 @@ for value in primary:
 
 print(primary_av, stddev)
 ```
+
+--
+
+### **Challenge #2**
++ Download a Uniprot multiple sequence FASTA for 'DNA directed RNA polymerase https://www.uniprot.org/uniprot/?query=DNA-directed+RNA+polymerase
++ Copy and Paste in `sprot_prot.fasta`
+
+---
+>+   Read FASTA records from file `sprot_prot.fasta`
+>+   Count (and print) the cysteine residues in each sequence.
+
+--
+
+## Solution to *Challenge #2*
+
+One possible solution:
+```python
+fasta = open('sprot_prot.fasta')
+
+seq = ''
+
+for line in fasta:
+    if line[0] == '>' and seq == '':
+        header = line[4:10]
+    elif line[0] != '>':
+        seq = seq + line.strip()
+    elif line[0] == '>' and seq != '':
+        cys_num = seq.count('C')
+        print(header, ': ', cys_num)
+        header = line[4:10]
+        seq = ''
+
+cys_num = seq.count('C')
+print(header, ': ', cys_num)
+```
+
+--
+
+## Solution to *Challenge #2*
+
+Another possible solution:
+
+```python
+fasta = open('sprot_prot.fasta')
+
+seq = ''
+
+for line in fasta:
+    if line[0]=='>':
+        if seq:
+            cys_num = seq.count('C')
+            print(header, ':' , cys_num)
+        header = line.split('|')[1]
+        seq = ''
+    else:
+        seq = seq + line.strip()
+```
+
+--
+
+## **Challenge #3**
+
+
+> * Read the multiple sequence FASTA file `sprot_prot.fasta` and 
+> * write to a new file only the records from Homo sapiens.
+
+--
+
+## Solution to *Challenge #13*
+One possible solution:
+```python
+fasta = open('sprot_prot.fasta')
+output = open('homo_sapiens.fasta', 'w')
+seq = ''
+for line in fasta:
+    if line[0] == '>' and seq == '':
+        header = line
+    elif line[0] != '>':
+        seq = seq + line
+    elif line[0] == '>' and seq != '':
+        if "Homo sapiens" in header:
+              output.write(header + seq)
+        header = line
+        seq = ''   
+
+if "Homo sapiens" in header:
+  output.write(header + seq)
+
+output.close()
+```
+
+--
+
+## Solution to *Challenge #3*
+Another possible solution:
+```python
+fasta = open('sprot_prot.fasta')
+output = open('sprot_human.fasta', 'w')
+
+seq = ''
+
+for line in fasta:
+  if line[0]=='>':
+    if seq:
+      if "Homo sapiens" in header:
+        output.write(header + seq)
+    header = line
+    seq = ''
+  else:
+    seq = seq + line
+
+output.close()
+```
+
+--
+
+##  **Challenge #4**
+
+* Read a multiple sequence file in FASTA format `SwissProt-Human.fasta`
+* and write to a new file only the records the Uniprot ACs of which are present in the list created in Program 1
+
+>Check the file `SwissProt-Human.fasta`
+
+```
+>sp|P31946|1433B_HUMAN 14-3-3 protein beta/alpha OS=Homo sapiens
+MTMDKSELVQKAKLAEQAERYDDMAAAMKAVTEQGHELSNEERNLLSVAYKNVVGARRSSWRVISSIEQKTERNEKKQQMGKEYREKIEAELQDICNDVLELLDKYLIPNATQPESKVFYLKMKGDYFRYLSEVASGDNKQTTVSNSQQAYQEAFEISKKEMQPTHPIRLGLALNFSVFYYEILNSPEKACSLAKTAFDEAIAELDTLNEESYKDSTLIMQLLRDNLTLWTSENQGDEGDAGEGEN
+>sp|P62258|1433E_HUMAN 14-3-3 protein epsilon OS=Homo sapiens
+MDDREDLVYQAKLAEQAERYDEMVESMKKVAGMDVELTVEERNLLSVAYKNVIGARRASWRIISSIEQKEENKGGEDKLKMIREYRQMVETELKLICCDILDVLDKHLIPAANTGESKVFYYKMKGDYHRYLAEFATGNDRKEAAENSLVAYKAASDIAMTELPPTHPIRLGLALNFSVFYYEILNSPDRACRLAKAAFDDAIAELDTLSEESYKDSTLIMQLLRDNLTLWTSDMQGDGEEQNKEALQDVEDENQ
+>sp|Q04917|1433F_HUMAN 14-3-3 protein eta OS=Homo sapiens
+GNYWHAHMGDREQLLQRARLAEQAERYDDMASAMKAVTELNEPLSNEDRNLLSVAYKNVVGARRSSWRVISSIEQKTMADGNEKKLEKVKAYREKIEKELETVCNDVLSLLDKFLIKNCNDFQYESKVFYLKMKGDYYRYLAEVASGEKKNSVVEASEAAYKEAFEISKEQMQPTHPIRLGLALNFSVFYYEIQNAPEQACLLAKQAFDDAIAELDTLNEDSYKDSTLIMQLLRDNLTLWTSDQQDEEAGEGN
+```
+
+--
+
+## Solution to *Challenge #4*
+One possible solution
+```
+cancer_file = open('cancer-expressed.txt')
+human_fasta = open('SwissProt-Human.fasta')
+Outfile = open('cancer_expressed.fasta','w')
+
+cancer_list = []
+seq = ''
+
+for line in cancer_file:
+  AC = line.strip()
+  cancer_list.append(AC)
+
+for line in human_fasta:
+  if line[0] == '>':
+    if seq:
+      if AC in cancer_list:
+        Outfile.write(header + seq)
+      header = line
+      AC = line.split('|')[1]
+      seq = ''
+  else:
+    seq = seq + line
+
+if AC in cancer_list:
+  Outfile.write(header+seq)
+```
+
+--
+
+## Solution to *Challenge #4*
+Another possible solution:
+```python
+cancer_file = open('cancer-expressed.txt')
+human_fasta = open('SwissProt-Human.fasta')
+Outfile = open('cancer_expressed.fasta','w')
+
+cancer_list = []
+
+for line in cancer_file:
+  AC = line.strip()
+  cancer_list.append(AC)
+
+for line in human_fasta:
+  if line[0] == ">":
+    field = line.split("|")
+    AC = field[1]
+    if AC in cancer_list:
+      Outfile.write(line)
+  else:
+    if AC in cancer_list:
+      Outfile.write(line)
+Outfile.close()
+```
+
+--
+
+# ... 
+
 </script>
 </section>
 

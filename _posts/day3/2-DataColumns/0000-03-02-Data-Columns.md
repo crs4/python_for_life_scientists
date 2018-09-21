@@ -275,8 +275,6 @@ print("{:s}".format('text'))
 text
 print("{0:.2f}".format(1.1234))
 1.12
-print("{0:.4f}".format(1.1234))
-1.1234
 ```
 ```python
 import math
@@ -288,6 +286,7 @@ The square root of 25.00 is     5
 print("The square root of {:10.2f} is {:5.2f}".format(a, math.sqrt(a)))
 The square root of      25.00 is  5.00
 ```
+https://pyformat.info
 
 --
 
@@ -341,8 +340,7 @@ Outfile.close()
 
 ## Match the formatting expressions and their result
 
-<img src="{{site.url}}/img/expression_values.png" alt="slot" style="width: 700px;"/>
-
+<img src="{{site.url}}/img/expression_values.png" alt="slot" style="width: 900px;"/>
 
 --
 

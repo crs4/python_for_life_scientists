@@ -79,7 +79,7 @@ by a colon character followed by *indented instructions*
 
 --
 
-### More remarks
+### Remarks
 
 - You   can   insert   in   the   body   of   a   function   a documentation  string  in  quotation  marks.  This  string can  be  retrieved  using  the `__doc__`  attribute  of  the function object
 
@@ -93,6 +93,27 @@ def triangle_area(b, h):
     return (b*h)/2.0
 
 print(triangle_area.__doc__)
+```
+
+--
+
+## More remarks
+
+-  The statement `return` exits a function, optionally passing
+back a value to the caller.
+
+-   A `return`  statement  with  no  arguments  is  the  same  as returning `None`.
+
+-   The returned value can be assigned to a variable
+
+```
+>>> def j(x,y):
+...     return x + y
+...
+>>> s = j(1, 100)
+>>> print(s)
+101
+>>>
 ```
 
 --
@@ -121,27 +142,6 @@ def get_values(arg1, arg2):
     return s, d, p
 
 print(get_values(15, 8))
-```
-
---
-
-## Remarks
-
--  The statement `return` exits a function, optionally passing
-back a value to the caller.
-
--   A `return`  statement  with  no  arguments  is  the  same  as returning `None`.
-
--   The returned value can be assigned to a variable
-
-```
->>> def j(x,y):
-...     return x + y
-...
->>> s = j(1, 100)
->>> print(s)
-101
->>>
 ```
 
 --
@@ -294,7 +294,7 @@ print_funct(10)
 
 --
 
-## General remarks
+## Variables scope
 
 -  Python uses **dynamical** namespaces: when a function is called, *its namespace is automatically created*
 
