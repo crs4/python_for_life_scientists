@@ -2,7 +2,7 @@
 
 --
 
-## **Challenge #14 homework**
+## **Challenge #14**
 
 +  Read a multiple sequence file in FASTA format and only write to a new file the records the sequences of which start with a methionine ('M') and have at least two tryptophan residues ('W')
 
@@ -12,7 +12,7 @@
 
 --
 
-## Solution II to *Challenge #14*
+## Solution to *Challenge #14*
 ```python
 fasta = open('SwissProtHuman.fasta','r')
 outfile = open('SwissProtHuman-Filtered.fasta','w')
@@ -39,7 +39,7 @@ outfile.close()
 
 --
 
-## **Challenge #15 homework**
+## **Challenge #15**
 
 
 * Read a Genbank record (Candida albicans genomic DNA, chromosome 7) https://www.ncbi.nlm.nih.gov/nuccore/AP006852
@@ -57,7 +57,7 @@ Gtaccgttgtagctctctcgtaaacacaagaaccaacaccaaacaacatactacaactga
 
 --
 
-## Solution II to *Challenge #15*
+## Solution to *Challenge #15*
 
 ```python
 InputFile = open("ap006852.gbk")
