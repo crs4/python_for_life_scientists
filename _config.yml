@@ -1,10 +1,10 @@
 # Your presentation title
 title: 'Python for Life Scientists: Managing biological data with Python'
 
-url: https://ratzeni.github.io/python_for_life_scientists
+url: https://crs4.github.io/python_for_life_scientists
 
-pages_url: https://ratzeni.github.io/python_for_life_scientists
-github_url: https://github.com/ratzeni/python_for_life_scientists
+pages_url: https://crs4.github.io/python_for_life_scientists
+github_url: https://github.com/crs4/python_for_life_scientists
 
 # The Reveal theme
 reveal_theme: league.css
