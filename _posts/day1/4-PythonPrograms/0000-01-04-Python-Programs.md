@@ -85,7 +85,7 @@ Infile = open("insulin.txt")
 content = Infile.read()
 
 # show its content
-print content
+print(content)
 ```
 
 --
