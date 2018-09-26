@@ -4,7 +4,7 @@
 
 ## Searching (and manipulating) your data
 
-<img src="{{site.url}}/img/geneticcode.png" alt="slot" style="width: 600px;"/>
+<img src="{{site.url}}/img/geneticcode.png" alt="slot" style="width: 800px;"/>
 
 --
 
