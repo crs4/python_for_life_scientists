@@ -248,11 +248,11 @@ out.close()
 ## Solution to *Challenge #4*
 
 ```python
-out = open('neuron_data-3.txt', 'w')
 
 data1 =  [1, 2, 2, 1, 1, 2, 1, 2, 2]
-data2 = [16.38, 139.90, 441.46, 29.03, 40.93,
- 202.07, 142.30, 346.00, 300.00]
+data2 = [16.38, 139.90, 441.46, 29.03, 40.93, 202.07, 142.30, 346.00, 300.00]
+
+out = open('neuron_data-3.txt', 'w')
 
 for i in range(len(data1)):
     out.write(str(data1[i]) + '\t' +  str(data2[i]) + '\n')
@@ -305,7 +305,8 @@ https://pyformat.info
 
 ##  **Challenge #5**
 
-> Use two lists with data from `neuron_data-2.txt` to write a table identical to `neuron_data-2.txt`. 
+> Use two lists with data from `neuron_data-2.txt` to write a table identical
+ to `neuron_data-3.txt`. 
 >
 > Do it using **string formatting**.
 
@@ -313,11 +314,10 @@ https://pyformat.info
 
 ## Solution to *Challenge #5*
 ```python
-out = open('neuron_data-3.txt', 'w')
-
 data1 =  [1, 2, 2, 1, 1, 2, 1, 2, 2]
-data2 = [16.38, 139.90, 441.46, 29.03, 40.93,
-202.07, 142.30, 346.00, 300.00]
+data2 = [16.38, 139.90, 441.46, 29.03, 40.93, 202.07, 142.30, 346.00, 300.00]
+
+out = open('neuron_data-3.txt', 'w')
 
 for i in range(len(data1)):
   out.write("{:d}{:s}{:f}{:s}".format(data1[i],'\t', data2[i],'\n'))
