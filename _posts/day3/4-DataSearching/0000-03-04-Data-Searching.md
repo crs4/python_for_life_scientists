@@ -44,6 +44,41 @@
 
 --
 
+#### Preparation
+Copy and paste into tgca.py
+
+codonAMINO =  {'GCU':'A','GCC':'A','GCA':'A', 'GCG':'A',
+'CGU':'R','CGC':'R','CGA':'R','CGG':'R','AGA':'R','AGG':'R',
+'UCU':'S','UCC':'S','UCA':'S','UCG':'S','AGU':'S','AGC':'S',
+'AUU':'I','AUC':'I','AUA':'I','AUU':'I','AUC':'I','AUA':'I',
+'UUA':'L','UUG':'L','CUU':'L','CUC':'L','CUA':'L','CUG':'L',
+'GGU':'G','GGC':'G','GGA':'G','GGG':'G','AAU':'N','AAC':'N',
+'GUU':'V','GUC':'V','GUA':'V','GUG':'V','GAU':'D','GAC':'D',
+'ACU':'T','ACC':'T','ACA':'T','ACG':'T','UGU':'C','UGC':'C',
+'CCU':'P','CCC':'P','CCA':'P','CCG':'P','CAA':'Q','CAG':'Q',
+'GAA':'E','GAG':'E','CAU':'H','CAC':'H','AAA':'K','AAG':'K',
+'UUU':'F','UUC':'F','UAU':'Y','UAC':'Y','AUG':'M','UGG':'W',
+'AUG':'START','UAG':'STOP', 'UGA':'STOP', 'UAA':'STOP' }
+
+--
+
+#### Preparation
+Copy and paste into rna_seq.fasta
+
+>A06662 Synthetic nucleotide sequence of the human GSH transferase pi gene. : Location:1..1000
+UGGGACCAGUCAGCAGAGGCAGCGUGUGUGCGCGUGCGUGUGCGUGUGUGUGCGUGUGUG
+UGUGUACGCUUGCAUUUGUGUCGGGUGGGUAAGGAGAUAGAGAUGGGCGGGCAGUAGGCC
+CAGGUCCCGAAGGCCUUGAACCCACUGGUUUGGAGUCUCCUAAGGGCAAUGGGGGCCAUU
+GAGAAGUCUGAACAGGGCUGUGUCUGAAUGUGAGGUCUAGAAGGAUCCUCCAGAGAAGCC
+AGCUCUAAAGCUUUUGCAAUCAUCUGGUGAGAGAACCCAGCAAGGAUGGACAGGCAGAAU
+GGAAUAGAGAUGAGUUGGCAGCUGAAGUGGACAGGAUUUGGUACUAGCCUGGUUGUGGGG
+AGCAAGCAGAGGAGAAUCUGGGACUCUGGUGGUCUGGCCUGGGGCAGACGGGGGUGUCUC
+AGGGGCUGGGAGGGAUGAGAGUAGGAUGAUACAUGGUGGUGUCUGGCAGGAGGCGGGCAA
+GGAUGACUAUGUGAAGGCACUGCCCGGGCAACUGAAGCCUUUUGAGACCCUGCUGUCCCA
+GAACCAGGGAGGCAAGACCUUCAUUGUGGGAGACCAGGUGAGCAUCUGGCC
+
+--
+
 #### Let's give a look to the content of the tgac.py: 
 
 ```
@@ -128,18 +163,20 @@ d = {key1:value1, key2:value2, …, keyN:valueN}
 --
 
 ```
->>> dict = {"a":1, "b":2, "c":3}
->>> dict.keys()     #list of dictionary keys
-['a', 'c', 'b']
+>>> dict = {"a":1, "d":2, "c":3}
 
->>> keys = list(dict.keys())
+>>> keys = list(dict.keys())  #list of dictionary keys
+>>> keys
+['a', 'd', 'c']
+
 >>> keys.sort() #sort keys
-['a', 'b', 'c']
+>>> keys
+['a', 'c', 'd']
 
->>> dict.values() #list of dictionary values
+>>> list(dict.values()) #list of dictionary values
 [1, 3, 2]
 
->>> dict.items() #tuple of dictionary (key,value) pairs
+>>> list(dict.items()) #tuple of dictionary (key,value) pairs
 [('a', 1), ('c', 3), ('b', 2)]
 
 >>> "a" in dict   #True if dict has key "a", else False
