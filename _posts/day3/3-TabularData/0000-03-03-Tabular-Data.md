@@ -415,6 +415,9 @@ print(sum(lengths) / len(lengths))
 Create an empty table of 10 x 10 cells
 
 ```python
+>>> [0]*10
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
 >>> empty_table = [[0]*10 for x in range(10)]
 >>> empty_table
 [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0,
