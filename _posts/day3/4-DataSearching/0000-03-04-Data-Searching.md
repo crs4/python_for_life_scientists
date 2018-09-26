@@ -333,7 +333,7 @@ where `x` is a sequence-like object (string, tuple, list)
 | `pop()`, `remove()`, `discard()`  | remove set elements  |
 | `pop()` | deletes a single element randomly |
 | `remove(x)` | removes the element `x` and returns a message of error if `x` is not in the set |
-| `discard()`  |  removes the element `x` without returning any error message if `x` is not in the set |
+| `discard(x)`  |  removes the element `x` without returning any error message if `x` is not in the set |
 
 --
 
