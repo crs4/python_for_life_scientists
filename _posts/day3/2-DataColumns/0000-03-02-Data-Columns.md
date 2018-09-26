@@ -328,11 +328,10 @@ out.close()
 If you want to switch two columns:
 
 ```python
-Outfile = open('neuron_data-3.txt', 'w')
-
 data1 =  [1, 2, 2, 1, 1, 2, 1, 2, 2]
-data2 = [16.38, 139.90, 441.46, 29.03, 40.93,
-202.07, 142.30, 346.00, 300.00]
+data2 = [16.38, 139.90, 441.46, 29.03, 40.93, 202.07, 142.30, 346.00, 300.00]
+
+Outfile = open('neuron_data-3.txt', 'w')
 
 for i in range(len(data1)):
     Outfile.write("{:d}{:s}{:f}{:s}".format(data2[i],'\t', data1[i],'\n'))
