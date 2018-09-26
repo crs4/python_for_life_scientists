@@ -402,9 +402,12 @@ set(['a', 'b', 'e', 'd'])
 
 ## Challenge #3
 
-> Given the array a = ['Q5XXA6', 'Q9Y5P2', 'Q9NQQ7', 'Q14667', 'Q9GZY1', 
-'O75387', 'Q9NQQ7'] print his length, then transform it in a set and print his 
+> Given the array a print his length, then convert it in a set and print his 
 length
+
+```python
+a = ['Q5XXA6', 'Q9Y5P2', 'Q9NQQ7', 'Q14667', 'Q9GZY1', 'O75387', 'Q9NQQ7'] 
+```
 
 --
 
