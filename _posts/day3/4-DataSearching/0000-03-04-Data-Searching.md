@@ -400,4 +400,24 @@ set(['a', 'b', 'e', 'd'])
 
 --
 
+## Challenge #3
+
+> Given the array a = ['Q5XXA6', 'Q9Y5P2', 'Q9NQQ7', 'Q14667', 'Q9GZY1', 
+'O75387', 'Q9NQQ7'] print his length, then transform it in a set and print his 
+length
+
+--
+
+## Solution challenge #3
+
+```python
+a = ['Q5XXA6', 'Q9Y5P2', 'Q9NQQ7', 'Q14667', 'Q9GZY1', 'O75387', 'Q9NQQ7']
+s = set(a)
+
+print(len(a), len(s))
+
+```
+
+--
+
 # ...
