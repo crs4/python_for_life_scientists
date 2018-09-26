@@ -238,7 +238,8 @@ out.close()
 
 ## **Challenge #4**
 
-> Use two lists with data from <br> `neuron_data-2.txt` <br> to write a table identical to <br> `neuron_data-2.txt`.
+> Use two lists with data from <br> `neuron_data-2.txt` <br> to write a table
+ identical to <br> `neuron_data-3.txt`.
 >
 > Do it using **string concatenation**.
 
