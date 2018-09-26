@@ -46,7 +46,7 @@
 
 #### Preparation
 Copy and paste into tgca.py
-
+```
 codonAMINO =  {'GCU':'A','GCC':'A','GCA':'A', 'GCG':'A',
 'CGU':'R','CGC':'R','CGA':'R','CGG':'R','AGA':'R','AGG':'R',
 'UCU':'S','UCC':'S','UCA':'S','UCG':'S','AGU':'S','AGC':'S',
@@ -59,12 +59,12 @@ codonAMINO =  {'GCU':'A','GCC':'A','GCA':'A', 'GCG':'A',
 'GAA':'E','GAG':'E','CAU':'H','CAC':'H','AAA':'K','AAG':'K',
 'UUU':'F','UUC':'F','UAU':'Y','UAC':'Y','AUG':'M','UGG':'W',
 'AUG':'START','UAG':'STOP', 'UGA':'STOP', 'UAA':'STOP' }
-
+```
 --
 
 #### Preparation
 Copy and paste into rna_seq.fasta
-
+```
 >A06662 Synthetic nucleotide sequence of the human GSH transferase pi gene. : Location:1..1000
 UGGGACCAGUCAGCAGAGGCAGCGUGUGUGCGCGUGCGUGUGCGUGUGUGUGCGUGUGUG
 UGUGUACGCUUGCAUUUGUGUCGGGUGGGUAAGGAGAUAGAGAUGGGCGGGCAGUAGGCC
@@ -76,7 +76,7 @@ AGCAAGCAGAGGAGAAUCUGGGACUCUGGUGGUCUGGCCUGGGGCAGACGGGGGUGUCUC
 AGGGGCUGGGAGGGAUGAGAGUAGGAUGAUACAUGGUGGUGUCUGGCAGGAGGCGGGCAA
 GGAUGACUAUGUGAAGGCACUGCCCGGGCAACUGAAGCCUUUUGAGACCCUGCUGUCCCA
 GAACCAGGGAGGCAAGACCUUCAUUGUGGGAGACCAGGUGAGCAUCUGGCC
-
+```
 --
 
 #### Let's give a look to the content of the tgac.py: 
